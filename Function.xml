@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Functions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Function>
+		<Id>1</Id>
+		<Node>18</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Loss (Functions)</Name>
+		<Description>Quantify the error between predicted and actual values during model training.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Predicted values, true values</Formula>
+		<InputData>A single numerical value representing the loss</InputData>
+		<OutputData>Differentiable, non-negative, scalar output</OutputData>
+		<Properties>All supervised learning models</Properties>
+		<Role>loss, optimization, error, training</Role>
+		<Tags>Loss functions quantify the difference between predicted and actual values in machine learning models. They are crucial for training models by providing a measure of error that the optimization algorithm aims to minimize.</Tags>
+	</Function>
+	<Function>
+		<Id>2</Id>
+		<Node>19</Node>
+		<Lvl>4</Lvl>
+		<From>18</From>
+		<Name>L1 Loss (Mean Absolute Error)</Name>
+		<Description>Calculates the average of the absolute differences between predictions and actual values. Robust to outliers.</Description>
+		<Purpose>MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|</Purpose>
+		<Formula>Predicted values, true values</Formula>
+		<InputData>A single numerical value representing the mean absolute error</InputData>
+		<OutputData>Robust to outliers, non-differentiable at zero, linear growth</OutputData>
+		<Properties>Regression models, models where robustness to outliers is important</Properties>
+		<Role>loss, optimization, L1 regularization, robust</Role>
+		<Tags>L1 Loss, also known as Mean Absolute Error (MAE), calculates the average of the absolute differences between predictions and true values. It is less sensitive to outliers compared to L2 loss.</Tags>
+	</Function>
+	<Function>
+		<Id>3</Id>
+		<Node>20</Node>
+		<Lvl>4</Lvl>
+		<From>18</From>
+		<Name>L2 Loss (Mean Squared Error)</Name>
+		<Description>Calculates the average of the squared differences between predictions and actual values. Penalizes large errors more heavily than L1 loss.</Description>
+		<Purpose>MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Purpose>
+		<Formula>Predicted values, true values</Formula>
+		<InputData>A single numerical value representing the mean squared error</InputData>
+		<OutputData>Sensitive to outliers, differentiable, quadratic growth</OutputData>
+		<Properties>Most regression models, neural networks</Properties>
+		<Role>loss, optimization, L2 regularization, differentiable</Role>
+		<Tags>L2 Loss, also known as Mean Squared Error (MSE), calculates the average of the squared differences between predictions and true values. It penalizes larger errors more heavily than L1 loss, making it sensitive to outliers.</Tags>
+	</Function>
+	<Function>
+		<Id>4</Id>
+		<Node>43</Node>
+		<Lvl>3</Lvl>
+		<From>42</From>
+		<Name>Probability (Sigmoid Function)</Name>
+		<Description>Converts any real value to a probability between 0 and 1. Used in binary classification problems.</Description>
+		<Purpose>\sigma(x) = \frac{1}{1 + e^{-x}}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Probability between 0 and 1</InputData>
+		<OutputData>Bounded between 0 and 1, differentiable, non-linear</OutputData>
+		<Properties>Binary classification models, neural networks</Properties>
+		<Role>activation, probability, classification, non-linear</Role>
+		<Tags>The Sigmoid function is an activation function that maps any real-valued number to a probability between 0 and 1. It is commonly used in binary classification problems to model the probability of a data point belonging to a particular class.</Tags>
+	</Function>
+	<Function>
+		<Id>5</Id>
+		<Node>44</Node>
+		<Lvl>3</Lvl>
+		<From>42</From>
+		<Name>Loss (Log Loss)</Name>
+		<Description>Measures the performance of a classification model where the prediction input is a probability value between 0 and 1.</Description>
+		<Purpose>Log Loss = - \frac{1}{n} \sum_{i=1}^{n} [y_i \cdot \log(\hat{y}_i) + (1 - y_i) \cdot \log(1 - \hat{y}_i)]</Purpose>
+		<Formula>Predicted probabilities, true labels</Formula>
+		<InputData>A single numerical value representing the log loss</InputData>
+		<OutputData>Differentiable, non-negative, increases sharply as prediction deviates from actual</OutputData>
+		<Properties>Binary and multi-class classification models, logistic regression, neural networks</Properties>
+		<Role>loss, classification, probability, optimization</Role>
+		<Tags>Log Loss, also known as Binary Cross-Entropy Loss, measures the performance of a classification model where the prediction input is a probability value between 0 and 1. It is particularly suitable for binary classification tasks.</Tags>
+	</Function>
+	<Function>
+		<Id>6</Id>
+		<Node>103</Node>
+		<Lvl>3</Lvl>
+		<From>100</From>
+		<Name>Activation Functions (Types)</Name>
+		<Description>Introduce non-linearity to neural networks, enabling them to learn complex patterns.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Weighted sum of inputs from the previous layer</Formula>
+		<InputData>Transformed value(s), typically with non-linearity</InputData>
+		<OutputData>Introduce non-linearity, differentiable (most), can affect gradient flow</OutputData>
+		<Properties>Neural networks, deep learning models</Properties>
+		<Role>activation, non-linear, neural networks</Role>
+		<Tags>Activation functions introduce non-linearity into neural networks, enabling them to learn complex patterns. Different types of activation functions have varying properties that affect the training dynamics and performance of the network.</Tags>
+	</Function>
+	<Function>
+		<Id>7</Id>
+		<Node>104</Node>
+		<Lvl>4</Lvl>
+		<From>103</From>
+		<Name>Sigmoid-family (Sigmoid, Tanh)</Name>
+		<Description>A group of activation functions that includes Sigmoid and Tanh, known for their 'S' shape.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between 0 and 1 (Sigmoid) or -1 and 1 (Tanh)</InputData>
+		<OutputData>Differentiable, saturating non-linearity, can suffer from vanishing gradients</OutputData>
+		<Properties>Historically in neural networks, recurrent neural networks (RNNs)</Properties>
+		<Role>activation, sigmoid, tanh, saturation</Role>
+		<Tags>The Sigmoid family includes activation functions like Sigmoid and Tanh, which produce 'S' shaped curves. They were historically popular but can suffer from vanishing gradients in deep networks.</Tags>
+	</Function>
+	<Function>
+		<Id>8</Id>
+		<Node>105</Node>
+		<Lvl>4</Lvl>
+		<From>103</From>
+		<Name>ReLU-family (ReLU, ReLU6, Leaky ReLU, ELU)</Name>
+		<Description>A group of activation functions based on the Rectified Linear Unit (ReLU), designed to address the vanishing gradient problem.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Non-negative value (with variations for Leaky ReLU and ELU)</InputData>
+		<OutputData>Computationally efficient, can suffer from dying ReLU (except Leaky ReLU, ELU)</OutputData>
+		<Properties>Modern neural networks, convolutional neural networks (CNNs)</Properties>
+		<Role>activation, relu, vanishing gradient</Role>
+		<Tags>The ReLU family is based on the Rectified Linear Unit (ReLU). These functions are designed to address the vanishing gradient problem and are widely used in modern neural networks due to their efficiency.</Tags>
+	</Function>
+	<Function>
+		<Id>9</Id>
+		<Node>106</Node>
+		<Lvl>4</Lvl>
+		<From>103</From>
+		<Name>Other (Softmax, etc)</Name>
+		<Description>Activation functions that don't fall into the Sigmoid or ReLU families, such as Softmax.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Vector of real numbers</Formula>
+		<InputData>Probability distribution over multiple classes</InputData>
+		<OutputData>Softmax: Outputs probability distribution, differentiable</OutputData>
+		<Properties>Softmax: Multi-class classification models, neural networks</Properties>
+		<Role>activation, softmax, multi-class, probability</Role>
+		<Tags>This category includes activation functions that don't fall into the Sigmoid or ReLU families. Softmax, for example, is used in multi-class classification to produce a probability distribution over multiple classes.</Tags>
+	</Function>
+	<Function>
+		<Id>10</Id>
+		<Node>23</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Activation Functions (Types and Pros/Cons)</Name>
+		<Description>Overview of different activation functions, discussing their advantages and disadvantages.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>N/A</Formula>
+		<InputData>N/A</InputData>
+		<OutputData>Conceptual, varies by function</OutputData>
+		<Properties>N/A</Properties>
+		<Role>activation, overview, comparison</Role>
+		<Tags>This entry provides an overview of different activation functions, discussing their advantages, disadvantages, and typical use cases. It helps in selecting the appropriate activation function for a given neural network architecture.</Tags>
+	</Function>
+	<Function>
+		<Id>11</Id>
+		<Node>24</Node>
+		<Lvl>2</Lvl>
+		<From>24</From>
+		<Name>Sigmoid-family</Name>
+		<Description>Activation functions that produce 'S' shaped curves.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between 0 and 1 (Sigmoid) or -1 and 1 (Tanh)</InputData>
+		<OutputData>Differentiable, saturating</OutputData>
+		<Properties>Neural networks</Properties>
+		<Role>activation, sigmoid</Role>
+		<Tags>This refers to the family of activation functions that produce an 'S' shaped curve, with Sigmoid and Tanh being the most common members.</Tags>
+	</Function>
+	<Function>
+		<Id>12</Id>
+		<Node>25</Node>
+		<Lvl>3</Lvl>
+		<From>25</From>
+		<Name>Sigmoid</Name>
+		<Description>Squashes values between 0 and 1, historically popular for binary classification.</Description>
+		<Purpose>\sigma(x) = \frac{1}{1 + e^{-x}}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between 0 and 1</InputData>
+		<OutputData>Bounded output, historically used for binary classification</OutputData>
+		<Properties>Binary classification</Properties>
+		<Role>activation, binary classification</Role>
+		<Tags>The Sigmoid function squashes values between 0 and 1, making it suitable for binary classification problems where the output represents a probability.</Tags>
+	</Function>
+	<Function>
+		<Id>13</Id>
+		<Node>26</Node>
+		<Lvl>3</Lvl>
+		<From>25</From>
+		<Name>Tanh</Name>
+		<Description>Squashes values between -1 and 1, similar to Sigmoid but centered at 0.</Description>
+		<Purpose>tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between -1 and 1</InputData>
+		<OutputData>Zero-centered output, similar to Sigmoid</OutputData>
+		<Properties>Neural networks, RNNs</Properties>
+		<Role>activation, zero-centered</Role>
+		<Tags>The Hyperbolic Tangent (Tanh) function is similar to Sigmoid but squashes values between -1 and 1. It is zero-centered, which can be advantageous in some neural network architectures.</Tags>
+	</Function>
+	<Function>
+		<Id>14</Id>
+		<Node>27</Node>
+		<Lvl>2</Lvl>
+		<From>24</From>
+		<Name>ReLU-family</Name>
+		<Description>Activation functions that activate neurons only if the input is above a certain threshold.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Non-negative value (with variations)</InputData>
+		<OutputData>Piecewise linear, efficient</OutputData>
+		<Properties>CNNs, deep neural networks</Properties>
+		<Role>activation, relu</Role>
+		<Tags>This family of activation functions is based on the Rectified Linear Unit (ReLU) and its variants, designed to mitigate the vanishing gradient problem.</Tags>
+	</Function>
+	<Function>
+		<Id>15</Id>
+		<Node>28</Node>
+		<Lvl>3</Lvl>
+		<From>28</From>
+		<Name>ReLU</Name>
+		<Description>Outputs the input directly if it is positive, otherwise outputs zero. Simple and efficient.</Description>
+		<Purpose>f(x) = max(0, x)</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Non-negative value</InputData>
+		<OutputData>Simple, efficient, can lead to dying ReLU</OutputData>
+		<Properties>General neural networks</Properties>
+		<Role>activation, efficient</Role>
+		<Tags>The Rectified Linear Unit (ReLU) is a simple and efficient activation function that outputs the input directly if it is positive and zero otherwise.</Tags>
+	</Function>
+	<Function>
+		<Id>16</Id>
+		<Node>29</Node>
+		<Lvl>3</Lvl>
+		<From>28</From>
+		<Name>ReLU6</Name>
+		<Description>A variant of ReLU that clips the output at 6, useful in some hardware-constrained environments.</Description>
+		<Purpose>f(x) = min(max(0, x), 6)</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between 0 and 6</InputData>
+		<OutputData>Bounded ReLU, useful for quantized networks</OutputData>
+		<Properties>MobileNets, resource-constrained models</Properties>
+		<Role>activation, bounded</Role>
+		<Tags>ReLU6 is a variant of ReLU that clips the output at 6. It is sometimes used in mobile or embedded applications where computational efficiency is crucial.</Tags>
+	</Function>
+	<Function>
+		<Id>17</Id>
+		<Node>30</Node>
+		<Lvl>3</Lvl>
+		<From>28</From>
+		<Name>Leaky ReLU</Name>
+		<Description>Allows a small, non-zero gradient when the unit is not active, mitigating the dying ReLU problem.</Description>
+		<Purpose>f(x) = \begin{cases} x, &amp; \text{if } x &gt; 0 \\ \alpha x, &amp; \text{otherwise} \end{cases}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value, allowing small negative values</InputData>
+		<OutputData>Avoids dying ReLU, introduces small non-zero gradient</OutputData>
+		<Properties>Generative Adversarial Networks (GANs)</Properties>
+		<Role>activation, dying relu</Role>
+		<Tags>Leaky ReLU addresses the dying ReLU problem by allowing a small, non-zero gradient when the unit is not active. This helps in better gradient flow during training.</Tags>
+	</Function>
+	<Function>
+		<Id>18</Id>
+		<Node>31</Node>
+		<Lvl>3</Lvl>
+		<From>28</From>
+		<Name>ELU</Name>
+		<Description>Exponential Linear Unit. Aims to speed up learning by reducing the bias shift effect.</Description>
+		<Purpose>f(x) = \begin{cases} x, &amp; \text{if } x &gt; 0 \\ \alpha (e^x - 1), &amp; \text{otherwise} \end{cases}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value, allowing negative values with exponential decay</InputData>
+		<OutputData>Smooth, can speed up learning, computationally intensive</OutputData>
+		<Properties>Deep neural networks</Properties>
+		<Role>activation, exponential</Role>
+		<Tags>The Exponential Linear Unit (ELU) is another variant of ReLU that aims to speed up learning by reducing the bias shift effect. It allows for negative values, which can push the mean activation closer to zero.</Tags>
+	</Function>
+	<Function>
+		<Id>19</Id>
+		<Node>33</Node>
+		<Lvl>3</Lvl>
+		<From>33</From>
+		<Name>Softmax</Name>
+		<Description>Converts a vector of numbers into a vector of probabilities, where the probabilities sum to 1. Used in multi-class classification.</Description>
+		<Purpose>\sigma(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}</Purpose>
+		<Formula>Vector of real numbers</Formula>
+		<InputData>Probability distribution over multiple classes</InputData>
+		<OutputData>Normalizes outputs to a probability distribution</OutputData>
+		<Properties>Multi-class classification</Properties>
+		<Role>activation, normalization, multi-class</Role>
+		<Tags>The Softmax function converts a vector of numbers into a probability distribution, where the probabilities sum to 1. It is commonly used in the output layer of multi-class classification models.</Tags>
+	</Function>
+	<Function>
+		<Id>20</Id>
+		<Node>34</Node>
+		<Lvl>3</Lvl>
+		<From>33</From>
+		<Name>Swish/SiLU</Name>
+		<Description>A relatively new activation function defined as x * sigmoid(x).</Description>
+		<Purpose>Swish(x) = x \cdot \sigma(x); \quad SiLU(x) = x \cdot \sigma(x)</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Self-gating, can improve performance</OutputData>
+		<Properties>Deep neural networks, MobileNets</Properties>
+		<Role>activation, self-gating</Role>
+		<Tags>Swish and SiLU (Sigmoid Linear Unit) are relatively new activation functions that have shown promising results in deep learning models. Swish is defined as f(x) = x * sigmoid(x).</Tags>
+	</Function>
+	<Function>
+		<Id>21</Id>
+		<Node>35</Node>
+		<Lvl>3</Lvl>
+		<From>33</From>
+		<Name>GELU</Name>
+		<Description>Gaussian Error Linear Unit. A smooth approximation to the ReLU function.</Description>
+		<Purpose>GELU(x) = x \cdot \Phi(x)</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Smooth, high performance in transformers</OutputData>
+		<Properties>Transformers</Properties>
+		<Role>activation, transformer</Role>
+		<Tags>The Gaussian Error Linear Unit (GELU) is a smooth approximation to the ReLU function. It has shown excellent performance in transformer models.</Tags>
+	</Function>
+	<Function>
+		<Id>22</Id>
+		<Node>36</Node>
+		<Lvl>2</Lvl>
+		<From>24</From>
+		<Name>Functions</Name>
+		<Description>General purpose methods or operations.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Varies depending on the specific function</Formula>
+		<InputData>Varies depending on the specific function</InputData>
+		<OutputData>Varies</OutputData>
+		<Properties>General programming, data processing</Properties>
+		<Role>utility, general</Role>
+		<Tags>This category refers to general-purpose methods or operations that perform specific tasks, such as data manipulation or object conversion.</Tags>
+	</Function>
+	<Function>
+		<Id>23</Id>
+		<Node>37</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>serialize</Name>
+		<Description>Convert an object into a stream of bytes to store it or transmit it over a network.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Object to be converted</Formula>
+		<InputData>Stream of bytes</InputData>
+		<OutputData>Object to byte stream conversion</OutputData>
+		<Properties>Any model requiring saving/loading</Properties>
+		<Role>serialization, data, transform</Role>
+		<Tags>Serialization is the process of converting an object into a format that can be stored or transmitted, such as a stream of bytes.</Tags>
+	</Function>
+	<Function>
+		<Id>24</Id>
+		<Node>38</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>deserialize</Name>
+		<Description>Convert a stream of bytes back into an object.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Stream of bytes</Formula>
+		<InputData>Object</InputData>
+		<OutputData>Byte stream to object conversion</OutputData>
+		<Properties>Any model requiring saving/loading</Properties>
+		<Role>deserialization, data, transform</Role>
+		<Tags>Deserialization is the reverse process of serialization, where a serialized object is converted back into its original form.</Tags>
+	</Function>
+	<Function>
+		<Id>25</Id>
+		<Node>39</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>get</Name>
+		<Description>Retrieve a specific element or value from a collection or data structure.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Collection, key or index</Formula>
+		<InputData>Retrieved element or value</InputData>
+		<OutputData>Retrieval operation</OutputData>
+		<Properties>Data access in any model</Properties>
+		<Role>access, retrieve, data</Role>
+		<Tags>The 'get' function is a common operation in programming that retrieves a specific element or value from a collection or data structure based on a key or index.</Tags>
+	</Function>
+	<Function>
+		<Id>26</Id>
+		<Node>40</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>elu</Name>
+		<Description>Alias for the Exponential Linear Unit activation function.</Description>
+		<Purpose>f(x) = \begin{cases} x, &amp; \text{if } x &gt; 0 \\ \alpha (e^x - 1), &amp; \text{otherwise} \end{cases}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Alias for ELU</OutputData>
+		<Properties>Deep neural networks</Properties>
+		<Role>activation</Role>
+		<Tags>This is an alias for the Exponential Linear Unit (ELU) activation function.</Tags>
+	</Function>
+	<Function>
+		<Id>27</Id>
+		<Node>41</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>exponential</Name>
+		<Description>Mathematical function that calculates e raised to the power of a number.</Description>
+		<Purpose>f(x) = e^x</Purpose>
+		<Formula>Number</Formula>
+		<InputData>Number</InputData>
+		<OutputData>Rapid growth, defined for all real numbers</OutputData>
+		<Properties>Various mathematical models</Properties>
+		<Role>math, transform</Role>
+		<Tags>The exponential function is a mathematical function that calculates e (Euler's number) raised to the power of a given number.</Tags>
+	</Function>
+	<Function>
+		<Id>28</Id>
+		<Node>42</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>hard_sigmoid</Name>
+		<Description>A piecewise linear approximation of the sigmoid function. Faster to compute.</Description>
+		<Purpose>f(x) = max(0, min(1, 0.2x + 0.5))</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between 0 and 1</InputData>
+		<OutputData>Approximation of Sigmoid, computationally efficient</OutputData>
+		<Properties>Lightweight neural networks</Properties>
+		<Role>activation, approximation</Role>
+		<Tags>Hard Sigmoid is a piecewise linear approximation of the Sigmoid function. It is computationally more efficient than Sigmoid but less smooth.</Tags>
+	</Function>
+	<Function>
+		<Id>29</Id>
+		<Node>43</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>hard_silu</Name>
+		<Description>A computationally efficient approximation of the SiLU activation function.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Approximation of SiLU</OutputData>
+		<Properties>Lightweight neural networks</Properties>
+		<Role>activation, approximation</Role>
+		<Tags>Hard SiLU is a computationally efficient approximation of the SiLU activation function.</Tags>
+	</Function>
+	<Function>
+		<Id>30</Id>
+		<Node>44</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>hard_swish</Name>
+		<Description>A computationally efficient approximation of the Swish activation function.</Description>
+		<Purpose>N/A</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Approximation of Swish</OutputData>
+		<Properties>MobileNets</Properties>
+		<Role>activation, approximation</Role>
+		<Tags>Hard Swish is a computationally efficient approximation of the Swish activation function.</Tags>
+	</Function>
+	<Function>
+		<Id>31</Id>
+		<Node>45</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>linear</Name>
+		<Description>A linear (identity) activation function, often used in the output layer for regression.</Description>
+		<Purpose>f(x) = x</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Identity function, preserves linearity</OutputData>
+		<Properties>Linear regression, output layers of regression models</Properties>
+		<Role>transform, linear</Role>
+		<Tags>The linear activation function, also known as the identity function, simply outputs the input without any transformation. It is often used in the output layer for regression problems.</Tags>
+	</Function>
+	<Function>
+		<Id>32</Id>
+		<Node>46</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>log_softmax</Name>
+		<Description>Computes the logarithm of the Softmax function.</Description>
+		<Purpose>log \sigma(z)_i = log \left( \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}} \right)</Purpose>
+		<Formula>Vector of real numbers</Formula>
+		<InputData>Log-probabilities</InputData>
+		<OutputData>Numerical stability, combines log and softmax</OutputData>
+		<Properties>Classification models</Properties>
+		<Role>activation, probability, numerical stability</Role>
+		<Tags>Log Softmax is a function that computes the logarithm of the Softmax function. It is often used in classification tasks for numerical stability.</Tags>
+	</Function>
+	<Function>
+		<Id>33</Id>
+		<Node>47</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>mish</Name>
+		<Description>A self-regularizing non-monotonic activation function.</Description>
+		<Purpose>f(x) = x \cdot tanh(ln(1 + e^x))</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Real-valued number</InputData>
+		<OutputData>Self-regularizing, non-monotonic</OutputData>
+		<Properties>Deep neural networks</Properties>
+		<Role>activation</Role>
+		<Tags>Mish is a self-regularizing non-monotonic activation function that has shown promising results in various deep learning tasks.</Tags>
+	</Function>
+	<Function>
+		<Id>34</Id>
+		<Node>48</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>selu</Name>
+		<Description>Scaled Exponential Linear Unit. Induces self-normalizing properties.</Description>
+		<Purpose>f(x) = \lambda \begin{cases} x, &amp; \text{if } x &gt; 0 \\ \alpha (e^x - 1), &amp; \text{otherwise} \end{cases}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Scaled real-valued number</InputData>
+		<OutputData>Self-normalizing, requires specific initialization</OutputData>
+		<Properties>Self-normalizing networks</Properties>
+		<Role>activation, self-normalizing</Role>
+		<Tags>Scaled Exponential Linear Unit (SELU) is an activation function that induces self-normalizing properties in neural networks, helping to stabilize training.</Tags>
+	</Function>
+	<Function>
+		<Id>35</Id>
+		<Node>49</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>softplus</Name>
+		<Description>A smooth approximation to the ReLU function.</Description>
+		<Purpose>f(x) = ln(1 + e^x)</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Positive real-valued number</InputData>
+		<OutputData>Smooth approximation to ReLU</OutputData>
+		<Properties>Energy-based models</Properties>
+		<Role>activation, smooth</Role>
+		<Tags>Softplus is a smooth approximation to the ReLU function. It is differentiable everywhere and outputs only positive values.</Tags>
+	</Function>
+	<Function>
+		<Id>36</Id>
+		<Node>50</Node>
+		<Lvl>3</Lvl>
+		<From>37</From>
+		<Name>softsign</Name>
+		<Description>A function that outputs a value between -1 and 1, similar to tanh but with slower growth.</Description>
+		<Purpose>f(x) = \frac{x}{1 + |x|}</Purpose>
+		<Formula>Real-valued number</Formula>
+		<InputData>Value between -1 and 1</InputData>
+		<OutputData>Alternative to tanh, slower growth</OutputData>
+		<Properties>Neural networks</Properties>
+		<Role>activation</Role>
+		<Tags>Softsign is an activation function that outputs a value between -1 and 1. It is similar to Tanh but has a slower growth rate.</Tags>
+	</Function>
+</Functions>

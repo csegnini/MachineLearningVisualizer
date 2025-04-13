@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Concepts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Concept>
+		<Id>1</Id>
+		<Node>1</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Data Types</Name>
+		<Definition>Categories used to classify data based on its characteristics (e.g., numerical, categorical, boolean).</Definition>
+		<Explanation>Data types define the format and structure of data, influencing how it can be processed and analyzed. Common examples include integers, floating-point numbers, strings, and booleans.</Explanation>
+		<Importance>Crucial for selecting appropriate data processing and analysis techniques.</Importance>
+		<RelatedTerms>Data Structures, Variables, Data Storage</RelatedTerms>
+		<Examples>Integer (age: 25), Float (temperature: 24.5), String (name: 'Alice'), Boolean (is_active: True)</Examples>
+		<Basis>Set theory, information theory</Basis>
+		<ImpactOnModels>Data types determine how data can be used in models and which algorithms are applicable.</ImpactOnModels>
+		<Tags>Data, Fundamentals</Tags>
+	</Concept>
+	<Concept>
+		<Id>2</Id>
+		<Node>2</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Numerical</Name>
+		<Definition>Data that represents measurable quantities (e.g., age, temperature, height).</Definition>
+		<Explanation>Numerical data represents quantities that can be measured or counted. It can be further classified into discrete (e.g., integers) and continuous (e.g., floating-point numbers).</Explanation>
+		<Importance>Fundamental for many machine learning algorithms that require quantitative input.</Importance>
+		<RelatedTerms>Quantitative Data, Continuous Data, Discrete Data, Integer, Float</RelatedTerms>
+		<Examples>Discrete: number of students in a class; Continuous: height of a person</Examples>
+		<Basis>Number theory, real analysis</Basis>
+		<ImpactOnModels>Numerical data is used as input for many algorithms and influences model predictions.</ImpactOnModels>
+		<Tags>Data, Quantitative</Tags>
+	</Concept>
+	<Concept>
+		<Id>3</Id>
+		<Node>3</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Categorical</Name>
+		<Definition>Data that represents qualities or characteristics (e.g., color, gender, city).</Definition>
+		<Explanation>Categorical data represents qualities or characteristics that can be divided into categories. It can be nominal (categories with no order) or ordinal (categories with a meaningful order).</Explanation>
+		<Importance>Essential for representing qualities and characteristics, common in many datasets.</Importance>
+		<RelatedTerms>Qualitative Data, Nominal Data, Ordinal Data, String, Category</RelatedTerms>
+		<Examples>Nominal: colors (red, blue, green); Ordinal: education level (high school, bachelor's, master's)</Examples>
+		<Basis>Set theory, statistics</Basis>
+		<ImpactOnModels>Categorical data requires encoding to be used in most models and affects how relationships are modeled.</ImpactOnModels>
+		<Tags>Data, Qualitative</Tags>
+	</Concept>
+	<Concept>
+		<Id>4</Id>
+		<Node>5</Node>
+		<Lvl>2</Lvl>
+		<From>4</From>
+		<Name>Lifecycle</Name>
+		<Definition>The series of stages that data goes through, from initial collection or generation to archival and deletion.</Definition>
+		<Explanation>The data lifecycle encompasses all stages from data creation and acquisition, through storage, processing, and usage, to eventual archiving or deletion. Understanding the lifecycle is crucial for data management.</Explanation>
+		<Importance>Important for effective data management, quality control, and long-term usability.</Importance>
+		<RelatedTerms>Data Management, Data Governance, Data Storage, Data Processing</RelatedTerms>
+		<Examples>Data creation -&gt; data storage -&gt; data analysis -&gt; data archiving</Examples>
+		<Basis>Database theory, information management</Basis>
+		<ImpactOnModels>Understanding the lifecycle informs data management strategies for model training and deployment.</ImpactOnModels>
+		<Tags>Data Management, Process</Tags>
+	</Concept>
+	<Concept>
+		<Id>5</Id>
+		<Node>6</Node>
+		<Lvl>2</Lvl>
+		<From>4</From>
+		<Name>Quantity</Name>
+		<Definition>A numerical amount or count.</Definition>
+		<Explanation>Quantity refers to a numerical value associated with a measurement or count. It answers the question 'how much' or 'how many.'</Explanation>
+		<Importance>Fundamental to understanding the scale and scope of data.</Importance>
+		<RelatedTerms>Amount, Count, Measurement, Value</RelatedTerms>
+		<Examples>10 apples, 3.14 meters, 5 kilograms</Examples>
+		<Basis>Arithmetic</Basis>
+		<ImpactOnModels>The amount of data influences model complexity, training time, and generalization ability.</ImpactOnModels>
+		<Tags>Data, Measurement</Tags>
+	</Concept>
+	<Concept>
+		<Id>6</Id>
+		<Node>11</Node>
+		<Lvl>2</Lvl>
+		<From>4</From>
+		<Name>Quality</Name>
+		<Definition>The degree to which data is accurate, complete, consistent, and reliable.</Definition>
+		<Explanation>Data quality is a measure of the condition of data, considering factors like accuracy, completeness, consistency, validity, and timeliness. High-quality data is essential for reliable analysis and decision-making.</Explanation>
+		<Importance>Critical for ensuring the reliability and validity of analysis and model results.</Importance>
+		<RelatedTerms>Data Accuracy, Data Completeness, Data Consistency, Data Validity</RelatedTerms>
+		<Examples>Accurate: correct values; Complete: no missing values; Consistent: same format</Examples>
+		<Basis>Statistics, information theory</Basis>
+		<ImpactOnModels>Data quality directly impacts model accuracy, reliability, and bias.</ImpactOnModels>
+		<Tags>Data, Assessment</Tags>
+	</Concept>
+	<Concept>
+		<Id>7</Id>
+		<Node>12</Node>
+		<Lvl>3</Lvl>
+		<From>11</From>
+		<Name>Clearly named</Name>
+		<Definition>Data elements that have descriptive and unambiguous names for easy understanding.</Definition>
+		<Explanation>Data elements should have descriptive and unambiguous names to facilitate understanding and avoid misinterpretation. This is crucial for collaboration and data governance.</Explanation>
+		<Importance>Improves data understanding, collaboration, and maintainability.</Importance>
+		<RelatedTerms>Data Naming Conventions, Data Dictionary, Metadata</RelatedTerms>
+		<Examples>Use 'customer_id' instead of 'custid'</Examples>
+		<Basis>Linguistics, information science</Basis>
+		<ImpactOnModels>Improves model interpretability and reduces errors in data handling.</ImpactOnModels>
+		<Tags>Data, Best Practice</Tags>
+	</Concept>
+	<Concept>
+		<Id>8</Id>
+		<Node>13</Node>
+		<Lvl>3</Lvl>
+		<From>11</From>
+		<Name>Checked before training</Name>
+		<Definition>Ensuring data is validated and cleaned before being used to train machine learning models.</Definition>
+		<Explanation>Data should be validated and cleaned before being used to train machine learning models to ensure accuracy and prevent model errors. This includes handling missing values, outliers, and inconsistencies.</Explanation>
+		<Importance>Prevents errors and biases in model training, leading to better model performance.</Importance>
+		<RelatedTerms>Data Validation, Data Cleaning, Data Integrity</RelatedTerms>
+		<Examples>Removing outliers, handling missing values</Examples>
+		<Basis>Statistics, data validation</Basis>
+		<ImpactOnModels>Ensures models are trained on clean and valid data, leading to better performance.</ImpactOnModels>
+		<Tags>Data, Preparation</Tags>
+	</Concept>
+	<Concept>
+		<Id>9</Id>
+		<Node>14</Node>
+		<Lvl>3</Lvl>
+		<From>11</From>
+		<Name>Sensible</Name>
+		<Definition>Data that is reasonable and logical within the given context.</Definition>
+		<Explanation>Data should be reasonable and logical within its context. For example, an age value of -5 or a temperature value of 1000 degrees Celsius would likely be considered nonsensical.</Explanation>
+		<Importance>Ensures data accuracy and prevents illogical conclusions.</Importance>
+		<RelatedTerms>Data Validity, Data Reasonableness, Logical Consistency</RelatedTerms>
+		<Examples>A person's age cannot be negative</Examples>
+		<Basis>Logic, domain expertise</Basis>
+		<ImpactOnModels>Prevents models from learning illogical patterns and producing nonsensical predictions.</ImpactOnModels>
+		<Tags>Data, Validity</Tags>
+	</Concept>
+	<Concept>
+		<Id>10</Id>
+		<Node>15</Node>
+		<Lvl>3</Lvl>
+		<From>11</From>
+		<Name>Reliability</Name>
+		<Definition>The consistency and trustworthiness of data over time.</Definition>
+		<Explanation>Data reliability refers to the consistency and trustworthiness of data over time and across different sources. Reliable data can be depended upon for accurate analysis and reporting.</Explanation>
+		<Importance>Essential for consistent and trustworthy data-driven decisions.</Importance>
+		<RelatedTerms>Data Trustworthiness, Data Consistency, Data Provenance</RelatedTerms>
+		<Examples>Sensor readings that are consistently accurate</Examples>
+		<Basis>Statistics, probability theory</Basis>
+		<ImpactOnModels>Reliable data leads to more consistent and trustworthy model predictions.</ImpactOnModels>
+		<Tags>Data, Consistency</Tags>
+	</Concept>
+	<Concept>
+		<Id>11</Id>
+		<Node>16</Node>
+		<Lvl>3</Lvl>
+		<From>11</From>
+		<Name>Completeness</Name>
+		<Definition>The degree to which data has all the necessary values.</Definition>
+		<Explanation>Data completeness refers to the degree to which all required data is present. Incomplete data can lead to biased or inaccurate analysis.</Explanation>
+		<Importance>Necessary for avoiding biased or incomplete analysis.</Importance>
+		<RelatedTerms>Data Integrity, Missing Data, Data Sufficiency</RelatedTerms>
+		<Examples>A table with no missing entries in the 'email' column</Examples>
+		<Basis>Set theory, database theory</Basis>
+		<ImpactOnModels>Incomplete data can introduce bias and reduce model accuracy.</ImpactOnModels>
+		<Tags>Data, Integrity</Tags>
+	</Concept>
+	<Concept>
+		<Id>12</Id>
+		<Node>24</Node>
+		<Lvl>3</Lvl>
+		<From>23</From>
+		<Name>Separated</Name>
+		<Definition>Data that is organized into distinct categories or groups.</Definition>
+		<Explanation>Data is considered separated when it is organized into distinct categories or groups. This organization can be based on various criteria, such as class labels or cluster assignments.</Explanation>
+		<Importance>Facilitates analysis and modeling of distinct groups or categories.</Importance>
+		<RelatedTerms>Data Categorization, Data Grouping, Data Segmentation</RelatedTerms>
+		<Examples>Data grouped by customer demographics</Examples>
+		<Basis>Set theory, category theory</Basis>
+		<ImpactOnModels>Allows models to learn distinct patterns for different groups or categories.</ImpactOnModels>
+		<Tags>Data, Organization</Tags>
+	</Concept>
+	<Concept>
+		<Id>13</Id>
+		<Node>25</Node>
+		<Lvl>3</Lvl>
+		<From>23</From>
+		<Name>Unseparated</Name>
+		<Definition>Data that is not organized into distinct categories or groups.</Definition>
+		<Explanation>Data is considered unseparated when it is not organized into distinct categories or groups. This might be the case with raw, unprocessed data.</Explanation>
+		<Importance>Describes the state of raw data before it has been categorized.</Importance>
+		<RelatedTerms>Raw Data, Unprocessed Data, Undifferentiated Data</RelatedTerms>
+		<Examples>A long list of text without categorization</Examples>
+		<Basis>Set theory</Basis>
+		<ImpactOnModels>Represents the initial state of data before it's used to train models.</ImpactOnModels>
+		<Tags>Data, State</Tags>
+	</Concept>
+	<Concept>
+		<Id>14</Id>
+		<Node>30</Node>
+		<Lvl>2</Lvl>
+		<From>17</From>
+		<Name>Generalization</Name>
+		<Definition>The ability of a model to perform well on unseen data.</Definition>
+		<Explanation>Generalization is the ability of a machine learning model to perform well on unseen data, which is crucial for real-world applications.</Explanation>
+		<Importance>The core goal of machine learning; determines a model's real-world applicability.</Importance>
+		<RelatedTerms>Overfitting, Underfitting, Model Performance, Out-of-Sample Performance</RelatedTerms>
+		<Examples>A model trained on images of cats correctly identifying a cat in a new image</Examples>
+		<Basis>Statistical learning theory, probability theory</Basis>
+		<ImpactOnModels>The ultimate measure of a model's usefulness; models are built to generalize well.</ImpactOnModels>
+		<Tags>Model, Performance</Tags>
+	</Concept>
+	<Concept>
+		<Id>15</Id>
+		<Node>31</Node>
+		<Lvl>3</Lvl>
+		<From>30</From>
+		<Name>Overfitting</Name>
+		<Definition>A phenomenon where a model learns the training data too well, leading to poor performance on unseen data.</Definition>
+		<Explanation>Overfitting occurs when a model learns the training data too well, capturing noise and specific patterns that do not generalize to new data, leading to poor performance on unseen data.</Explanation>
+		<Importance>Understanding overfitting is crucial for building models that perform well on unseen data.</Importance>
+		<RelatedTerms>Model Complexity, Training Data, Validation Data, Generalization Error</RelatedTerms>
+		<Examples>A model that predicts training data perfectly but fails on test data</Examples>
+		<Basis>Approximation theory, statistical learning theory</Basis>
+		<ImpactOnModels>A phenomenon to avoid, as it leads to models that perform poorly on new data.</ImpactOnModels>
+		<Tags>Model, Error</Tags>
+	</Concept>
+	<Concept>
+		<Id>16</Id>
+		<Node>32</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Loss curve</Name>
+		<Definition>A graph showing the model's error on the training data over iterations.</Definition>
+		<Explanation>A loss curve is a graph that plots the value of the loss function (a measure of error) on the training data over iterations of model training. It helps to diagnose training problems.</Explanation>
+		<Importance>A diagnostic tool for monitoring model training and identifying issues.</Importance>
+		<RelatedTerms>Training Error, Optimization, Learning Rate, Convergence</RelatedTerms>
+		<Examples>A graph showing training error decreasing over epochs</Examples>
+		<Basis>Calculus, optimization theory</Basis>
+		<ImpactOnModels>Provides insights into model training dynamics and potential problems.</ImpactOnModels>
+		<Tags>Model, Training</Tags>
+	</Concept>
+	<Concept>
+		<Id>17</Id>
+		<Node>33</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Generalization curve</Name>
+		<Definition>A graph showing the model's error on a validation set over iterations.</Definition>
+		<Explanation>A generalization curve is a graph that plots the model's performance (e.g., loss or accuracy) on a validation set over iterations. It helps to monitor overfitting.</Explanation>
+		<Importance>A diagnostic tool for detecting overfitting during model training.</Importance>
+		<RelatedTerms>Validation Error, Overfitting, Model Selection</RelatedTerms>
+		<Examples>A graph showing validation error increasing after a certain epoch</Examples>
+		<Basis>Statistics, learning theory</Basis>
+		<ImpactOnModels>Helps in detecting overfitting and optimizing model training.</ImpactOnModels>
+		<Tags>Model, Validation</Tags>
+	</Concept>
+	<Concept>
+		<Id>18</Id>
+		<Node>38</Node>
+		<Lvl>2</Lvl>
+		<From>17</From>
+		<Name>Fairness/Bias</Name>
+		<Definition>The absence of prejudice or discrimination in machine learning models and their outputs.</Definition>
+		<Explanation>Fairness in machine learning refers to the absence of prejudice or discrimination in model outcomes, ensuring that the model does not unfairly disadvantage certain groups. Bias, on the other hand, refers to systematic errors in the model's predictions.</Explanation>
+		<Importance>Increasingly important for ethical AI development and responsible decision-making.</Importance>
+		<RelatedTerms>Ethical AI, Algorithmic Bias, Discrimination, Equity</RelatedTerms>
+		<Examples>A loan approval model that disproportionately denies loans to minority groups</Examples>
+		<Basis>Statistics, social science theory</Basis>
+		<ImpactOnModels>Bias in data or models leads to unfair or discriminatory outcomes.</ImpactOnModels>
+		<Tags>Ethics, Evaluation</Tags>
+	</Concept>
+	<Concept>
+		<Id>19</Id>
+		<Node>39</Node>
+		<Lvl>3</Lvl>
+		<From>38</From>
+		<Name>Types</Name>
+		<Definition>Different categories or forms of fairness or bias.</Definition>
+		<Explanation>In the context of fairness, 'types' refers to the various categories of bias that can occur in machine learning, each with its own characteristics and potential impact.</Explanation>
+		<Importance>Understanding the different types of bias is crucial for effective mitigation.</Importance>
+		<RelatedTerms>Bias Categories, Bias Sources, Bias Mitigation</RelatedTerms>
+		<Examples>Algorithmic bias, data bias, societal bias</Examples>
+		<Basis>Set theory, logic</Basis>
+		<ImpactOnModels>Different types of bias affect models in distinct ways and require specific mitigation strategies.</ImpactOnModels>
+		<Tags>Bias, Taxonomy</Tags>
+	</Concept>
+	<Concept>
+		<Id>20</Id>
+		<Node>40</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Automation bias</Name>
+		<Definition>The tendency to favor suggestions made by automated systems.</Definition>
+		<Explanation>Automation bias is the tendency for humans to favor suggestions and decisions made by automated systems, even when those suggestions are incorrect.</Explanation>
+		<Importance>Recognizing this bias helps in critically evaluating automated system outputs.</Importance>
+		<RelatedTerms>AI Trust, Human-Computer Interaction, Decision Support Systems</RelatedTerms>
+		<Examples>Trusting a spell checker even when it suggests an incorrect word</Examples>
+		<Basis>Psychology, sociology</Basis>
+		<ImpactOnModels>Can lead to over-reliance on model outputs, even when incorrect.</ImpactOnModels>
+		<Tags>Bias, Human Factors</Tags>
+	</Concept>
+	<Concept>
+		<Id>21</Id>
+		<Node>41</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Confirmation bias</Name>
+		<Definition>The tendency to interpret information in a way that confirms one's existing beliefs.</Definition>
+		<Explanation>Confirmation bias is the tendency to search for, interpret, favor, and recall information that confirms or supports one's prior beliefs or values.</Explanation>
+		<Importance>Awareness of this bias is important for objective data analysis.</Importance>
+		<RelatedTerms>Cognitive Bias, Information Processing, Selective Perception</RelatedTerms>
+		<Examples>Only focusing on positive customer reviews while ignoring negative ones</Examples>
+		<Basis>Cognitive psychology</Basis>
+		<ImpactOnModels>Can influence how data is selected and interpreted, affecting model results.</ImpactOnModels>
+		<Tags>Bias, Psychology</Tags>
+	</Concept>
+	<Concept>
+		<Id>22</Id>
+		<Node>42</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Coverage bias</Name>
+		<Definition>Bias due to underrepresentation of certain groups in the data.</Definition>
+		<Explanation>Coverage bias arises from non-representative training data, where certain subgroups of the population are underrepresented, leading to poor model performance for those groups.</Explanation>
+		<Importance>Addressing coverage bias ensures that models are fair to all subgroups.</Importance>
+		<RelatedTerms>Sampling Bias, Representation Bias, Population Bias</RelatedTerms>
+		<Examples>A facial recognition system trained primarily on light-skinned faces</Examples>
+		<Basis>Statistics, sampling theory</Basis>
+		<ImpactOnModels>Models trained on data with coverage bias may perform poorly on underrepresented groups.</ImpactOnModels>
+		<Tags>Bias, Data Representation</Tags>
+	</Concept>
+	<Concept>
+		<Id>23</Id>
+		<Node>43</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Experimenter's bias</Name>
+		<Definition>Bias introduced by the researcher's expectations or influence.</Definition>
+		<Explanation>Experimenter's bias occurs when the researcher's expectations or influence affect the design, execution, or interpretation of a study, leading to skewed results.</Explanation>
+		<Importance>Minimizing this bias is essential for scientific rigor in machine learning research.</Importance>
+		<RelatedTerms>Researcher Bias, Observer Effect, Expectation Bias</RelatedTerms>
+		<Examples>Unintentionally influencing participants in a study</Examples>
+		<Basis>Scientific methodology, statistics</Basis>
+		<ImpactOnModels>Can skew model development and evaluation, leading to unreliable results.</ImpactOnModels>
+		<Tags>Bias, Methodology</Tags>
+	</Concept>
+	<Concept>
+		<Id>24</Id>
+		<Node>44</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Group attribution bias</Name>
+		<Definition>The tendency to generalize characteristics of an individual to the entire group.</Definition>
+		<Explanation>Group attribution bias is the tendency to assume that the characteristics of an individual are representative of the entire group to which they belong.</Explanation>
+		<Importance>Avoiding this bias promotes fair and accurate group assessments.</Importance>
+		<RelatedTerms>Stereotyping, Prejudice, Social Cognition</RelatedTerms>
+		<Examples>Assuming all members of a certain age group have the same tech skills</Examples>
+		<Basis>Social psychology</Basis>
+		<ImpactOnModels>Models may perpetuate harmful stereotypes if they learn patterns based on group attributions.</ImpactOnModels>
+		<Tags>Bias, Social</Tags>
+	</Concept>
+	<Concept>
+		<Id>25</Id>
+		<Node>45</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Historical bias</Name>
+		<Definition>Bias present in the data due to past societal inequalities.</Definition>
+		<Explanation>Historical bias occurs when existing societal inequalities are reflected in the training data, leading the model to perpetuate those inequalities.</Explanation>
+		<Importance>Acknowledging historical bias is necessary for creating equitable AI systems.</Importance>
+		<RelatedTerms>Societal Bias, Systemic Inequality, Legacy Effects</RelatedTerms>
+		<Examples>A hiring algorithm trained on historical data where women were underrepresented in certain roles</Examples>
+		<Basis>Social science, history</Basis>
+		<ImpactOnModels>Models can amplify existing societal inequalities if trained on biased historical data.</ImpactOnModels>
+		<Tags>Bias, Societal</Tags>
+	</Concept>
+	<Concept>
+		<Id>26</Id>
+		<Node>46</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Implicit bias</Name>
+		<Definition>Unconscious attitudes or stereotypes that affect our understanding and actions.</Definition>
+		<Explanation>Implicit bias refers to unconscious attitudes or stereotypes that can affect our judgments and decisions, often in subtle ways.</Explanation>
+		<Importance>Understanding implicit bias is crucial for building fair and unbiased systems.</Importance>
+		<RelatedTerms>Unconscious Bias, Stereotypes, Attitudes</RelatedTerms>
+		<Examples>Making assumptions about someone's abilities based on their accent</Examples>
+		<Basis>Cognitive psychology, neuroscience</Basis>
+		<ImpactOnModels>Can subtly influence data collection and model design, leading to unfair outcomes.</ImpactOnModels>
+		<Tags>Bias, Psychology</Tags>
+	</Concept>
+	<Concept>
+		<Id>27</Id>
+		<Node>47</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>In-group bias</Name>
+		<Definition>The tendency to favor one's own group.</Definition>
+		<Explanation>In-group bias is the tendency to favor members of one's own group over members of other groups.</Explanation>
+		<Importance>Counteracting in-group bias promotes objectivity in decision-making.</Importance>
+		<RelatedTerms>Favoritism, Group Dynamics, Social Identity</RelatedTerms>
+		<Examples>Favoring products made in one's own country</Examples>
+		<Basis>Social psychology</Basis>
+		<ImpactOnModels>Models may favor certain groups if the training data reflects in-group biases.</ImpactOnModels>
+		<Tags>Bias, Social</Tags>
+	</Concept>
+	<Concept>
+		<Id>28</Id>
+		<Node>48</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Out-group homogeneity bias</Name>
+		<Definition>The tendency to perceive members of an out-group as being more similar than members of one's in-group.</Definition>
+		<Explanation>Out-group homogeneity bias is the tendency to perceive members of an out-group as being more similar to each other than members of one's in-group.</Explanation>
+		<Importance>Overcoming this bias leads to more nuanced understanding of different groups.</Importance>
+		<RelatedTerms>Stereotypes, Prejudice, Social Perception</RelatedTerms>
+		<Examples>Thinking that all people from a different culture are the same</Examples>
+		<Basis>Social psychology</Basis>
+		<ImpactOnModels>Can lead to models that fail to recognize the diversity within out-groups.</ImpactOnModels>
+		<Tags>Bias, Social</Tags>
+	</Concept>
+	<Concept>
+		<Id>29</Id>
+		<Node>49</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Non-response bias</Name>
+		<Definition>Bias resulting from differences between those who respond to a survey and those who do not.</Definition>
+		<Explanation>Non-response bias occurs when individuals selected for a study do not participate, and those who participate differ systematically from those who do not.</Explanation>
+		<Importance>Accounting for non-response bias improves the representativeness of analysis.</Importance>
+		<RelatedTerms>Survey Bias, Selection Bias, Participation Rate</RelatedTerms>
+		<Examples>A survey where only people with strong opinions choose to respond</Examples>
+		<Basis>Survey methodology, statistics</Basis>
+		<ImpactOnModels>Models trained on data with non-response bias may not generalize well to the overall population.</ImpactOnModels>
+		<Tags>Bias, Sampling</Tags>
+	</Concept>
+	<Concept>
+		<Id>30</Id>
+		<Node>50</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Participation bias</Name>
+		<Definition>Bias due to differences in participation rates among different groups.</Definition>
+		<Explanation>Participation bias arises from differences in participation rates among different groups, leading to a skewed representation of the population.</Explanation>
+		<Importance>Ensuring fair participation is crucial for obtaining unbiased data.</Importance>
+		<RelatedTerms>Selection Bias, Self-Selection, Volunteer Bias</RelatedTerms>
+		<Examples>A study where only highly motivated individuals participate</Examples>
+		<Basis>Statistics, sampling theory</Basis>
+		<ImpactOnModels>Unequal participation can skew model predictions for certain groups.</ImpactOnModels>
+		<Tags>Bias, Sampling</Tags>
+	</Concept>
+	<Concept>
+		<Id>31</Id>
+		<Node>51</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Reporting bias</Name>
+		<Definition>Bias that occurs when data is not equally likely to be recorded or reported across all groups.</Definition>
+		<Explanation>Reporting bias occurs when certain types of data are more likely to be recorded or reported than others, leading to an incomplete or skewed dataset.</Explanation>
+		<Importance>Addressing reporting bias leads to more accurate and complete datasets.</Importance>
+		<RelatedTerms>Publication Bias, Response Bias, Underreporting</RelatedTerms>
+		<Examples>Underreporting of certain types of crimes</Examples>
+		<Basis>Statistics, sociology</Basis>
+		<ImpactOnModels>Incomplete or inaccurate reporting can lead to models that reflect the biases in the reported data.</ImpactOnModels>
+		<Tags>Bias, Data Collection</Tags>
+	</Concept>
+	<Concept>
+		<Id>32</Id>
+		<Node>52</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Sampling bias</Name>
+		<Definition>Bias introduced by the way in which the sample is selected.</Definition>
+		<Explanation>Sampling bias is introduced when the sample used to train a model is not representative of the population to which the model will be applied.</Explanation>
+		<Importance>Avoiding sampling bias is fundamental for building generalizable models.</Importance>
+		<RelatedTerms>Selection Bias, Non-Representative Sample, Population</RelatedTerms>
+		<Examples>A poll conducted only among people who own smartphones</Examples>
+		<Basis>Statistics, probability theory</Basis>
+		<ImpactOnModels>Models trained on biased samples may not accurately represent the real-world population.</ImpactOnModels>
+		<Tags>Bias, Data Selection</Tags>
+	</Concept>
+	<Concept>
+		<Id>33</Id>
+		<Node>53</Node>
+		<Lvl>4</Lvl>
+		<From>39</From>
+		<Name>Selection bias</Name>
+		<Definition>Bias introduced by the way in which subjects or data are chosen for a study.</Definition>
+		<Explanation>Selection bias occurs when the process of selecting subjects or data for a study introduces systematic differences between the groups being compared.</Explanation>
+		<Importance>Proper selection procedures are crucial for valid comparisons and conclusions.</Importance>
+		<RelatedTerms>Sampling Bias, Allocation Bias, Assignment Bias</RelatedTerms>
+		<Examples>Choosing patients for a study based on ease of access</Examples>
+		<Basis>Statistics, experimental design</Basis>
+		<ImpactOnModels>The way data is selected for training can significantly impact model performance and fairness.</ImpactOnModels>
+		<Tags>Bias, Data Selection</Tags>
+	</Concept>
+	<Concept>
+		<Id>34</Id>
+		<Node>54</Node>
+		<Lvl>3</Lvl>
+		<From>38</From>
+		<Name>Identification and Mitigation</Name>
+		<Definition>The process of detecting and reducing fairness and bias in machine learning.</Definition>
+		<Explanation>Identification and mitigation refer to the process of detecting and reducing fairness and bias in machine learning models and their outputs, aiming to create more equitable AI systems.</Explanation>
+		<Importance>Essential for developing responsible and ethical AI applications.</Importance>
+		<RelatedTerms>Bias Detection, Fairness Metrics, Bias Correction</RelatedTerms>
+		<Examples>Using fairness metrics to evaluate model output and applying debiasing techniques</Examples>
+		<Basis>Statistics, ethics, computer science</Basis>
+		<ImpactOnModels>Essential for developing responsible AI systems that do not perpetuate unfairness.</ImpactOnModels>
+		<Tags>Bias, Process</Tags>
+	</Concept>
+	<Concept>
+		<Id>35</Id>
+		<Node>55</Node>
+		<Lvl>2</Lvl>
+		<From>17</From>
+		<Name>Feature Engineering (Purpose)</Name>
+		<Definition>The process of creating new features or modifying existing features to improve model performance.</Definition>
+		<Explanation>The purpose of feature engineering is to transform raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy.</Explanation>
+		<Importance>A key process for improving model performance and accuracy.</Importance>
+		<RelatedTerms>Feature Selection, Feature Transformation, Feature Extraction, Data Representation</RelatedTerms>
+		<Examples>Creating new features like 'age squared' or combining 'first name' and 'last name' into 'full name'</Examples>
+		<Basis>Linear algebra, information theory, statistics</Basis>
+		<ImpactOnModels>Crucial for transforming data into a format that models can effectively learn from.</ImpactOnModels>
+		<Tags>Data, Transformation</Tags>
+	</Concept>
+	<Concept>
+		<Id>36</Id>
+		<Node>76</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Clustering (Goal: Discover groupings)</Name>
+		<Definition>An unsupervised learning technique that groups similar data points together.</Definition>
+		<Explanation>Clustering is an unsupervised machine learning technique that aims to discover inherent groupings or patterns within unlabeled data, based on similarity or distance measures.</Explanation>
+		<Importance>Useful for exploratory data analysis, pattern recognition, and segmentation.</Importance>
+		<RelatedTerms>Unsupervised Learning, Pattern Recognition, Data Segmentation, Cluster Analysis</RelatedTerms>
+		<Examples>Grouping customers into market segments</Examples>
+		<Basis>Statistics, linear algebra, graph theory</Basis>
+		<ImpactOnModels>Can be used to preprocess data or as a standalone modeling technique.</ImpactOnModels>
+		<Tags>Method, Unsupervised</Tags>
+	</Concept>
+	<Concept>
+		<Id>37</Id>
+		<Node>77</Node>
+		<Lvl>2</Lvl>
+		<From>76</From>
+		<Name>Types</Name>
+		<Definition>Different categories or algorithms for clustering.</Definition>
+		<Explanation>In the context of clustering, 'types' refers to the different categories or algorithms available for performing clustering, each with its own approach to grouping data.</Explanation>
+		<Importance>Different clustering types offer flexibility for various data structures and goals.</Importance>
+		<RelatedTerms>Clustering Algorithms, Partitioning Methods, Hierarchical Clustering, Density-Based Clustering</RelatedTerms>
+		<Examples>K-means, hierarchical clustering, DBSCAN</Examples>
+		<Basis>Algorithm theory, graph theory, statistics</Basis>
+		<ImpactOnModels>Different clustering types have varying suitability for different data types and modeling goals.</ImpactOnModels>
+		<Tags>Method, Clustering</Tags>
+	</Concept>
+	<Concept>
+		<Id>38</Id>
+		<Node>1</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Model Fundamentals</Name>
+		<Definition>Basic principles and concepts that underlie machine learning models.</Definition>
+		<Explanation>Model fundamentals encompass the basic building blocks, assumptions, and principles that underpin the creation and operation of machine learning models.</Explanation>
+		<Importance>Provides the foundation for understanding how machine learning models work.</Importance>
+		<RelatedTerms>Machine Learning Principles, Model Building, Algorithm Design, Statistical Learning</RelatedTerms>
+		<Examples>Linear regression, logistic regression, decision trees</Examples>
+		<Basis>Statistics, linear algebra, calculus, probability theory</Basis>
+		<ImpactOnModels>Understanding these fundamentals is essential for choosing, building, and interpreting models.</ImpactOnModels>
+		<Tags>Theory, Foundations</Tags>
+	</Concept>
+	<Concept>
+		<Id>39</Id>
+		<Node>2</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Error, Residuals</Name>
+		<Definition>The difference between a model's predictions and the actual values.</Definition>
+		<Explanation>Error, also known as residuals, represents the difference between a model's predictions and the actual observed values. It quantifies the inaccuracy of the model's output.</Explanation>
+		<Importance>Quantifying error is crucial for model evaluation and improvement.</Importance>
+		<RelatedTerms>Prediction Error, Model Accuracy, Model Evaluation, Loss Function</RelatedTerms>
+		<Examples>The difference between predicted and actual house prices</Examples>
+		<Basis>Statistics, calculus</Basis>
+		<ImpactOnModels>Quantifying error is essential for evaluating model performance and guiding model improvement.</ImpactOnModels>
+		<Tags>Model, Evaluation</Tags>
+	</Concept>
+	<Concept>
+		<Id>40</Id>
+		<Node>3</Node>
+		<Lvl>3</Lvl>
+		<From>2</From>
+		<Name>Types</Name>
+		<Definition>Different categories or sources of error.</Definition>
+		<Explanation>In the context of errors, 'types' refers to the various categories of errors that can occur in machine learning models, such as bias, variance, and irreducible error.</Explanation>
+		<Importance>Understanding error types helps in diagnosing and addressing model limitations.</Importance>
+		<RelatedTerms>Error Sources, Bias-Variance Tradeoff, Model Misspecification</RelatedTerms>
+		<Examples>Bias, variance, irreducible error</Examples>
+		<Basis>Statistics, linear algebra</Basis>
+		<ImpactOnModels>Different error types have different implications for model behavior and require specific handling.</ImpactOnModels>
+		<Tags>Error, Category</Tags>
+	</Concept>
+	<Concept>
+		<Id>41</Id>
+		<Node>8</Node>
+		<Lvl>3</Lvl>
+		<From>2</From>
+		<Name>Error Components</Name>
+		<Definition>The different parts that contribute to the overall error of a model.</Definition>
+		<Explanation>Error components are the different sources that contribute to the overall error of a model. Understanding these components helps in diagnosing and improving model performance.</Explanation>
+		<Importance>Decomposition of error helps in targeted model improvement.</Importance>
+		<RelatedTerms>Bias, Variance, Irreducible Error, Model Complexity</RelatedTerms>
+		<Examples>Bias error, variance error</Examples>
+		<Basis>Statistics, linear algebra</Basis>
+		<ImpactOnModels>Understanding error components helps in diagnosing model limitations and identifying areas for improvement.</ImpactOnModels>
+		<Tags>Error, Source</Tags>
+	</Concept>
+	<Concept>
+		<Id>42</Id>
+		<Node>9</Node>
+		<Lvl>4</Lvl>
+		<From>8</From>
+		<Name>Reducible</Name>
+		<Definition>The portion of the error that can be reduced by improving the model.</Definition>
+		<Explanation>Reducible error is the portion of the model's error that can be decreased by improving the model, such as by using a more complex model or better training techniques.</Explanation>
+		<Importance>Focusing on reducible error allows for model optimization.</Importance>
+		<RelatedTerms>Model Improvement, Optimization, Algorithm Selection</RelatedTerms>
+		<Examples>Improving a model to better fit the training data</Examples>
+		<Basis>Optimization theory, statistics</Basis>
+		<ImpactOnModels>Focusing on reducing reducible error is a key part of the model optimization process.</ImpactOnModels>
+		<Tags>Error, Model</Tags>
+	</Concept>
+	<Concept>
+		<Id>43</Id>
+		<Node>10</Node>
+		<Lvl>4</Lvl>
+		<From>8</From>
+		<Name>Irreducible</Name>
+		<Definition>The portion of the error that cannot be reduced by improving the model.</Definition>
+		<Explanation>Irreducible error is the portion of the model's error that cannot be reduced by improving the model. It represents the inherent noise in the data itself.</Explanation>
+		<Importance>Recognizing irreducible error sets a limit on achievable model performance.</Importance>
+		<RelatedTerms>Noise, Data Limitations, Inherent Variability</RelatedTerms>
+		<Examples>Noise inherent in the data collection process</Examples>
+		<Basis>Probability theory, information theory</Basis>
+		<ImpactOnModels>Recognizing irreducible error helps set realistic expectations for model performance.</ImpactOnModels>
+		<Tags>Error, Data</Tags>
+	</Concept>
+	<Concept>
+		<Id>44</Id>
+		<Node>11</Node>
+		<Lvl>3</Lvl>
+		<From>2</From>
+		<Name>Error Properties</Name>
+		<Definition>Characteristics or behaviors of errors in machine learning models.</Definition>
+		<Explanation>Error properties describe the characteristics or behavior of errors in machine learning models, such as their distribution, variance, and independence.</Explanation>
+		<Importance>Understanding error properties informs model selection and assumptions.</Importance>
+		<RelatedTerms>Error Distribution, Error Variance, Error Independence</RelatedTerms>
+		<Examples>Errors that are normally distributed</Examples>
+		<Basis>Statistics, probability theory</Basis>
+		<ImpactOnModels>The properties of errors influence the choice of appropriate statistical models and evaluation metrics.</ImpactOnModels>
+		<Tags>Error, Characteristics</Tags>
+	</Concept>
+	<Concept>
+		<Id>45</Id>
+		<Node>12</Node>
+		<Lvl>4</Lvl>
+		<From>11</From>
+		<Name>Homoscedasticity</Name>
+		<Definition>The property of errors having constant variance across all levels of the independent variables.</Definition>
+		<Explanation>Homoscedasticity is the property of errors having constant variance across all levels of the independent variables, indicating that the spread of errors is consistent.</Explanation>
+		<Importance>An assumption of many statistical models; its violation can affect inference.</Importance>
+		<RelatedTerms>Constant Variance, Error Distribution, Model Assumptions</RelatedTerms>
+		<Examples>Errors having the same variance across different income levels</Examples>
+		<Basis>Statistics</Basis>
+		<ImpactOnModels>An assumption in many regression models; violation can affect the validity of statistical inference.</ImpactOnModels>
+		<Tags>Error, Assumption</Tags>
+	</Concept>
+	<Concept>
+		<Id>46</Id>
+		<Node>13</Node>
+		<Lvl>4</Lvl>
+		<From>11</From>
+		<Name>Heteroscedasticity</Name>
+		<Definition>The property of errors having non-constant variance across all levels of the independent variables.</Definition>
+		<Explanation>Heteroscedasticity is the property of errors having non-constant variance across all levels of the independent variables, meaning the spread of errors varies.</Explanation>
+		<Importance>Violation of homoscedasticity; requires different modeling approaches.</Importance>
+		<RelatedTerms>Non-Constant Variance, Error Patterns, Model Violations</RelatedTerms>
+		<Examples>Errors having larger variance for higher income levels</Examples>
+		<Basis>Statistics</Basis>
+		<ImpactOnModels>Violation of homoscedasticity requires specialized modeling techniques.</ImpactOnModels>
+		<Tags>Error, Violation</Tags>
+	</Concept>
+	<Concept>
+		<Id>47</Id>
+		<Node>14</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Bias and Variance</Name>
+		<Definition>Two key sources of error that contribute to a model's generalization performance.</Definition>
+		<Explanation>Bias and variance are two key sources of error that contribute to a model's generalization performance. Bias represents the model's tendency to consistently make the same type of error, while variance represents the model's sensitivity to fluctuations in the training data.</Explanation>
+		<Importance>Fundamental concepts for understanding model generalization.</Importance>
+		<RelatedTerms>Generalization Error, Model Complexity, Underfitting, Overfitting</RelatedTerms>
+		<Examples>A simple model with high bias vs. a complex model with high variance</Examples>
+		<Basis>Statistics, probability theory</Basis>
+		<ImpactOnModels>These concepts are fundamental to understanding model generalization and preventing overfitting.</ImpactOnModels>
+		<Tags>Error, Generalization</Tags>
+	</Concept>
+	<Concept>
+		<Id>48</Id>
+		<Node>15</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Trade-offs</Name>
+		<Definition>The balancing act between different aspects of a model, such as bias and variance.</Definition>
+		<Explanation>In machine learning, trade-offs refer to the compromises that must be made during model development, such as balancing bias and variance, accuracy and interpretability, or computational cost and performance.</Explanation>
+		<Importance>Acknowledging trade-offs is essential for practical model development.</Importance>
+		<RelatedTerms>Model Selection, Optimization, Performance Metrics, Constraints</RelatedTerms>
+		<Examples>Balancing model complexity and generalization ability</Examples>
+		<Basis>Optimization theory, decision theory</Basis>
+		<ImpactOnModels>Model development involves navigating trade-offs to achieve the best balance of performance and practicality.</ImpactOnModels>
+		<Tags>Model, Choice</Tags>
+	</Concept>
+	<Concept>
+		<Id>49</Id>
+		<Node>27</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Hyperparameters</Name>
+		<Definition>Parameters set before training that control the learning process.</Definition>
+		<Explanation>Hyperparameters are parameters that are set before training a machine learning model and control the learning process itself, influencing model complexity and behavior.</Explanation>
+		<Importance>Crucial for controlling model behavior and achieving optimal performance.</Importance>
+		<RelatedTerms>Model Configuration, Training Process, Model Tuning, Algorithm Parameters</RelatedTerms>
+		<Examples>Learning rate, number of layers in a neural network</Examples>
+		<Basis>Optimization theory, control theory</Basis>
+		<ImpactOnModels>Hyperparameters have a significant impact on model training, performance, and generalization.</ImpactOnModels>
+		<Tags>Model, Configuration</Tags>
+	</Concept>
+	<Concept>
+		<Id>50</Id>
+		<Node>28</Node>
+		<Lvl>4</Lvl>
+		<From>27</From>
+		<Name>Learning Rate</Name>
+		<Definition>A hyperparameter that controls the step size the model takes to update its parameters.</Definition>
+		<Explanation>The learning rate is a hyperparameter that controls the step size the model takes to update its parameters based on the calculated error or gradient.</Explanation>
+		<Importance>A key hyperparameter that significantly affects model training.</Importance>
+		<RelatedTerms>Optimization Algorithm, Gradient Descent, Convergence, Step Size</RelatedTerms>
+		<Examples>A small learning rate for fine-tuning, a large learning rate for faster training</Examples>
+		<Basis>Calculus, optimization theory</Basis>
+		<ImpactOnModels>Controls the speed and stability of model learning.</ImpactOnModels>
+		<Tags>Hyperparameter, Optimization</Tags>
+	</Concept>
+	<Concept>
+		<Id>51</Id>
+		<Node>29</Node>
+		<Lvl>4</Lvl>
+		<From>27</From>
+		<Name>Batch size</Name>
+		<Definition>The number of training examples used in one iteration of training.</Definition>
+		<Explanation>Batch size is a hyperparameter that defines the number of training examples used in one iteration to calculate the model's error and update its parameters.</Explanation>
+		<Importance>A hyperparameter that influences training efficiency and model convergence.</Importance>
+		<RelatedTerms>Training Efficiency, Memory Usage, Gradient Estimation, Stochastic Optimization</RelatedTerms>
+		<Examples>Training a model with batches of 32, 64, or 128 images</Examples>
+		<Basis>Optimization theory, linear algebra</Basis>
+		<ImpactOnModels>Affects training efficiency, memory usage, and model convergence.</ImpactOnModels>
+		<Tags>Hyperparameter, Training</Tags>
+	</Concept>
+	<Concept>
+		<Id>52</Id>
+		<Node>30</Node>
+		<Lvl>4</Lvl>
+		<From>27</From>
+		<Name>Epochs</Name>
+		<Definition>The number of times the entire training dataset is passed through the model.</Definition>
+		<Explanation>Epochs represent the number of times the entire training dataset is passed forward and backward through the neural network during the training process.</Explanation>
+		<Importance>A hyperparameter that determines the duration of training.</Importance>
+		<RelatedTerms>Training Iterations, Model Convergence, Training Time, Overfitting</RelatedTerms>
+		<Examples>Training a model for 100 epochs</Examples>
+		<Basis>Optimization theory</Basis>
+		<ImpactOnModels>Determines the duration of training and influences the risk of overfitting.</ImpactOnModels>
+		<Tags>Hyperparameter, Training</Tags>
+	</Concept>
+	<Concept>
+		<Id>53</Id>
+		<Node>47</Node>
+		<Lvl>3</Lvl>
+		<From>42</From>
+		<Name>Thresholds</Name>
+		<Definition>Values used to make binary classifications based on a model's output probabilities.</Definition>
+		<Explanation>Thresholds are specific values used in binary classification to convert a model's output probabilities into discrete class labels, determining the decision boundary.</Explanation>
+		<Importance>Essential for converting model outputs into actionable decisions.</Importance>
+		<RelatedTerms>Decision Boundaries, Classification, Probability, Sensitivity, Specificity</RelatedTerms>
+		<Examples>Setting a probability threshold of 0.5 to classify emails as spam or not spam</Examples>
+		<Basis>Probability theory, statistics</Basis>
+		<ImpactOnModels>Crucial for converting model outputs into discrete decisions, affecting precision and recall.</ImpactOnModels>
+		<Tags>Classification, Decision</Tags>
+	</Concept>
+	<Concept>
+		<Id>54</Id>
+		<Node>49</Node>
+		<Lvl>4</Lvl>
+		<From>48</From>
+		<Name>Confusion Matrix</Name>
+		<Definition>A table that visualizes the performance of a classification model.</Definition>
+		<Explanation>A confusion matrix is a table that visualizes the performance of a classification model by summarizing the counts of true positive, true negative, false positive, and false negative predictions.</Explanation>
+		<Importance>A fundamental tool for evaluating classification model performance.</Importance>
+		<RelatedTerms>Classification Performance, True Positives, False Positives, True Negatives, False Negatives</RelatedTerms>
+		<Examples>A table showing the number of true positives, true negatives, false positives, and false negatives in a classification task</Examples>
+		<Basis>Statistics, linear algebra</Basis>
+		<ImpactOnModels>A key tool for evaluating classification model performance, especially in imbalanced datasets.</ImpactOnModels>
+		<Tags>Classification, Evaluation</Tags>
+	</Concept>
+	<Concept>
+		<Id>55</Id>
+		<Node>69</Node>
+		<Lvl>3</Lvl>
+		<From>68</From>
+		<Name>Structure (nodes, branches, leaves, stumps)</Name>
+		<Definition>The components of a decision tree.</Definition>
+		<Explanation>In the context of decision trees, structure refers to the arrangement of nodes, branches, leaves, and stumps, which collectively form the decision-making process of the tree.</Explanation>
+		<Importance>Understanding tree structure is key to interpreting decision tree models.</Importance>
+		<RelatedTerms>Decision Tree, Tree Representation, Decision Rules, Tree Depth</RelatedTerms>
+		<Examples>A decision tree with root node, branches representing decisions, and leaves representing outcomes</Examples>
+		<Basis>Graph theory, tree theory</Basis>
+		<ImpactOnModels>The structure of decision trees dictates their decision-making process and interpretability.</ImpactOnModels>
+		<Tags>Decision Tree, Components</Tags>
+	</Concept>
+	<Concept>
+		<Id>56</Id>
+		<Node>70</Node>
+		<Lvl>3</Lvl>
+		<From>68</From>
+		<Name>Conditions </Name>
+		<Definition>The criteria used to split nodes in a decision tree.(Types, Axis-Aligned, Oblique, Binary/Non-Binary, Thresholds)</Definition>
+		<Explanation>Conditions in decision trees are the criteria used to split nodes, and they can vary in type (e.g., axis-aligned, oblique), branching (binary/non-binary), and application of thresholds.</Explanation>
+		<Importance>Different condition types impact the complexity and interpretability of decision trees.</Importance>
+		<RelatedTerms>Decision Tree Split, Feature Selection, Decision Criteria, Tree Complexity</RelatedTerms>
+		<Examples>Splitting a decision tree node based on 'age &gt; 30' (axis-aligned, binary, threshold)</Examples>
+		<Basis>Geometry, linear algebra, logic</Basis>
+		<ImpactOnModels>The type of conditions used in decision trees influences their complexity and ability to capture relationships.</ImpactOnModels>
+		<Tags>Decision Tree, Rules</Tags>
+	</Concept>
+	<Concept>
+		<Id>57</Id>
+		<Node>71</Node>
+		<Lvl>3</Lvl>
+		<From>68</From>
+		<Name>Information gain and entropy</Name>
+		<Definition>Metrics used to evaluate the quality of splits in a decision tree.</Definition>
+		<Explanation>Information gain and entropy are metrics used to evaluate the quality of splits in a decision tree, helping to determine the most informative features for classification.</Explanation>
+		<Importance>Metrics for building effective decision trees.</Importance>
+		<RelatedTerms>Decision Tree Impurity, Split Quality, Feature Importance, Information Theory</RelatedTerms>
+		<Examples>Using entropy to determine the best feature to split a decision tree node</Examples>
+		<Basis>Information theory, probability theory</Basis>
+		<ImpactOnModels>Metrics that guide the construction of effective decision trees.</ImpactOnModels>
+		<Tags>Decision Tree, Metrics</Tags>
+	</Concept>
+	<Concept>
+		<Id>58</Id>
+		<Node>73</Node>
+		<Lvl>4</Lvl>
+		<From>72</From>
+		<Name>Maximum depth</Name>
+		<Definition>A hyperparameter that limits the depth of a decision tree.</Definition>
+		<Explanation>Maximum depth is a hyperparameter that limits the number of levels in a decision tree, controlling its complexity and preventing overfitting.</Explanation>
+		<Importance>A hyperparameter for controlling tree complexity and preventing overfitting.</Importance>
+		<RelatedTerms>Decision Tree Pruning, Overfitting Control, Tree Complexity</RelatedTerms>
+		<Examples>Limiting a decision tree to a maximum depth of 5 to prevent overfitting</Examples>
+		<Basis>Algorithm theory, graph theory</Basis>
+		<ImpactOnModels>A hyperparameter that directly controls the complexity and generalization of decision trees.</ImpactOnModels>
+		<Tags>Decision Tree, Hyperparameter</Tags>
+	</Concept>
+	<Concept>
+		<Id>59</Id>
+		<Node>74</Node>
+		<Lvl>4</Lvl>
+		<From>72</From>
+		<Name>Minimum examples in leaves</Name>
+		<Definition>A hyperparameter that sets the minimum number of data points required in a leaf node.</Definition>
+		<Explanation>Minimum examples in leaves is a hyperparameter that sets the minimum number of data points required to form a leaf node, preventing the creation of overly specific branches.</Explanation>
+		<Importance>A hyperparameter for controlling tree granularity and preventing overfitting.</Importance>
+		<RelatedTerms>Decision Tree Pruning, Generalization, Leaf Size</RelatedTerms>
+		<Examples>Requiring at least 10 data points in each leaf node of a decision tree</Examples>
+		<Basis>Statistics, set theory</Basis>
+		<ImpactOnModels>Another hyperparameter that prevents decision trees from overfitting to noise.</ImpactOnModels>
+		<Tags>Decision Tree, Hyperparameter</Tags>
+	</Concept>
+	<Concept>
+		<Id>60</Id>
+		<Node>94</Node>
+		<Lvl>2</Lvl>
+		<From>93</From>
+		<Name>Types</Name>
+		<Definition>Different categories or kinds of neural networks.</Definition>
+		<Explanation>In the context of neural networks, 'types' refers to the various architectures or categories of neural networks, each designed for specific tasks and data types.</Explanation>
+		<Importance>Different neural network types are suited for different tasks.</Importance>
+		<RelatedTerms>Neural Network Architectures, Network Design, Layer Types</RelatedTerms>
+		<Examples>Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs)</Examples>
+		<Basis>Graph theory, linear algebra</Basis>
+		<ImpactOnModels>Different neural network types are suited for different tasks and data types.</ImpactOnModels>
+		<Tags>Neural Network, Category</Tags>
+	</Concept>
+	<Concept>
+		<Id>61</Id>
+		<Node>100</Node>
+		<Lvl>2</Lvl>
+		<From>93</From>
+		<Name>Components</Name>
+		<Definition>The building blocks of a neural network.</Definition>
+		<Explanation>Components of a neural network are the fundamental building blocks that make up the network's structure, including layers, neurons, connections, and activation functions.</Explanation>
+		<Importance>Essential for understanding how neural networks are built and function.</Importance>
+		<RelatedTerms>Neural Network Layers, Neurons, Activation Functions, Connections</RelatedTerms>
+		<Examples>Layers, neurons, activation functions</Examples>
+		<Basis>Linear algebra, graph theory</Basis>
+		<ImpactOnModels>Understanding the components is essential for designing, building, and training neural networks.</ImpactOnModels>
+		<Tags>Neural Network, Structure</Tags>
+	</Concept>
+	<Concept>
+		<Id>62</Id>
+		<Node>101</Node>
+		<Lvl>3</Lvl>
+		<From>100</From>
+		<Name>Nodes</Name>
+		<Definition>The basic units of a neural network, also called neurons.</Definition>
+		<Explanation>Nodes, also called neurons, are the basic computational units in a neural network that receive input, perform calculations, and produce output.</Explanation>
+		<Importance>The basic computational units of neural networks.</Importance>
+		<RelatedTerms>Neurons, Perceptrons, Computation Units, Activation</RelatedTerms>
+		<Examples>Neurons in a neural network layer</Examples>
+		<Basis>Graph theory, linear algebra</Basis>
+		<ImpactOnModels>The basic building blocks of neural networks, responsible for computation.</ImpactOnModels>
+		<Tags>Neural Network, Neuron</Tags>
+	</Concept>
+	<Concept>
+		<Id>63</Id>
+		<Node>102</Node>
+		<Lvl>3</Lvl>
+		<From>100</From>
+		<Name>Hidden Layers</Name>
+		<Definition>Layers in a neural network that are not the input or output layer.</Definition>
+		<Explanation>Hidden layers are the layers in a neural network that exist between the input and output layers, responsible for learning complex representations of the data.</Explanation>
+		<Importance>Enable neural networks to learn complex representations.</Importance>
+		<RelatedTerms>Neural Network Depth, Feature Representation, Non-Linearity</RelatedTerms>
+		<Examples>Intermediate layers between the input and output in a neural network</Examples>
+		<Basis>Linear algebra, calculus</Basis>
+		<ImpactOnModels>Allow neural networks to learn complex, hierarchical representations of data.</ImpactOnModels>
+		<Tags>Neural Network, Architecture</Tags>
+	</Concept>
+	<Concept>
+		<Id>64</Id>
+		<Node>113</Node>
+		<Lvl>3</Lvl>
+		<From>111</From>
+		<Name>Contextual embeddings</Name>
+		<Definition>Vector representations of words that capture their meaning in a specific context.</Definition>
+		<Explanation>Contextual embeddings are vector representations of words or tokens that capture their meaning based on the surrounding words in a sentence or document.</Explanation>
+		<Importance>Crucial for natural language processing tasks that require understanding word meaning in context.</Importance>
+		<RelatedTerms>Word Embeddings, Semantic Representation, Natural Language Processing, Transformer Models</RelatedTerms>
+		<Examples>Word embeddings that change based on the surrounding words (e.g., 'bank' as a financial institution vs. 'bank' as the side of a river)</Examples>
+		<Basis>Linear algebra, information theory</Basis>
+		<ImpactOnModels>Enable neural networks to understand the meaning of words in context.</ImpactOnModels>
+		<Tags>Natural Language Processing, Representation</Tags>
+	</Concept>
+	<Concept>
+		<Id>65</Id>
+		<Node>115</Node>
+		<Lvl>3</Lvl>
+		<From>111</From>
+		<Name>Embedding space</Name>
+		<Definition>The vector space in which embeddings are represented.</Definition>
+		<Explanation>Embedding space is the multi-dimensional vector space in which embeddings are represented, where semantically similar words are located closer to each other.</Explanation>
+		<Importance>Provides a geometric representation of relationships between data points.</Importance>
+		<RelatedTerms>Vector Space, Semantic Similarity, Dimensionality Reduction, Representation Learning</RelatedTerms>
+		<Examples>A vector space where words with similar meanings are close together</Examples>
+		<Basis>Linear algebra, geometry</Basis>
+		<ImpactOnModels>The geometry of the embedding space influences how relationships between data points are captured.</ImpactOnModels>
+		<Tags>Representation, Geometry</Tags>
+	</Concept>
+	<Concept>
+		<Id>66</Id>
+		<Node>116</Node>
+		<Lvl>3</Lvl>
+		<From>111</From>
+		<Name>Static embeddings</Name>
+		<Definition>Vector representations of words that remain fixed regardless of context.</Definition>
+		<Explanation>Static embeddings are vector representations of words that remain fixed regardless of the context in which the word appears.</Explanation>
+		<Importance>Useful for tasks where word meaning is relatively constant.</Importance>
+		<RelatedTerms>Word Embeddings, Pre-trained Models, Word2Vec, GloVe</RelatedTerms>
+		<Examples>Word embeddings that are fixed and do not change based on context</Examples>
+		<Basis>Linear algebra</Basis>
+		<ImpactOnModels>Provide a fixed representation of words, useful in certain NLP tasks.</ImpactOnModels>
+		<Tags>Representation, Fixed</Tags>
+	</Concept>
+	<Concept>
+		<Id>67</Id>
+		<Node>117</Node>
+		<Lvl>3</Lvl>
+		<From>111</From>
+		<Name>Sparse data</Name>
+		<Definition>Data where most of the values are zero.</Definition>
+		<Explanation>Sparse data is data where most of the values are zero or missing, common in applications like text analysis and recommender systems.</Explanation>
+		<Importance>Requires specialized techniques for efficient processing.</Importance>
+		<RelatedTerms>High-Dimensional Data, Text Data, Recommender Systems, Feature Engineering</RelatedTerms>
+		<Examples>A document-term matrix where most entries are zero</Examples>
+		<Basis>Linear algebra, information theory</Basis>
+		<ImpactOnModels>Requires specialized handling in neural networks to maintain efficiency.</ImpactOnModels>
+		<Tags>Data, Representation</Tags>
+	</Concept>
+	<Concept>
+		<Id>68</Id>
+		<Node>1</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Fundamentals</Name>
+		<Definition>Basic principles and concepts.</Definition>
+		<Explanation>Fundamentals refer to the basic principles, concepts, and building blocks that underlie a particular field or system, providing a foundation for understanding more complex topics.</Explanation>
+		<Importance>Essential for building a solid understanding of machine learning.</Importance>
+		<RelatedTerms>Basic Principles, Core Concepts, Essential Knowledge, Foundations</RelatedTerms>
+		<Examples>Basic mathematical concepts, programming principles</Examples>
+		<Basis>Mathematics, statistics, computer science</Basis>
+		<ImpactOnModels>A solid understanding of these fundamentals is crucial for effective model development.</ImpactOnModels>
+		<Tags>Basics, Principles</Tags>
+	</Concept>
+	<Concept>
+		<Id>69</Id>
+		<Node>2</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>Tokens</Name>
+		<Definition>Individual units into which text is broken down.</Definition>
+		<Explanation>Tokens are the individual units into which text is broken down for processing, such as words, sub-words, or characters.</Explanation>
+		<Importance>The basic units of text processing in NLP.</Importance>
+		<RelatedTerms>Words, Subwords, Characters, Text Processing, Natural Language Processing</RelatedTerms>
+		<Examples>Words, sub-words, or characters in a sentence</Examples>
+		<Basis>Linguistics, formal language theory</Basis>
+		<ImpactOnModels>The way text is tokenized affects how it is processed by NLP models.</ImpactOnModels>
+		<Tags>Text, Units</Tags>
+	</Concept>
+	<Concept>
+		<Id>70</Id>
+		<Node>5</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Architecture</Name>
+		<Definition>The design or structure of a neural network.</Definition>
+		<Explanation>Architecture refers to the design or structure of a neural network, including the arrangement of layers, connections, and activation functions.</Explanation>
+		<Importance>The design of a neural network determines its capabilities.</Importance>
+		<RelatedTerms>Network Structure, Model Design, Layer Configuration, Connectivity</RelatedTerms>
+		<Examples>The arrangement of layers and connections in a neural network</Examples>
+		<Basis>Graph theory, linear algebra</Basis>
+		<ImpactOnModels>The architecture of a neural network determines its capacity and capabilities.</ImpactOnModels>
+		<Tags>Design, Structure</Tags>
+	</Concept>
+	<Concept>
+		<Id>71</Id>
+		<Node>9</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Applications</Name>
+		<Definition>The ways in which machine learning models are used.</Definition>
+		<Explanation>Applications are the specific tasks or problems that machine learning models are designed to solve, ranging from image recognition to natural language processing.</Explanation>
+		<Importance>Demonstrates the practical use of machine learning in various domains.</Importance>
+		<RelatedTerms>Use Cases, Real-World Problems, Machine Learning Tasks, Problem Domains</RelatedTerms>
+		<Examples>Image recognition, natural language processing, speech recognition</Examples>
+		<Basis>Varies by application domain</Basis>
+		<ImpactOnModels>Understanding applications guides the choice of appropriate models and techniques.</ImpactOnModels>
+		<Tags>Use Cases, Domains</Tags>
+	</Concept>
+	<Concept>
+		<Id>72</Id>
+		<Node>10</Node>
+		<Lvl>2</Lvl>
+		<From>10</From>
+		<Name>Text generation</Name>
+		<Definition>The task of creating human-readable text using a machine learning model.</Definition>
+		<Explanation>Text generation is the task of creating human-readable text using a machine learning model, often based on a given prompt or context.</Explanation>
+		<Importance>A key application of natural language processing.</Importance>
+		<RelatedTerms>Natural Language Generation, Language Models, Creative Writing, Content Creation</RelatedTerms>
+		<Examples>Creating articles, poems, or code using a language model</Examples>
+		<Basis>Probability theory, information theory</Basis>
+		<ImpactOnModels>A key application of language models, with implications for creativity and communication.</ImpactOnModels>
+		<Tags>Natural Language Processing, Output</Tags>
+	</Concept>
+	<Concept>
+		<Id>73</Id>
+		<Node>11</Node>
+		<Lvl>2</Lvl>
+		<From>10</From>
+		<Name>Language understanding</Name>
+		<Definition>The ability of a machine learning model to interpret and extract meaning from text.</Definition>
+		<Explanation>Language understanding is the ability of a machine learning model to interpret and extract meaning from text, including tasks like sentiment analysis and question answering.</Explanation>
+		<Importance>A core capability of natural language processing.</Importance>
+		<RelatedTerms>Natural Language Processing, Text Interpretation, Semantic Analysis, Comprehension</RelatedTerms>
+		<Examples>A chatbot's ability to interpret user queries</Examples>
+		<Basis>Linguistics, logic</Basis>
+		<ImpactOnModels>A core capability of NLP models, essential for tasks like sentiment analysis and question answering.</ImpactOnModels>
+		<Tags>Natural Language Processing, Interpretation</Tags>
+	</Concept>
+	<Concept>
+		<Id>74</Id>
+		<Node>6</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Model Evaluation (Goals)</Name>
+		<Definition>The objectives of assessing the performance of a machine learning model.</Definition>
+		<Explanation>The goals of model evaluation are to assess the performance, generalization ability, and suitability of a machine learning model for a specific task.</Explanation>
+		<Importance>Defines the criteria for assessing model success.</Importance>
+		<RelatedTerms>Performance Measurement, Model Assessment, Validation, Testing</RelatedTerms>
+		<Examples>Assessing accuracy, precision, recall, or other performance metrics</Examples>
+		<Basis>Statistics, decision theory</Basis>
+		<ImpactOnModels>Defines the criteria for assessing model performance and selecting the best model.</ImpactOnModels>
+		<Tags>Process, Objective</Tags>
+	</Concept>
+	<Concept>
+		<Id>75</Id>
+		<Node>19</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>Trade-offs</Name>
+		<Definition>The compromises that must be made during model development.</Definition>
+		<Explanation>Trade-offs in machine learning refer to the compromises that must be made during model development, such as balancing accuracy and interpretability or computational cost and performance.</Explanation>
+		<Importance>Understanding trade-offs leads to informed model design choices.</Importance>
+		<RelatedTerms>Design Choices, Optimization, Constraints, Balancing Factors</RelatedTerms>
+		<Examples>Balancing model complexity and interpretability</Examples>
+		<Basis>Optimization theory, decision theory</Basis>
+		<ImpactOnModels>Model development involves balancing competing objectives.</ImpactOnModels>
+		<Tags>Choices, Balancing</Tags>
+	</Concept>
+	<Concept>
+		<Id>76</Id>
+		<Node>20</Node>
+		<Lvl>2</Lvl>
+		<From>7</From>
+		<Name>Prediction Bias</Name>
+		<Definition>Systematic errors in a model's predictions.</Definition>
+		<Explanation>Prediction bias refers to systematic errors in a model's predictions, where the model consistently overestimates or underestimates the target variable.</Explanation>
+		<Importance>Awareness of prediction bias is crucial for responsible AI.</Importance>
+		<RelatedTerms>Model Bias, Systematic Error, Prediction Accuracy, Fairness</RelatedTerms>
+		<Examples>A model that consistently overestimates housing prices in a certain neighborhood</Examples>
+		<Basis>Statistics, social science theory</Basis>
+		<ImpactOnModels>Systematic bias in model predictions can lead to unfair or inaccurate results.</ImpactOnModels>
+		<Tags>Model, Error</Tags>
+	</Concept>
+	<Concept>
+		<Id>77</Id>
+		<Node>1</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Deployment Challenges</Name>
+		<Definition>Issues that arise when putting a machine learning model into production.</Definition>
+		<Explanation>Deployment challenges are the various issues and obstacles that arise when putting a trained machine learning model into a production environment for real-world use.</Explanation>
+		<Importance>Addressing these challenges is essential for successful real-world applications.</Importance>
+		<RelatedTerms>Production Issues, Real-World Constraints, Scalability, Reliability</RelatedTerms>
+		<Examples>Scalability issues when handling a large number of user requests</Examples>
+		<Basis>Computer science, software engineering</Basis>
+		<ImpactOnModels>These challenges must be addressed for successful real-world application of models.</ImpactOnModels>
+		<Tags>Production, Issues</Tags>
+	</Concept>
+	<Concept>
+		<Id>78</Id>
+		<Node>2</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>Scalability</Name>
+		<Definition>The ability of a system to handle increasing amounts of data or traffic.</Definition>
+		<Explanation>Scalability refers to the ability of a system or model to handle increasing amounts of data, traffic, or users without experiencing significant performance degradation.</Explanation>
+		<Importance>Critical for handling large datasets and high traffic.</Importance>
+		<RelatedTerms>System Performance, Resource Management, Efficiency, Throughput</RelatedTerms>
+		<Examples>A system that can handle a growing number of users</Examples>
+		<Basis>Computer science, systems engineering</Basis>
+		<ImpactOnModels>The scalability of a system impacts its ability to handle large datasets and user loads.</ImpactOnModels>
+		<Tags>System, Performance</Tags>
+	</Concept>
+	<Concept>
+		<Id>79</Id>
+		<Node>3</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>Latency</Name>
+		<Definition>The delay between input and output in a system.</Definition>
+		<Explanation>Latency is the delay between input and output in a system, representing the time it takes for a model to generate a prediction after receiving an input.</Explanation>
+		<Importance>Important for real-time applications.</Importance>
+		<RelatedTerms>Response Time, Delay, Real-Time Processing, Speed</RelatedTerms>
+		<Examples>The time it takes for a website to load</Examples>
+		<Basis>Computer science, network theory</Basis>
+		<ImpactOnModels>Latency is a critical factor for real-time applications.</ImpactOnModels>
+		<Tags>System, Performance</Tags>
+	</Concept>
+	<Concept>
+		<Id>80</Id>
+		<Node>4</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>Maintenance</Name>
+		<Definition>The ongoing tasks required to keep a deployed model running smoothly.</Definition>
+		<Explanation>Maintenance encompasses the ongoing tasks required to keep a deployed machine learning model running smoothly, including monitoring performance, updating the model, and addressing issues.</Explanation>
+		<Importance>Ensures continued model performance and reliability.</Importance>
+		<RelatedTerms>Model Monitoring, Model Updating, System Administration, Reliability</RelatedTerms>
+		<Examples>Regularly updating a model with new data</Examples>
+		<Basis>Software engineering, reliability engineering</Basis>
+		<ImpactOnModels>Proper maintenance is essential for ensuring the continued reliability of deployed models.</ImpactOnModels>
+		<Tags>System, Process</Tags>
+	</Concept>
+	<Concept>
+		<Id>81</Id>
+		<Node>14</Node>
+		<Lvl>3</Lvl>
+		<From>14</From>
+		<Name>Create standard quality rules</Name>
+		<Definition>Developing guidelines for assessing data quality.</Definition>
+		<Explanation>Creating standard quality rules involves developing guidelines and procedures for assessing and ensuring the quality of data used in machine learning.</Explanation>
+		<Importance>Ensures consistent and reliable data quality assessment.</Importance>
+		<RelatedTerms>Data Quality Assessment, Data Validation, Data Integrity, Data Governance</RelatedTerms>
+		<Examples>Defining acceptable ranges for data values</Examples>
+		<Basis>Logic, set theory</Basis>
+		<ImpactOnModels>Standardized rules ensure consistent and objective evaluation of data quality.</ImpactOnModels>
+		<Tags>Data, Process</Tags>
+	</Concept>
+	<Concept>
+		<Id>82</Id>
+		<Node>15</Node>
+		<Lvl>3</Lvl>
+		<From>14</From>
+		<Name>Model quality</Name>
+		<Definition>The degree to which a model meets the required standards and expectations.</Definition>
+		<Explanation>Model quality refers to the degree to which a machine learning model meets the required standards and expectations, including accuracy, reliability, and robustness.</Explanation>
+		<Importance>A fundamental aspect of building trustworthy AI systems.</Importance>
+		<RelatedTerms>Model Performance, Model Reliability, Model Robustness, Model Evaluation</RelatedTerms>
+		<Examples>A model that consistently makes accurate predictions</Examples>
+		<Basis>Statistics, information theory</Basis>
+		<ImpactOnModels>High model quality is essential for building trust and confidence in AI systems.</ImpactOnModels>
+		<Tags>Model, Assessment</Tags>
+	</Concept>
+	<Concept>
+		<Id>83</Id>
+		<Node>17</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Skew</Name>
+		<Definition>Asymmetry in a data distribution.</Definition>
+		<Explanation>Skew in data distribution refers to the asymmetry of the distribution, where the data is concentrated more on one side than the other.</Explanation>
+		<Importance>Affects the performance and interpretation of statistical models.</Importance>
+		<RelatedTerms>Data Distribution, Asymmetry, Probability Distribution, Statistical Measures</RelatedTerms>
+		<Examples>A distribution of income where most people earn less than the average</Examples>
+		<Basis>Statistics, probability theory</Basis>
+		<ImpactOnModels>Skew in data distribution can affect the performance and interpretability of statistical models.</ImpactOnModels>
+		<Tags>Data, Distribution</Tags>
+	</Concept>
+	<Concept>
+		<Id>84</Id>
+		<Node>18</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Label leak</Name>
+		<Definition>Information from the future that is inappropriately included in training data.</Definition>
+		<Explanation>Label leak, also known as data leakage, occurs when information from the future or outside the training dataset is inappropriately used to train a model, leading to overly optimistic performance estimates.</Explanation>
+		<Importance>Leads to overly optimistic performance estimates and poor generalization.</Importance>
+		<RelatedTerms>Data Leakage, Information Leakage, Model Validation, Overfitting</RelatedTerms>
+		<Examples>Using future stock prices to predict past stock prices</Examples>
+		<Basis>Statistics, causality</Basis>
+		<ImpactOnModels>Label leak leads to overly optimistic performance estimates and poor generalization.</ImpactOnModels>
+		<Tags>Data, Error</Tags>
+	</Concept>
+	<Concept>
+		<Id>85</Id>
+		<Node>19</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Age</Name>
+		<Definition>The time since data was created or last updated.</Definition>
+		<Explanation>Data age refers to the time elapsed since the data was created or last updated, indicating its freshness and potential relevance.</Explanation>
+		<Importance>Impacts the relevance and reliability of data.</Importance>
+		<RelatedTerms>Data Freshness, Data Relevance, Data Time, Time Series Analysis</RelatedTerms>
+		<Examples>The age of a customer or a product</Examples>
+		<Basis>Statistics, time series analysis</Basis>
+		<ImpactOnModels>Data age impacts the relevance and timeliness of model predictions.</ImpactOnModels>
+		<Tags>Data, Property</Tags>
+	</Concept>
+	<Concept>
+		<Id>86</Id>
+		<Node>20</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Stability</Name>
+		<Definition>The consistency of data values over time.</Definition>
+		<Explanation>Data stability refers to the consistency of data values over time, indicating whether the data is prone to frequent changes or remains relatively constant.</Explanation>
+		<Importance>Influences the predictability and consistency of model behavior.</Importance>
+		<RelatedTerms>Data Consistency, Data Variation, Time Series Analysis, Data Drift</RelatedTerms>
+		<Examples>Consistency of customer demographics over time</Examples>
+		<Basis>Statistics, time series analysis</Basis>
+		<ImpactOnModels>Data stability influences the consistency and predictability of model behavior.</ImpactOnModels>
+		<Tags>Data, Property</Tags>
+	</Concept>
+	<Concept>
+		<Id>87</Id>
+		<Node>21</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Performance</Name>
+		<Definition>How well a model or system functions.</Definition>
+		<Explanation>Performance in the context of machine learning refers to how well a model or system functions, often measured by metrics like accuracy, precision, recall, or F1-score.</Explanation>
+		<Importance>The primary metric for evaluating model effectiveness.</Importance>
+		<RelatedTerms>Model Metrics, Evaluation Metrics, Accuracy, Precision, Recall</RelatedTerms>
+		<Examples>Model accuracy, precision, recall, F1-score</Examples>
+		<Basis>Statistics, information theory</Basis>
+		<ImpactOnModels>Model performance is the primary measure of a model's effectiveness.</ImpactOnModels>
+		<Tags>Model, Metric</Tags>
+	</Concept>
+	<Concept>
+		<Id>88</Id>
+		<Node>22</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Randomization</Name>
+		<Definition>The process of assigning subjects to groups randomly.</Definition>
+		<Explanation>Randomization is the process of assigning subjects or data points to different groups or conditions randomly, aiming to reduce bias and ensure comparability.</Explanation>
+		<Importance>A cornerstone of experimental design and unbiased evaluation.</Importance>
+		<RelatedTerms>Experimental Design, Control Groups, Treatment Groups, Statistical Significance</RelatedTerms>
+		<Examples>Randomly assigning patients to treatment groups in a clinical trial</Examples>
+		<Basis>Statistics, probability theory</Basis>
+		<ImpactOnModels>Randomization is crucial for unbiased evaluation and valid statistical inference.</ImpactOnModels>
+		<Tags>Method, Bias Reduction</Tags>
+	</Concept>
+	<Concept>
+		<Id>89</Id>
+		<Node>23</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Hashing</Name>
+		<Definition>A technique for mapping data of arbitrary size to data of a fixed size.</Definition>
+		<Explanation>Hashing is a technique for mapping data of arbitrary size to data of a fixed size using a hash function, often used for data indexing and security.</Explanation>
+		<Importance>Used for efficient data storage and retrieval.</Importance>
+		<RelatedTerms>Data Indexing, Data Retrieval, Hash Functions, Data Structures</RelatedTerms>
+		<Examples>Using a hash function to map URLs to shorter strings</Examples>
+		<Basis>Computer science, algorithm theory</Basis>
+		<ImpactOnModels>Hashing enables efficient data lookup and storage in various machine learning tasks.</ImpactOnModels>
+		<Tags>Technique, Mapping</Tags>
+	</Concept>
+	<Concept>
+		<Id>90</Id>
+		<Node>0</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Logic and Mathematical Foundations</Name>
+		<Definition>The underlying principles of reasoning and computation that support machine learning.</Definition>
+		<Explanation>Logic and mathematical foundations are the underlying principles of reasoning and computation that provide a framework for understanding and developing machine learning algorithms.</Explanation>
+		<Importance>Provide the theoretical basis for machine learning.</Importance>
+		<RelatedTerms>Theoretical Basis, Mathematical Principles, Logical Reasoning, Foundations</RelatedTerms>
+		<Examples>Set theory, calculus, linear algebra</Examples>
+		<Basis>Logic, set theory, algebra, calculus</Basis>
+		<ImpactOnModels>Provide the theoretical underpinning for machine learning algorithms and reasoning.</ImpactOnModels>
+		<Tags>Theory, Basis</Tags>
+	</Concept>
+	<Concept>
+		<Id>91</Id>
+		<Node>1</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Logic (Relevance to ML)</Name>
+		<Definition>How formal logic connects to machine learning.</Definition>
+		<Explanation>Logic's relevance to machine learning lies in its application to areas such as knowledge representation, automated reasoning, and algorithm design.</Explanation>
+		<Importance>Essential for areas like knowledge representation and reasoning in AI.</Importance>
+		<RelatedTerms>Symbolic Reasoning, Knowledge Representation, Automated Deduction, AI</RelatedTerms>
+		<Examples>Boolean logic in decision rules</Examples>
+		<Basis>Symbolic logic, predicate logic</Basis>
+		<ImpactOnModels>Logic provides tools for knowledge representation and automated reasoning in AI systems.</ImpactOnModels>
+		<Tags>Theory, Application</Tags>
+	</Concept>
+	<Concept>
+		<Id>92</Id>
+		<Node>3</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>Logical Connectives</Name>
+		<Definition>Symbols used to combine logical statements.</Definition>
+		<Explanation>Logical connectives are symbols or operators used to combine or modify logical statements, such as AND, OR, NOT, and implication.</Explanation>
+		<Importance>The building blocks of logical expressions.</Importance>
+		<RelatedTerms>Logical Operators, Boolean Algebra, Propositional Logic, Truth Tables</RelatedTerms>
+		<Examples>AND, OR, NOT</Examples>
+		<Basis>Boolean algebra, propositional logic</Basis>
+		<ImpactOnModels>Logical connectives are fundamental for constructing and manipulating logical statements.</ImpactOnModels>
+		<Tags>Logic, Operator</Tags>
+	</Concept>
+	<Concept>
+		<Id>93</Id>
+		<Node>4</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>De Morgans Law</Name>
+		<Definition>A principle of logic that describes how negation interacts with conjunction and disjunction.</Definition>
+		<Explanation>De Morgan's law is a principle of logic that describes how negation interacts with conjunction and disjunction, providing rules for simplifying logical expressions.</Explanation>
+		<Importance>A fundamental rule for manipulating logical expressions.</Importance>
+		<RelatedTerms>Boolean Algebra, Logic Simplification, Logical Equivalence, Set Theory</RelatedTerms>
+		<Examples>Simplifying logical expressions</Examples>
+		<Basis>Boolean algebra, set theory</Basis>
+		<ImpactOnModels>De Morgan's law is used to simplify and transform logical expressions.</ImpactOnModels>
+		<Tags>Logic, Rule</Tags>
+	</Concept>
+	<Concept>
+		<Id>94</Id>
+		<Node>6</Node>
+		<Lvl>2</Lvl>
+		<From>2</From>
+		<Name>Clause</Name>
+		<Definition>A disjunction of literals in logic.</Definition>
+		<Explanation>In logic, a clause is a disjunction (OR combination) of literals, where a literal is either a variable or its negation.</Explanation>
+		<Importance>A basic component of logical formulas.</Importance>
+		<RelatedTerms>Propositional Logic, First-Order Logic, Conjunctive Normal Form, Disjunctive Normal Form</RelatedTerms>
+		<Examples>A statement like 'A or not B or C'</Examples>
+		<Basis>Propositional logic, first-order logic</Basis>
+		<ImpactOnModels>Clauses are the building blocks of logical formulas in various reasoning systems.</ImpactOnModels>
+		<Tags>Logic, Component</Tags>
+	</Concept>
+	<Concept>
+		<Id>95</Id>
+		<Node>10</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Probability and Statistics (Fundamentals)</Name>
+		<Definition>Basic concepts of chance and data analysis.</Definition>
+		<Explanation>Probability and statistics fundamentals encompass the basic concepts and principles of chance and data analysis, providing the foundation for understanding uncertainty and variability in data.</Explanation>
+		<Importance>Essential for understanding uncertainty and data variability.</Importance>
+		<RelatedTerms>Probability Theory, Statistical Inference, Descriptive Statistics, Data Analysis</RelatedTerms>
+		<Examples>Mean, median, standard deviation</Examples>
+		<Basis>Probability theory, statistics</Basis>
+		<ImpactOnModels>Essential for understanding uncertainty, variability, and drawing inferences from data.</ImpactOnModels>
+		<Tags>Theory, Basis</Tags>
+	</Concept>
+</Concepts>

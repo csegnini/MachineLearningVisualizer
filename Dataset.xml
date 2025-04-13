@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Dataset>
+		<Id>1</Id>
+		<Node>0</Node>
+		<Lvl>0</Lvl>
+		<From>0</From>
+		<Name>Data</Name>
+		<Source>Can originate from various sources, including databases, files, sensors, and APIs.</Source>
+		<Description>Information, facts, or values used as input for machine learning algorithms. Data can be structured (e.g., tables) or unstructured (e.g., images, text). The process of acquiring, gathering, and serving data is crucial, involving best practices for collection, data collection plans, templates, quality control, and defining measurement instruments with their inherent error. Assessing reproducibility is also vital.</Description>
+		<Relevance>Fundamental input for all machine learning models; data quality and quantity directly impact model performance.</Relevance>
+		<Tags>data, input, fundamental, machine_learning</Tags>
+	</Dataset>
+	<Dataset>
+		<Id>2</Id>
+		<Node>4</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Dataset</Name>
+		<KeyTask>A collection of data used for training, evaluating, or testing machine learning models. Key considerations include:
+....Assessing feature relevance.....Defining and selecting features (X) and target (y).....Data preparation (cleaning, normalization, shuffling).....Statistical measures (distribution, noise, patterns, clusters, correlation, variance).....Defining data expiration (if applicable)</KeyTask>
+		<Feat>Structured (e.g., tables) or unstructured (e.g., images, text)</Feat>
+		<Source>Various (e.g., files, databases)</Source>
+		<Description>delimited version of data</Description>
+		<Relevance>Fundamental for machine learning analysis and modeling.</Relevance>
+		<Tags>data, input, fundamental, machine_learning</Tags>
+	</Dataset>
+	<Dataset>
+		<Id>3</Id>
+		<Node>7</Node>
+		<Lvl>3</Lvl>
+		<From>6</From>
+		<Name>Train set</Name>
+		<KeyTask>be sure to have the data ready prior training, if transformations are performed here, keep in mind to apply the same transformations to the test, and validate set. Don’t forget to have it shuffled!</KeyTask>
+		<Size>0.6 to 0.8</Size>
+		<Source>dataset</Source>
+		<Description>The portion of the dataset used to train the machine learning model. Data transformations applied to the training set must also be applied to the test and validation sets</Description>
+		<Relevance>Essential for model learning</Relevance>
+		<Tags>data, input, fundamental, machine_learning</Tags>
+	</Dataset>
+	<Dataset>
+		<Id>4</Id>
+		<Node>8</Node>
+		<Lvl>3</Lvl>
+		<From>6</From>
+		<Name>Test set</Name>
+		<Size>0.1 to 0.2</Size>
+		<Source>dataset</Source>
+		<Description>The portion of the dataset used to evaluate the trained model's performance. Crucial for assessing generalization.</Description>
+		<Relevance>fundamental</Relevance>
+		<Tags>data, input, fundamental, machine_learning</Tags>
+	</Dataset>
+	<Dataset>
+		<Id>5</Id>
+		<Node>9</Node>
+		<Lvl>3</Lvl>
+		<From>6</From>
+		<Name>Validate set</Name>
+		<Size>0.1 to 0.2</Size>
+		<Source>dataset</Source>
+		<Description>The portion of the dataset used to tune model hyperparameters and prevent overfitting. Not always required (e.g., tree-based models)</Description>
+		<Relevance>Subset of the dataset used to tune model hyperparameters and select the best model</Relevance>
+		<Tags>data, input, fundamental, machine_learning</Tags>
+	</Dataset>
+</Datasets>

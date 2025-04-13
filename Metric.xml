@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Metrics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Metric>
+		<Id>1</Id>
+		<Node>89</Node>
+		<Lvl>2</Lvl>
+		<From>76</From>
+		<Name>Evaluation (Metrics)</Name>
+		<Purpose>To assess the performance and effectiveness of machine learning models.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>General guidelines on how to understand the meaning and significance of different evaluation metrics.</Interpretation>
+		<Applications>Generally, throughout the model development process, from initial experimentation to final deployment and monitoring.</Applications>
+		<Limitations>Choosing the wrong metric can lead to misleading conclusions about model performance.</Limitations>
+		<Tags>General, Model Assessment</Tags>
+	</Metric>
+	<Metric>
+		<Id>2</Id>
+		<Node>90</Node>
+		<Lvl>3</Lvl>
+		<From>89</From>
+		<Name>Silhouette Score</Name>
+		<Purpose>To evaluate the quality of clusters formed by clustering algorithms.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>A score closer to 1 indicates that the data point is well-matched to its own cluster and poorly matched to neighboring clusters. A score closer to -1 indicates the opposite. A score near 0 indicates overlapping clusters.</Interpretation>
+		<Applications>When evaluating the results of clustering algorithms where the ground truth is unknown, to assess cluster separation and cohesion.</Applications>
+		<Limitations>Assumes convex clusters, can be less effective for complex or irregular cluster shapes.</Limitations>
+		<Tags>Clustering, Internal Evaluation</Tags>
+	</Metric>
+	<Metric>
+		<Id>3</Id>
+		<Node>91</Node>
+		<Lvl>3</Lvl>
+		<From>89</From>
+		<Name>Davies-Bouldin Index</Name>
+		<Purpose>To measure the average similarity of each cluster with its most similar cluster.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>A lower Davies-Bouldin Index indicates better clustering, with clusters that are well-separated and internally cohesive.</Interpretation>
+		<Applications>When evaluating clustering algorithms, particularly to compare different algorithms or parameter settings on the same dataset.</Applications>
+		<Limitations>Also assumes convex clusters, sensitive to the choice of distance metric.</Limitations>
+		<Tags>Clustering, Internal Evaluation</Tags>
+	</Metric>
+	<Metric>
+		<Id>4</Id>
+		<Node>92</Node>
+		<Lvl>3</Lvl>
+		<From>89</From>
+		<Name>Purity</Name>
+		<Purpose>To measure the extent to which each cluster contains data points from a single class.</Purpose>
+		<Formula>Purity = \frac{1}{N} \sum_{i=1}^{k} max_j |c_i \cap t_j|</Formula>
+		<Interpretation>A higher purity score indicates that the cluster contains predominantly data points from a single class, suggesting good cluster homogeneity.</Interpretation>
+		<Applications>When evaluating clustering results where the ground truth class labels are known, to assess how well clusters correspond to classes.</Applications>
+		<Limitations>Doesn't consider the distribution of data points within clusters, high purity can be achieved with many small clusters.</Limitations>
+		<Tags>Clustering, External Evaluation</Tags>
+	</Metric>
+	<Metric>
+		<Id>5</Id>
+		<Node>93</Node>
+		<Lvl>3</Lvl>
+		<From>89</From>
+		<Name>Rand Index and Adjusted Rand Index</Name>
+		<Purpose>To measure the similarity between two data clusterings.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>A higher Rand Index or Adjusted Rand Index indicates greater agreement between the clustering results and the ground truth, with the Adjusted Rand Index correcting for chance.</Interpretation>
+		<Applications>When comparing two different clusterings of the same dataset, often when assessing the stability of a clustering algorithm or comparing against a ground truth clustering.</Applications>
+		<Limitations>Can be influenced by chance agreement, especially in high-dimensional spaces.</Limitations>
+		<Tags>Clustering, Comparison</Tags>
+	</Metric>
+	<Metric>
+		<Id>6</Id>
+		<Node>94</Node>
+		<Lvl>3</Lvl>
+		<From>89</From>
+		<Name>Normalized Mutual Information (NMI)</Name>
+		<Purpose>To measure the statistical dependence between cluster assignments and true labels.</Purpose>
+		<Formula>NMI(U, V) = \frac{2 * I(U; V)}{H(U) + H(V)}</Formula>
+		<Interpretation>A higher NMI score indicates a stronger agreement between the cluster assignments and the prior knowledge or external standard.</Interpretation>
+		<Applications>When evaluating clustering results with known ground truth labels, especially when dealing with clusters of varying sizes.</Applications>
+		<Limitations>Can be sensitive to the number of clusters, may require normalization.</Limitations>
+		<Tags>Clustering, Information Theory</Tags>
+	</Metric>
+	<Metric>
+		<Id>7</Id>
+		<Node>4</Node>
+		<Lvl>4</Lvl>
+		<From>3</From>
+		<Name>Standard error</Name>
+		<Purpose>To estimate the variability of a sample statistic.</Purpose>
+		<Formula>SE = \frac{\sigma}{\sqrt{n}}</Formula>
+		<Interpretation>A smaller standard error indicates that the sample mean is a more precise estimate of the population mean.</Interpretation>
+		<Applications>When estimating the precision of a sample statistic, such as the mean, and constructing confidence intervals.</Applications>
+		<Limitations>Only reflects sampling variability, does not account for other sources of error.</Limitations>
+		<Tags>Statistics, Inference, Variability</Tags>
+	</Metric>
+	<Metric>
+		<Id>8</Id>
+		<Node>5</Node>
+		<Lvl>4</Lvl>
+		<From>3</From>
+		<Name>MSE</Name>
+		<Purpose>To measure the average squared difference between predicted and actual values.</Purpose>
+		<Formula>MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Formula>
+		<Interpretation>MSE is interpreted as the average squared error in the units of the target variable squared. Lower MSE indicates better model fit.</Interpretation>
+		<Applications>When evaluating regression models where minimizing the average squared error is the primary goal.</Applications>
+		<Limitations>Sensitive to outliers, gives more weight to larger errors, not in the same units as the target variable.</Limitations>
+		<Tags>Regression, Error, Magnitude</Tags>
+	</Metric>
+	<Metric>
+		<Id>9</Id>
+		<Node>6</Node>
+		<Lvl>4</Lvl>
+		<From>3</From>
+		<Name>RSE</Name>
+		<Purpose>To measure the goodness of fit of a regression model.</Purpose>
+		<Formula>RSE = \sqrt{\frac{RSS}{n - 2}}</Formula>
+		<Interpretation>RSE is interpreted as the average error in the units of the target variable. Lower RSE indicates a better model fit.</Interpretation>
+		<Applications>When assessing the fit of a regression model and understanding the error in the units of the response variable.</Applications>
+		<Limitations>Assumes that the model errors are normally distributed, can be affected by outliers.</Limitations>
+		<Tags>Regression, Fit, Error</Tags>
+	</Metric>
+	<Metric>
+		<Id>10</Id>
+		<Node>7</Node>
+		<Lvl>4</Lvl>
+		<From>3</From>
+		<Name>RSS</Name>
+		<Purpose>To measure the total squared difference between the predicted and actual values.</Purpose>
+		<Formula>RSS = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Formula>
+		<Interpretation>RSS represents the total variance unexplained by the regression model. Lower RSS indicates a better fit.</Interpretation>
+		<Applications>When assessing the fit of a regression model and understanding the total variance unexplained by the model.</Applications>
+		<Limitations>Provides a measure of error but not of predictive accuracy.</Limitations>
+		<Tags>Regression, Error, Variance</Tags>
+	</Metric>
+	<Metric>
+		<Id>11</Id>
+		<Node>31</Node>
+		<Lvl>3</Lvl>
+		<From>17</From>
+		<Name>Evaluation</Name>
+		<Purpose>This term is too general and requires more context for a specific purpose.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>This term is too general and requires more context for a specific interpretation.</Interpretation>
+		<Applications>This term is too general and requires more context to specify when to use it.</Applications>
+		<Limitations>This term is too general and requires more context to specify limitations.</Limitations>
+		<Tags>General</Tags>
+	</Metric>
+	<Metric>
+		<Id>12</Id>
+		<Node>32</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Mean Squared Error (MSE)</Name>
+		<Purpose>To measure the average squared difference between predicted and actual values.</Purpose>
+		<Formula>MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Formula>
+		<Interpretation>MSE is interpreted as the average squared error in the units of the target variable squared. Lower MSE indicates better model fit.</Interpretation>
+		<Applications>When evaluating regression models where minimizing the average squared error is the primary goal.</Applications>
+		<Limitations>Sensitive to outliers, gives more weight to larger errors, not in the same units as the target variable.</Limitations>
+		<Tags>Regression, Error</Tags>
+	</Metric>
+	<Metric>
+		<Id>13</Id>
+		<Node>33</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Root Mean Squared Error (RMSE)</Name>
+		<Purpose>To measure the square root of the average squared difference between predicted and actual values.</Purpose>
+		<Formula>RMSE = \sqrt{MSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}</Formula>
+		<Interpretation>RMSE is in the same units as the target variable, making it easier to interpret the average prediction error. Lower values are better.</Interpretation>
+		<Applications>When evaluating regression models and when the error needs to be in the same units as the target variable.</Applications>
+		<Limitations>Sensitive to outliers.</Limitations>
+		<Tags>Regression, Error, Units</Tags>
+	</Metric>
+	<Metric>
+		<Id>14</Id>
+		<Node>34</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Mean Absolute Error (MAE)</Name>
+		<Purpose>To measure the average absolute difference between predicted and actual values.</Purpose>
+		<Formula>MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|</Formula>
+		<Interpretation>MAE is interpreted as the average absolute difference between predicted and actual values. Lower values indicate better model accuracy.</Interpretation>
+		<Applications>When evaluating regression models and when robustness to outliers is desired.</Applications>
+		<Limitations>Less sensitive to outliers than MSE, but doesn't penalize large errors as much.</Limitations>
+		<Tags>Regression, Error, Robust</Tags>
+	</Metric>
+	<Metric>
+		<Id>15</Id>
+		<Node>35</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>R-squared (Coefficient of Determination)</Name>
+		<Purpose>To measure the proportion of the variance in the dependent variable that is predictable from the independent variables.</Purpose>
+		<Formula>R^2 = 1 - \frac{RSS}{TSS}</Formula>
+		<Interpretation>R-squared is interpreted as the proportion of the variance in the dependent variable explained by the regression model. Values closer to 1 indicate a better fit.</Interpretation>
+		<Applications>When evaluating regression models and assessing the proportion of variance explained by the model.</Applications>
+		<Limitations>Can be inflated by adding more predictors, even if they are not relevant, doesn't indicate causation.</Limitations>
+		<Tags>Regression, Fit, Variance</Tags>
+	</Metric>
+	<Metric>
+		<Id>16</Id>
+		<Node>36</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Adjusted R-squared</Name>
+		<Purpose>To measure the proportion of the variance in the dependent variable that is predictable from the independent variables, adjusted for the number of predictors.</Purpose>
+		<Formula>Adjusted R^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - p - 1}</Formula>
+		<Interpretation>Adjusted R-squared is interpreted similarly to R-squared, but it accounts for the number of predictors in the model. It is useful for comparing models with different numbers of independent variables.</Interpretation>
+		<Applications>When comparing regression models with different numbers of predictors and assessing model fit.</Applications>
+		<Limitations>May not always accurately reflect the true explanatory power of the model.</Limitations>
+		<Tags>Regression, Fit, Model Complexity</Tags>
+	</Metric>
+	<Metric>
+		<Id>17</Id>
+		<Node>37</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Mean Absolute Percentage Error (MAPE)</Name>
+		<Purpose>To measure the average percentage error of predictions.</Purpose>
+		<Formula>MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100</Formula>
+		<Interpretation>MAPE is interpreted as the average percentage error of predictions. Lower MAPE indicates better prediction accuracy.</Interpretation>
+		<Applications>When evaluating regression models and when the error needs to be expressed as a percentage.</Applications>
+		<Limitations>Undefined when actual values are zero, can be skewed by small values.</Limitations>
+		<Tags>Regression, Error, Percentage</Tags>
+	</Metric>
+	<Metric>
+		<Id>18</Id>
+		<Node>38</Node>
+		<Lvl>4</Lvl>
+		<From>31</From>
+		<Name>Prediction, Confidence Intervals</Name>
+		<Purpose>To estimate a range of values likely to contain the true value of a parameter.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The interpretation focuses on the range within which the true value is likely to fall, providing a measure of the uncertainty associated with the prediction.</Interpretation>
+		<Applications>When quantifying the uncertainty associated with model predictions, especially in regression.</Applications>
+		<Limitations>Assumes that the model is correct and the errors are normally distributed, may not be reliable for non-linear models.</Limitations>
+		<Tags>Statistics, Uncertainty, Range</Tags>
+	</Metric>
+	<Metric>
+		<Id>19</Id>
+		<Node>48</Node>
+		<Lvl>3</Lvl>
+		<From>42</From>
+		<Name>Evaluation</Name>
+		<Purpose>This term is too general and requires more context for a specific purpose.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>This term is too general and requires more context for a specific interpretation.</Interpretation>
+		<Applications>This term is too general and requires more context to specify when to use it.</Applications>
+		<Limitations>This term is too general and requires more context for specific limitations.</Limitations>
+		<Tags>General</Tags>
+	</Metric>
+	<Metric>
+		<Id>20</Id>
+		<Node>50</Node>
+		<Lvl>5</Lvl>
+		<From>49</From>
+		<Name>Accuracy</Name>
+		<Purpose>To measure the overall proportion of correct predictions.</Purpose>
+		<Formula>Accuracy = \frac{TP + TN}{TP + TN + FP + FN}</Formula>
+		<Interpretation>Accuracy is interpreted as the overall proportion of correct predictions. Higher accuracy is generally desirable, but it can be misleading in imbalanced classification problems.</Interpretation>
+		<Applications>When evaluating classification models on balanced datasets where all classes are equally important.</Applications>
+		<Limitations>Can be misleading in imbalanced classification problems, gives equal weight to all classes.</Limitations>
+		<Tags>Classification, General</Tags>
+	</Metric>
+	<Metric>
+		<Id>21</Id>
+		<Node>51</Node>
+		<Lvl>5</Lvl>
+		<From>49</From>
+		<Name>Precision</Name>
+		<Purpose>To measure the proportion of correctly predicted positive instances out of all instances predicted as positive.</Purpose>
+		<Formula>Precision = \frac{TP}{TP + FP}</Formula>
+		<Interpretation>Precision is interpreted as the proportion of positive identifications that were actually correct. High precision is important when the cost of false positives is high.</Interpretation>
+		<Applications>When evaluating classification models and when minimizing false positives is crucial.</Applications>
+		<Limitations>Ignores false negatives, can be high even if the model misses many positive cases.</Limitations>
+		<Tags>Classification, Positive Prediction</Tags>
+	</Metric>
+	<Metric>
+		<Id>22</Id>
+		<Node>52</Node>
+		<Lvl>5</Lvl>
+		<From>49</From>
+		<Name>Recall (Sensitivity or True Positive Rate)</Name>
+		<Purpose>To measure the proportion of correctly predicted positive instances out of all actual positive instances.</Purpose>
+		<Formula>Recall = \frac{TP}{TP + FN}</Formula>
+		<Interpretation>Recall is interpreted as the proportion of actual positives that were correctly identified. High recall is important when the cost of false negatives is high.</Interpretation>
+		<Applications>When evaluating classification models and when minimizing false negatives is crucial.</Applications>
+		<Limitations>Ignores false positives, can be high even if the model makes many incorrect positive predictions.</Limitations>
+		<Tags>Classification, True Positive</Tags>
+	</Metric>
+	<Metric>
+		<Id>23</Id>
+		<Node>53</Node>
+		<Lvl>5</Lvl>
+		<From>49</From>
+		<Name>F1-Score</Name>
+		<Purpose>To provide a balanced measure of precision and recall.</Purpose>
+		<Formula>F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}</Formula>
+		<Interpretation>The F1-score is interpreted as the harmonic mean of precision and recall. It balances the trade-off between precision and recall, and higher F1-scores are better.</Interpretation>
+		<Applications>When evaluating classification models and when balancing precision and recall is important.</Applications>
+		<Limitations>Provides a balanced view but may not be suitable if precision or recall is significantly more important.</Limitations>
+		<Tags>Classification, Balanced</Tags>
+	</Metric>
+	<Metric>
+		<Id>24</Id>
+		<Node>54</Node>
+		<Lvl>4</Lvl>
+		<From>48</From>
+		<Name>AUC-ROC Curve</Name>
+		<Purpose>To visualize the performance of a binary classifier across different thresholds.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The AUC-ROC curve is interpreted as a measure of a classifier's ability to distinguish between positive and negative classes across different threshold settings. Higher AUC values indicate better performance.</Interpretation>
+		<Applications>When evaluating binary classification models across different decision thresholds and when class imbalance is present.</Applications>
+		<Limitations>Does not directly optimize for precision or recall at a specific threshold.</Limitations>
+		<Tags>Classification, Visualization, Threshold</Tags>
+	</Metric>
+	<Metric>
+		<Id>25</Id>
+		<Node>55</Node>
+		<Lvl>4</Lvl>
+		<From>48</From>
+		<Name>Confusion Matrix</Name>
+		<Purpose>To visualize the performance of a classification model by showing the counts of true positive, true negative, false positive, and false negative predictions.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The confusion matrix is interpreted by examining the counts of true positives, true negatives, false positives, and false negatives to understand the model's classification errors.</Interpretation>
+		<Applications>When evaluating classification models and when a detailed breakdown of classification performance is needed.</Applications>
+		<Limitations>Does not provide a single summary statistic, requires careful interpretation.</Limitations>
+		<Tags>Classification, Visualization, Error Analysis</Tags>
+	</Metric>
+	<Metric>
+		<Id>26</Id>
+		<Node>56</Node>
+		<Lvl>4</Lvl>
+		<From>48</From>
+		<Name>Log Loss (Cross-Entropy Loss)</Name>
+		<Purpose>To measure the uncertainty of the probabilistic predictions.</Purpose>
+		<Formula>Log Loss = - \frac{1}{n} \sum_{i=1}^{n} [y_i \cdot \log(\hat{y}_i) + (1 - y_i) \cdot \log(1 - \hat{y}_i)]</Formula>
+		<Interpretation>Log loss is interpreted as a measure of the model's uncertainty in its predictions. Lower log loss values indicate better model calibration.</Interpretation>
+		<Applications>When evaluating classification models that predict probabilities, especially in logistic regression and neural networks.</Applications>
+		<Limitations>Sensitive to misclassifications, requires probabilistic predictions.</Limitations>
+		<Tags>Classification, Probability, Uncertainty</Tags>
+	</Metric>
+	<Metric>
+		<Id>27</Id>
+		<Node>57</Node>
+		<Lvl>4</Lvl>
+		<From>48</From>
+		<Name>Cohen's Kappa</Name>
+		<Purpose>To measure the agreement between predicted and actual classifications, correcting for chance agreement.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Cohen's Kappa is interpreted as a measure of agreement between predicted and actual classifications, correcting for chance agreement. Higher Kappa values indicate stronger agreement.</Interpretation>
+		<Applications>When evaluating classification models and when correcting for agreement occurring by chance, especially in imbalanced datasets.</Applications>
+		<Limitations>Can be difficult to interpret with more than two classes, sensitive to class distribution.</Limitations>
+		<Tags>Classification, Agreement, Inter-Rater</Tags>
+	</Metric>
+	<Metric>
+		<Id>30</Id>
+		<Node>64</Node>
+		<Lvl>2</Lvl>
+		<From>60</From>
+		<Name>Mallow’s Cp</Name>
+		<Purpose>To assess the goodness of fit of a regression model while penalizing model complexity.</Purpose>
+		<Formula>C_p = \frac{SSE_p}{\hat{\sigma}^2} + 2p - n</Formula>
+		<Interpretation>Mallowâ€™s Cp is interpreted as a criterion for model selection, balancing goodness of fit and model complexity. Models with lower Cp values are generally preferred.</Interpretation>
+		<Applications>When selecting the best subset of predictors in regression models, balancing goodness of fit and model complexity.</Applications>
+		<Limitations>Computationally expensive for a large number of predictors.</Limitations>
+		<Tags>Regression, Model Selection, Complexity</Tags>
+	</Metric>
+	<Metric>
+		<Id>31</Id>
+		<Node>65</Node>
+		<Lvl>2</Lvl>
+		<From>60</From>
+		<Name>Akaike information criterion (AIC)</Name>
+		<Purpose>To compare the quality of statistical models for a given set of data.</Purpose>
+		<Formula>AIC = 2k - 2ln(L)</Formula>
+		<Interpretation>AIC is interpreted as a measure for comparing the quality of statistical models, balancing goodness of fit and model complexity. Lower AIC values are preferred.</Interpretation>
+		<Applications>When comparing statistical models and selecting the best one based on goodness of fit and model complexity.</Applications>
+		<Limitations>Can overfit if the sample size is small, relies on model assumptions.</Limitations>
+		<Tags>Model Selection, Information Theory</Tags>
+	</Metric>
+	<Metric>
+		<Id>32</Id>
+		<Node>66</Node>
+		<Lvl>2</Lvl>
+		<From>60</From>
+		<Name>Bayesian information criterion (BIC)</Name>
+		<Purpose>To compare the quality of statistical models for a given set of data, penalizing model complexity more heavily than AIC.</Purpose>
+		<Formula>BIC = k \cdot ln(n) - 2ln(L)</Formula>
+		<Interpretation>BIC is interpreted similarly to AIC but penalizes model complexity more heavily. Lower BIC values are preferred for model selection when model parsimony is important.</Interpretation>
+		<Applications>When comparing statistical models and selecting the best one, with a stronger penalty for model complexity than AIC.</Applications>
+		<Limitations>Penalizes model complexity, but relies on model assumptions.</Limitations>
+		<Tags>Model Selection, Information Theory, Complexity</Tags>
+	</Metric>
+	<Metric>
+		<Id>33</Id>
+		<Node>84</Node>
+		<Lvl>3</Lvl>
+		<From>76</From>
+		<Name>OOB evaluation</Name>
+		<Purpose>To evaluate the performance of ensemble models, such as Random Forests, using out-of-bag samples.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>OOB evaluation is interpreted as an estimate of model performance using out-of-bag samples, providing a validation metric without the need for a separate validation set.</Interpretation>
+		<Applications>When evaluating ensemble models like Random Forests, using the out-of-bag samples.</Applications>
+		<Limitations>Can be less accurate than cross-validation for small datasets, relies on the randomness of the bagging process.</Limitations>
+		<Tags>Ensemble, Validation, Efficiency</Tags>
+	</Metric>
+	<Metric>
+		<Id>34</Id>
+		<Node>85</Node>
+		<Lvl>3</Lvl>
+		<From>76</From>
+		<Name>Purity</Name>
+		<Purpose>To measure the extent to which each cluster contains data points from a single class.</Purpose>
+		<Formula>Purity = \frac{1}{N} \sum_{i=1}^{k} max_j |c_i \cap t_j|</Formula>
+		<Interpretation>A higher purity score indicates that the cluster contains predominantly data points from a single class, suggesting good cluster homogeneity.</Interpretation>
+		<Applications>When evaluating clustering results where the ground truth class labels are known, to assess how well clusters correspond to classes.</Applications>
+		<Limitations>Doesn't consider the distribution of data points within clusters, high purity can be achieved with many small clusters.</Limitations>
+		<Tags>Clustering, External</Tags>
+	</Metric>
+	<Metric>
+		<Id>35</Id>
+		<Node>86</Node>
+		<Lvl>3</Lvl>
+		<From>76</From>
+		<Name>Local and Global minima</Name>
+		<Purpose>To distinguish between the best possible solution and a suboptimal solution in optimization problems.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Local minima are interpreted as suboptimal solutions, while the global minimum represents the best possible solution in optimization problems.</Interpretation>
+		<Applications>When understanding the optimization landscape and potential pitfalls in training machine learning models.</Applications>
+		<Limitations>Optimization algorithms may get stuck in local minima, failing to find the global minimum.</Limitations>
+		<Tags>Optimization, Solution Space</Tags>
+	</Metric>
+	<Metric>
+		<Id>36</Id>
+		<Node>7</Node>
+		<Lvl>2</Lvl>
+		<From>7</From>
+		<Name>Evaluation Metric (for Classification)</Name>
+		<Purpose>This term is too general and requires more context for a specific purpose.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>This term is too general and requires more context for a specific interpretation.</Interpretation>
+		<Applications>This term is too general and requires more context to specify when to use it.</Applications>
+		<Limitations>This term is too general and requires more context for specific limitations.</Limitations>
+		<Tags>Classification, General</Tags>
+	</Metric>
+	<Metric>
+		<Id>37</Id>
+		<Node>8</Node>
+		<Lvl>3</Lvl>
+		<From>8</From>
+		<Name>Confusion Matrix</Name>
+		<Purpose>To visualize the performance of a classification model by showing the counts of true positive, true negative, false positive, and false negative predictions.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The confusion matrix is interpreted by examining the counts of true positives, true negatives, false positives, and false negatives to understand the model's classification errors.</Interpretation>
+		<Applications>When evaluating classification models and when a detailed breakdown of classification performance is needed.</Applications>
+		<Limitations>Does not provide a single summary statistic, requires careful interpretation.</Limitations>
+		<Tags>Classification, Visualization</Tags>
+	</Metric>
+	<Metric>
+		<Id>38</Id>
+		<Node>9</Node>
+		<Lvl>4</Lvl>
+		<From>9</From>
+		<Name>True Positives</Name>
+		<Purpose>To count the number of correctly predicted positive instances.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The number of instances correctly predicted as positive.</Interpretation>
+		<Applications>When analyzing the performance of a classification model.</Applications>
+		<Limitations>Focuses only on correctly predicted positive instances, ignoring other aspects of performance.</Limitations>
+		<Tags>Classification, Count</Tags>
+	</Metric>
+	<Metric>
+		<Id>39</Id>
+		<Node>10</Node>
+		<Lvl>4</Lvl>
+		<From>9</From>
+		<Name>False Positives</Name>
+		<Purpose>To count the number of incorrectly predicted positive instances.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The number of negative instances incorrectly predicted as positive.</Interpretation>
+		<Applications>When analyzing the performance of a classification model.</Applications>
+		<Limitations>Focuses only on incorrectly predicted positive instances, ignoring other aspects of performance.</Limitations>
+		<Tags>Classification, Count</Tags>
+	</Metric>
+	<Metric>
+		<Id>40</Id>
+		<Node>11</Node>
+		<Lvl>4</Lvl>
+		<From>9</From>
+		<Name>True Negatives</Name>
+		<Purpose>To count the number of correctly predicted negative instances.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The number of instances correctly predicted as negative.</Interpretation>
+		<Applications>When analyzing the performance of a classification model.</Applications>
+		<Limitations>Focuses only on correctly predicted negative instances, ignoring other aspects of performance.</Limitations>
+		<Tags>Classification, Count</Tags>
+	</Metric>
+	<Metric>
+		<Id>41</Id>
+		<Node>12</Node>
+		<Lvl>4</Lvl>
+		<From>9</From>
+		<Name>False Negatives</Name>
+		<Purpose>To count the number of incorrectly predicted negative instances.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The number of positive instances incorrectly predicted as negative.</Interpretation>
+		<Applications>When analyzing the performance of a classification model.</Applications>
+		<Limitations>Focuses only on incorrectly predicted negative instances, ignoring other aspects of performance.</Limitations>
+		<Tags>Classification, Count</Tags>
+	</Metric>
+	<Metric>
+		<Id>42</Id>
+		<Node>13</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>Accuracy</Name>
+		<Purpose>To measure the overall proportion of correct predictions.</Purpose>
+		<Formula>Accuracy = \frac{TP + TN}{TP + TN + FP + FN}</Formula>
+		<Interpretation>Accuracy is interpreted as the overall proportion of correct predictions. Higher accuracy is generally desirable, but it can be misleading in imbalanced classification problems.</Interpretation>
+		<Applications>When evaluating classification models on balanced datasets where all classes are equally important.</Applications>
+		<Limitations>Can be misleading in imbalanced classification problems, gives equal weight to all classes.</Limitations>
+		<Tags>Classification, General</Tags>
+	</Metric>
+	<Metric>
+		<Id>43</Id>
+		<Node>14</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>Precision</Name>
+		<Purpose>To measure the proportion of correctly predicted positive instances out of all instances predicted as positive.</Purpose>
+		<Formula>Precision = \frac{TP}{TP + FP}</Formula>
+		<Interpretation>Precision is interpreted as the proportion of positive identifications that were actually correct. High precision is important when the cost of false positives is high.</Interpretation>
+		<Applications>When evaluating classification models and when minimizing false positives is crucial.</Applications>
+		<Limitations>Ignores false negatives, can be high even if the model misses many positive cases.</Limitations>
+		<Tags>Classification, Positive Prediction</Tags>
+	</Metric>
+	<Metric>
+		<Id>44</Id>
+		<Node>15</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>Recall(true positive rate)</Name>
+		<Purpose>To measure the proportion of correctly predicted positive instances out of all actual positive instances.</Purpose>
+		<Formula>Recall = \frac{TP}{TP + FN}</Formula>
+		<Interpretation>Recall is interpreted as the proportion of actual positives that were correctly identified. High recall is important when the cost of false negatives is high.</Interpretation>
+		<Applications>When evaluating classification models and when minimizing false negatives is crucial.</Applications>
+		<Limitations>Ignores false positives, can be high even if the model makes many incorrect positive predictions.</Limitations>
+		<Tags>Classification, True Positive</Tags>
+	</Metric>
+	<Metric>
+		<Id>45</Id>
+		<Node>16</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>False positive rate</Name>
+		<Purpose>To measure the proportion of negative instances that are incorrectly classified as positive.</Purpose>
+		<Formula>FPR = \frac{FP}{FP + TN}</Formula>
+		<Interpretation>The proportion of negative instances that are incorrectly classified as positive.</Interpretation>
+		<Applications>When analyzing the trade-off between false positives and false negatives in classification.</Applications>
+		<Limitations>Focuses only on the proportion of negative instances that are incorrectly classified as positive.</Limitations>
+		<Tags>Classification, Error Rate</Tags>
+	</Metric>
+	<Metric>
+		<Id>46</Id>
+		<Node>17</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>ROC</Name>
+		<Purpose>To visualize the performance of a binary classifier across different thresholds.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The AUC-ROC curve is interpreted as a measure of a classifier's ability to distinguish between positive and negative classes across different threshold settings. Higher AUC values indicate better performance.</Interpretation>
+		<Applications>When evaluating binary classification models across different decision thresholds and when class imbalance is present.</Applications>
+		<Limitations>Does not directly optimize for precision or recall at a specific threshold.</Limitations>
+		<Tags>Classification, Visualization</Tags>
+	</Metric>
+	<Metric>
+		<Id>47</Id>
+		<Node>18</Node>
+		<Lvl>3</Lvl>
+		<From>13</From>
+		<Name>AUC</Name>
+		<Purpose>To visualize the performance of a binary classifier across different thresholds.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>The AUC-ROC curve is interpreted as a measure of a classifier's ability to distinguish between positive and negative classes across different threshold settings. Higher AUC values indicate better performance.</Interpretation>
+		<Applications>When evaluating binary classification models across different decision thresholds and when class imbalance is present.</Applications>
+		<Limitations>Does not directly optimize for precision or recall at a specific threshold.</Limitations>
+		<Tags>Classification, Performance Summary</Tags>
+	</Metric>
+	<Metric>
+		<Id>48</Id>
+		<Node>16</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Evaluation</Name>
+		<Purpose>This term is too general and requires more context for a specific purpose.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>This term is too general and requires more context for a specific purpose.</Interpretation>
+		<Applications>This term is too general and requires more context to specify when to use it.</Applications>
+		<Limitations>This term is too general and requires more context for specific limitations.</Limitations>
+		<Tags>General</Tags>
+	</Metric>
+	<Metric>
+		<Id>49</Id>
+		<Node>17</Node>
+		<Lvl>3</Lvl>
+		<From>16</From>
+		<Name>Perplexity</Name>
+		<Purpose>To evaluate how well a language model predicts a sequence of words.</Purpose>
+		<Formula>Perplexity = 2^{H(p)}</Formula>
+		<Interpretation>Lower perplexity indicates that the language model is better at predicting the next word in a sequence.</Interpretation>
+		<Applications>When evaluating the performance of language models.</Applications>
+		<Limitations>Correlates poorly with human judgment of text quality, sensitive to vocabulary size.</Limitations>
+		<Tags>Natural Language Processing, Language Model</Tags>
+	</Metric>
+	<Metric>
+		<Id>50</Id>
+		<Node>18</Node>
+		<Lvl>3</Lvl>
+		<From>16</From>
+		<Name>BLEU (Bilingual Evaluation Understudy)</Name>
+		<Purpose>To evaluate the quality of machine-translated text.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Higher BLEU scores indicate better translation quality, reflecting closer similarity to reference translations.</Interpretation>
+		<Applications>When evaluating the quality of machine translation output.</Applications>
+		<Limitations>Correlates poorly with human judgment of translation quality at the sentence level, relies on n-gram matching.</Limitations>
+		<Tags>Natural Language Processing, Translation, Text</Tags>
+	</Metric>
+	<Metric>
+		<Id>51</Id>
+		<Node>18</Node>
+		<Lvl>3</Lvl>
+		<From>16</From>
+		<Name>ROUGE</Name>
+		<Purpose>The purpose of Recall-Oriented Understudy for Gisting Evaluation is to evaluate the quality of text summarization.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Higher ROUGE scores indicate better summarization quality, reflecting greater overlap with reference summaries.</Interpretation>
+		<Applications>When evaluating the quality of text summarization output.</Applications>
+		<Limitations>Focuses on recall and may not capture fluency or coherence, sensitive to reference summary quality.</Limitations>
+		<Tags>Natural Language Processing, Summarization, Text</Tags>
+	</Metric>
+	<Metric>
+		<Id>52</Id>
+		<Node>19</Node>
+		<Lvl>3</Lvl>
+		<From>16</From>
+		<Name>METEOR </Name>
+		<Purpose>The purpose of the Metric for Evaluation of Translation with Explicit Ordering is to evaluate the quality of machine-translated text, considering precision and recall.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Higher METEOR scores indicate better translation quality, considering both precision and recall, and word order.</Interpretation>
+		<Applications>When evaluating machine translation output, considering both precision and recall, as well as word order.</Applications>
+		<Limitations>Requires external resources and parameter tuning, can be complex to implement.</Limitations>
+		<Tags>Natural Language Processing, Translation, Text</Tags>
+	</Metric>
+	<Metric>
+		<Id>53</Id>
+		<Node>24</Node>
+		<Lvl>2</Lvl>
+		<From>1</From>
+		<Name>Latency</Name>
+		<Purpose>To measure the delay between input and output in a system.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Lower latency indicates a faster response time, which is crucial for real-time applications.</Interpretation>
+		<Applications>When evaluating the responsiveness of real-time systems or models.</Applications>
+		<Limitations>May not capture the variability of response times, depends on system load.</Limitations>
+		<Tags>System, Performance, Time</Tags>
+	</Metric>
+	<Metric>
+		<Id>54</Id>
+		<Node>25</Node>
+		<Lvl>3</Lvl>
+		<From>24</From>
+		<Name>Throughput</Name>
+		<Purpose>To measure the amount of data processed or the number of tasks completed in a given time.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Higher throughput indicates a greater amount of data processed or tasks completed per unit of time, reflecting system efficiency.</Interpretation>
+		<Applications>When evaluating the efficiency and capacity of a system or model.</Applications>
+		<Limitations>Can be influenced by factors other than model efficiency, such as hardware limitations.</Limitations>
+		<Tags>System, Performance, Efficiency</Tags>
+	</Metric>
+	<Metric>
+		<Id>55</Id>
+		<Node>26</Node>
+		<Lvl>3</Lvl>
+		<From>24</From>
+		<Name>Stability and Reliability</Name>
+		<Purpose>To assess the consistency and dependability of a system or model's performance.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Higher stability and reliability indicate more consistent and dependable system or model performance over time.</Interpretation>
+		<Applications>When assessing the consistency and dependability of a system or model's performance over time.</Applications>
+		<Limitations>Can be challenging to quantify and measure objectively.</Limitations>
+		<Tags>System, Performance, Dependability</Tags>
+	</Metric>
+	<Metric>
+		<Id>56</Id>
+		<Node>27</Node>
+		<Lvl>3</Lvl>
+		<From>24</From>
+		<Name>Monitoring of Performance Metrics</Name>
+		<Purpose>To track and analyze key metrics to ensure the ongoing effectiveness of a system or model.</Purpose>
+		<Formula>N/A</Formula>
+		<Interpretation>Regular monitoring and analysis of performance metrics are essential for identifying and addressing potential issues, ensuring the continued effectiveness of a system or model.</Interpretation>
+		<Applications>Throughout the deployment and operation of machine learning systems to ensure ongoing effectiveness and detect issues.</Applications>
+		<Limitations>Requires careful selection and interpretation of metrics, risk of alert fatigue.</Limitations>
+		<Tags>System, Process, Analysis</Tags>
+	</Metric>
+</Metrics>

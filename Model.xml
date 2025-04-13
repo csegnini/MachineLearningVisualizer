@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Models xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Model>
+		<Id>1</Id>
+		<Node>0</Node>
+		<Lvl>0</Lvl>
+		<From>0</From>
+		<Name>Models</Name>
+		<Description>N/A</Description>
+		<CoreIdea>N/A</CoreIdea>
+		<Basis>N/A</Basis>
+		<InputData>N/A</InputData>
+		<OutputData>N/A</OutputData>
+		<ModelRepresentation>N/A</ModelRepresentation>
+		<LearningAlgorithm>N/A</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>N/A</Strengths>
+		<Limitations>N/A</Limitations>
+		<UseCases>N/A</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>2</Id>
+		<Node>16</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Linear Models (Regression)</Name>
+		<Description>N/A</Description>
+		<CoreIdea>N/A</CoreIdea>
+		<Basis>N/A</Basis>
+		<InputData>N/A</InputData>
+		<OutputData>N/A</OutputData>
+		<ModelRepresentation>N/A</ModelRepresentation>
+		<LearningAlgorithm>N/A</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>N/A</Strengths>
+		<Limitations>N/A</Limitations>
+		<UseCases>N/A</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>3</Id>
+		<Node>17</Node>
+		<Lvl>2</Lvl>
+		<From>16</From>
+		<Name>Linear Regression</Name>
+		<Description>Linear Regression: A fundamental statistical method that models the relationship between a dependent variable (the target) and one or more independent variables (features) by fitting a linear equation to the observed data. The goal is to find the best-fitting line (or hyperplane in higher dimensions) that  minimizes the difference between the predicted  and actual values.  (https://www.fireblazeaischool.in/blogs/altimetrik-top-data-analytics-interview-questions-and-answers/), (https://medium.com/@amaal79545/linear-regression-5fa8fbade5c4)</Description>
+		<CoreIdea> Models the relationship between variables with a best-fitting line.</CoreIdea>
+		<Basis>Model: $$\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p$$, where $$\hat{y}$$ is the predicted value, $$x_i$$ are the features, and $$\beta_i$$ are the coefficients. In matrix form: $$\hat{y} = X\beta$$....
+Loss Function: Typically Ordinary Least Squares (OLS): $$L(\beta) = \sum_{i=1}^{n} (\hat{y}_i - x_i^T \beta)^2 = (y - X\beta)^T (y - X\beta)$$....
+Optimization: Finding $$\beta$$ that minimizes $$L(\beta)$$. The analytical solution is $$\hat{\beta} = (X^T X)^{-1} X^T y$$ (if $$X^T X$$ is invertible).</Basis>
+		<InputData>Features (Independent Variables): Typically numerical data, organized in a matrix where each row represents an observation and each column represents a feature. Can also handle categorical features after appropriate encoding (e.g., one-hot encoding).
+</InputData>
+		<OutputData>
+Predicted Continuous Value (Dependent Variable): A numerical value representing the model's prediction for each input observation.</OutputData>
+		<ModelRepresentation>Represented by a set of coefficients (one for each feature) and an intercept (bias term). These define the linear equation.</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. The algorithm learns the relationship between input features and a continuous target variable based on labeled training data. The learning algorithm typically involves minimizing a cost function (like Mean Squared Error) to find the optimal coefficients.</LearningAlgorithm>
+		<LossFunction>Mean Squared Error (MSE): $$L(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$....
+Other loss functions can be used depending on the context, such as Mean Absolute Error (MAE) or Huber loss.</LossFunction>
+		<Regularization>L1, L2, Elastic Net(L1 +L2, benefits from both feature selection (L1) and shrinkage (L2))</Regularization>
+		<Hyperparameters>While standard linear regression has no inherent hyperparameters to tune in the same way as regularized versions, if you consider feature selection methods used in conjunction (e.g., selecting the top k features), 'k' could be considered a hyperparameter.</Hyperparameters>
+		<Strengths>Simple and Interpretable: The relationship between features and the target is easily understood through the coefficients….
+Computationally Efficient: Training and prediction are generally fast, especially for smaller datasets….
+Well-Established Theory: A solid statistical foundation with many diagnostic tools available….
+Works Well for Linearly Related Data: Effective when the underlying relationship between variables is approximately linear.</Strengths>
+		<Limitations>Assumes Linear Relationship: Performs poorly when the relationship between features and the target is non-linear….
+Sensitive to Outliers: Outliers can significantly affect the estimated coefficients….
+Assumes Independence of Errors: Correlated errors can violate model assumptions….
+Can Suffer from Multicollinearity: High correlation between independent variables can lead to unstable coefficient estimates.</Limitations>
+		<UseCases>Predicting Housing Prices: Based on features like square footage, number of bedrooms, location, etc….
+Sales Forecasting: Estimating future sales based on historical data and marketing spend….
+Demand Forecasting: Predicting product demand for inventory management….
+Analyzing Relationships Between Variables: Quantifying the impact of advertising spend on sales, or temperature on energy consumption.</UseCases>
+		<EvaluationMetrics>Mean Squared Error (MSE): The average of the squared differences between the predicted and actual values. Penalizes larger errors more heavily. MSE=n1∑i=1n(yi−y^i)2….
+Root Mean Squared Error (RMSE): The square root of the MSE. Provides an error metric in the same units as the target variable, making it more interpretable. RMSE=n1∑i=1n(yi−y^i)2….
+Mean Absolute Error (MAE): The average of the absolute differences between the predicted and actual values. Less sensitive to outliers than MSE. MAE=n1∑i=1n∣yi−y^i∣….
+R-squared (Coefficient of Determination): Represents the proportion of the variance in the dependent variable that is predictable from the independent variables. Ranges from 0 to 1, with higher values indicating a better fit. R2=1−∑i=1n(yi−yˉ)2∑i=1n(yi−y^i)2….
+Adjusted R-squared: A modification of R-squared that adjusts for the number of predictors in the model. Useful for comparing models with different numbers of features. AdjustedR2=1−n−p−1(1−R2)(n−1)….
+Mean Absolute Percentage Error (MAPE): The average percentage error of the predictions. Useful for understanding the relative size of the errors. MAPE=n1∑i=1n∣yiyi−y^i∣×100%...</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>4</Id>
+		<Node>25</Node>
+		<Lvl>4</Lvl>
+		<From>24</From>
+		<Name>Lasso Regression (L1)</Name>
+		<Description>A linear regression technique that adds an L1 regularization penalty to the loss function. This penalty encourages the model to shrink the coefficients of less important features towards zero, effectively performing feature selection. It can lead to sparse models (https://github.com/Taweilo/capital-bikeshare-forecasting)</Description>
+		<CoreIdea> Linear regression with a penalty that shrinks some feature coefficients to zero (feature selection).</CoreIdea>
+		<Basis>Loss Function: OLS with an L1 regularization term: $$L(\beta) = \sum_{i=1}^{n} (\hat{y}i - x_i^T \beta)^2 + \lambda \sum{j=1}^{p} |\beta_j|$$, where $$\lambda \geq 0$$ is the regularization parameter….
+Optimization: No closed-form solution. Typically solved using optimization algorithms like coordinate descent or subgradient methods.</Basis>
+		<InputData>Features (Independent Variables): Typically numerical data, organized in a matrix where each row represents an observation and each column represents a feature. Can also handle categorical features after appropriate encoding (e.g., one-hot encoding).
+</InputData>
+		<OutputData>
+Predicted Continuous Value (Dependent Variable): A numerical value representing the model's prediction for each input observation.</OutputData>
+		<ModelRepresentation>Similar to linear regression, represented by a set of coefficients and an intercept. However, some of the coefficients will likely be exactly zero due to the L1 regularization.</ModelRepresentation>
+		<LearningAlgorithm>Also Supervised Learning. It's a variation of linear regression with an added regularization term, but the core learning process is still about finding the best linear relationship based on labeled data while also performing feature selection.</LearningAlgorithm>
+		<LossFunction>The loss function includes the MSE term plus an L1 regularization penalty: $$L(y, \hat{y}, \beta) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}i)^2 + \lambda \sum{j=1}^{p} |\beta_j|$$</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>λ (Alpha): The regularization strength. A higher λ leads to more aggressive shrinkage of coefficients and potentially more coefficients becoming zero</Hyperparameters>
+		<Strengths>Feature Selection: Can drive the coefficients of irrelevant features to exactly zero, leading to a simpler and more interpretable model….
+Handles High-Dimensional Data: Can perform well when the number of features is larger than the number of samples.</Strengths>
+		<Limitations>Can Arbitrarily Select One Feature from a Group of Correlated Features: May not consistently choose the "best" feature….
+Performance Can Degrade if the True Relationship is Not Sparse: If many features are truly important.</Limitations>
+		<UseCases>High-Dimensional Datasets: In bioinformatics (e.g., gene expression analysis) or finance where there are many potential predictors….
+Feature Selection (Lasso): Identifying the most important genes related to a disease or key factors driving customer churn.
+</UseCases>
+		<EvaluationMetrics>Mean Squared Error (MSE): The average of the squared differences between the predicted and actual values. Penalizes larger errors more heavily. MSE=n1∑i=1n(yi−y^i)2….
+Root Mean Squared Error (RMSE): The square root of the MSE. Provides an error metric in the same units as the target variable, making it more interpretable. RMSE=n1∑i=1n(yi−y^i)2….
+Mean Absolute Error (MAE): The average of the absolute differences between the predicted and actual values. Less sensitive to outliers than MSE. MAE=n1∑i=1n∣yi−y^i∣….
+R-squared (Coefficient of Determination): Represents the proportion of the variance in the dependent variable that is predictable from the independent variables. Ranges from 0 to 1, with higher values indicating a better fit. R2=1−∑i=1n(yi−yˉ)2∑i=1n(yi−y^i)2….
+Adjusted R-squared: A modification of R-squared that adjusts for the number of predictors in the model. Useful for comparing models with different numbers of features. AdjustedR2=1−n−p−1(1−R2)(n−1)….
+Mean Absolute Percentage Error (MAPE): The average percentage error of the predictions. Useful for understanding the relative size of the errors. MAPE=n1∑i=1n∣yiyi−y^i∣×100%...</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>5</Id>
+		<Node>26</Node>
+		<Lvl>4</Lvl>
+		<From>24</From>
+		<Name>Ridge Regression (L2)</Name>
+		<Description>Another linear regression technique that adds an L2 regularization penalty to the loss function. This penalty shrinks the coefficients of all features towards zero, but typically does not force them to be exactly zero. It helps to reduce multicollinearity and improve the stability of the model</Description>
+		<CoreIdea> Linear regression with a penalty that shrinks all feature coefficients towards zero (reduces multicollinearity).</CoreIdea>
+		<Basis>Loss Function: OLS with an L2 regularization term: $$L(\beta) = \sum_{i=1}^{n} (\hat{y}i - x_i^T \beta)^2 + \lambda \sum{j=1}^{p} \beta_j^2 = (y - X\beta)^T (y - X\beta) + \lambda \beta^T \beta$$....
+Optimization: Has a closed-form solution: $$\hat{\beta} = (X^T X + \lambda I)^{-1} X^T y$$, where $$I$$ is the identity matrix.</Basis>
+		<InputData>Features (Independent Variables): Typically numerical data, organized in a matrix where each row represents an observation and each column represents a feature. Can also handle categorical features after appropriate encoding (e.g., one-hot encoding).
+</InputData>
+		<OutputData>
+Predicted Continuous Value (Dependent Variable): A numerical value representing the model's prediction for each input observation.</OutputData>
+		<ModelRepresentation>Also represented by a set of coefficients and an intercept. The coefficients will be shrunk towards zero but generally not exactly zero.</ModelRepresentation>
+		<LearningAlgorithm>Similarly, Supervised Learning. Another regularized form of linear regression, focusing on reducing the magnitude of coefficients to prevent overfitting, learned from labeled data.</LearningAlgorithm>
+		<LossFunction>The loss function includes the MSE term plus an L2 regularization penalty: L(y,y^,β)=n1∑i=1n(yi−y^i)2+λ∑j=1pβj2</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>λ (Alpha): The regularization strength. A higher λ leads to more shrinkage of coefficients towards zero.</Hyperparameters>
+		<Strengths>Handles Multicollinearity: Reduces the impact of correlated features, leading to more stable coefficient estimates….
+Improves Generalization: By shrinking coefficients, it can reduce overfitting, especially when the number of features is large.</Strengths>
+		<Limitations>Does Not Perform Feature Selection: Coefficients are shrunk towards zero but rarely become exactly zero, so all features are typically retained in the model….
+Less Effective for Highly Sparse Data: Where many features are truly irrelevant.</Limitations>
+		<UseCases>High-Dimensional Datasets: In bioinformatics (e.g., gene expression analysis) or finance where there are many potential predictors….
+Improving Prediction Accuracy (Ridge): When dealing with multicollinearity in datasets like macroeconomic indicators.</UseCases>
+		<EvaluationMetrics>Mean Squared Error (MSE): The average of the squared differences between the predicted and actual values. Penalizes larger errors more heavily. MSE=n1∑i=1n(yi−y^i)2….
+Root Mean Squared Error (RMSE): The square root of the MSE. Provides an error metric in the same units as the target variable, making it more interpretable. RMSE=n1∑i=1n(yi−y^i)2….
+Mean Absolute Error (MAE): The average of the absolute differences between the predicted and actual values. Less sensitive to outliers than MSE. MAE=n1∑i=1n∣yi−y^i∣….
+R-squared (Coefficient of Determination): Represents the proportion of the variance in the dependent variable that is predictable from the independent variables. Ranges from 0 to 1, with higher values indicating a better fit. R2=1−∑i=1n(yi−yˉ)2∑i=1n(yi−y^i)2….
+Adjusted R-squared: A modification of R-squared that adjusts for the number of predictors in the model. Useful for comparing models with different numbers of features. AdjustedR2=1−n−p−1(1−R2)(n−1)….
+Mean Absolute Percentage Error (MAPE): The average percentage error of the predictions. Useful for understanding the relative size of the errors. MAPE=n1∑i=1n∣yiyi−y^i∣×100%...</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>6</Id>
+		<Node>39</Node>
+		<Lvl>2</Lvl>
+		<From>16</From>
+		<Name>Generalized Linear Models</Name>
+		<Description>An extension of linear regression that allows the response variable to have error distribution models other than a normal distribution. GLMs consist of a random component (the probability distribution of the response), a systematic component (a linear combination of the predictors), and a link function that connects the mean of the response to the linear predictor.</Description>
+		<CoreIdea> Extends linear regression to various response variable distributions using a link function.</CoreIdea>
+		<Basis>Random Component: Response variable $$Y_i$$ follows a distribution from the exponential family (e.g., Normal, Poisson, Binomial)….
+Systematic Component: Linear predictor $$\eta_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_p x_{ip} = x_i^T \beta$$....
+Link Function: $$g(E[Y_i]) = \eta_i$$, relating the expected value of the response to the linear predictor (e.g., identity, log, logit)….
+Estimation: Coefficients $$\beta$$ are typically estimated using Maximum Likelihood Estimation (MLE).</Basis>
+		<InputData>N/A</InputData>
+		<OutputData>N/A</OutputData>
+		<ModelRepresentation>Represented by a set of coefficients, an intercept, and the specification of the link function and the probability distribution of the response variable.</ModelRepresentation>
+		<LearningAlgorithm>Fall under Supervised Learning. They extend linear regression to handle different types of response variables (e.g., counts, binary outcomes) using labeled data and a link function. The learning involves estimating parameters using methods like Maximum Likelihood Estimation.</LearningAlgorithm>
+		<LossFunction>The loss function is typically derived from the negative log-likelihood of the chosen probability distribution from the exponential family. The specific form varies depending on the distribution (e.g., Gaussian for linear regression, Poisson for Poisson regression, Binomial for logistic regression).</LossFunction>
+		<Regularization>L1, L2</Regularization>
+		<Hyperparameters>If L1 or L2 regularization is applied, then the corresponding λ (alpha) values are hyperparameters....
+Depending on the specific GLM and the optimization method used, there might be other hyperparameters related to the optimization process (e.g., learning rate for gradient descent).</Hyperparameters>
+		<Strengths>Flexible for Different Response Types: Can model a wide range of data, including continuous, count, binary, and categorical outcomes, by choosing the appropriate distribution and link function….
+Statistical Foundation: Built on a strong statistical framework….
+Interpretability: Coefficients can often be interpreted in the context of the chosen link function (e.g., odds ratios in logistic regression).</Strengths>
+		<Limitations>Relies on Correct Specification of the Distribution and Link Function: Misspecification can lead to poor model performance….
+Can Be Sensitive to Outliers: Depending on the chosen distribution….
+May Require More Data for Complex Models.</Limitations>
+		<UseCases>Insurance Claim Prediction (Poisson Regression): Modeling the number of insurance claims filed….
+Disease Incidence Modeling (Poisson Regression): Predicting the rate of disease occurrence in different populations….
+Click-Through Rate Prediction (Logistic Regression): Estimating the probability of a user clicking on an online advertisement….
+Customer Churn Prediction (Logistic Regression): Identifying customers likely to stop using a service.</UseCases>
+		<EvaluationMetrics>Mean Squared Error (MSE): The average of the squared differences between the predicted and actual values. Penalizes larger errors more heavily. MSE=n1∑i=1n(yi−y^i)2….
+Root Mean Squared Error (RMSE): The square root of the MSE. Provides an error metric in the same units as the target variable, making it more interpretable. RMSE=n1∑i=1n(yi−y^i)2….
+Mean Absolute Error (MAE): The average of the absolute differences between the predicted and actual values. Less sensitive to outliers than MSE. MAE=n1∑i=1n∣yi−y^i∣….
+R-squared (Coefficient of Determination): Represents the proportion of the variance in the dependent variable that is predictable from the independent variables. Ranges from 0 to 1, with higher values indicating a better fit. R2=1−∑i=1n(yi−yˉ)2∑i=1n(yi−y^i)2….
+Adjusted R-squared: A modification of R-squared that adjusts for the number of predictors in the model. Useful for comparing models with different numbers of features. AdjustedR2=1−n−p−1(1−R2)(n−1)….
+Mean Absolute Percentage Error (MAPE): The average percentage error of the predictions. Useful for understanding the relative size of the errors. MAPE=n1∑i=1n∣yiyi−y^i∣×100%...</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>7</Id>
+		<Node>40</Node>
+		<Lvl>3</Lvl>
+		<From>39</From>
+		<Name>Poisson Regression</Name>
+		<Description>N/A</Description>
+		<CoreIdea> GLM for count data, modeling the log of the expected count as a linear function.</CoreIdea>
+		<Basis>Random Component: Response variable $$Y_i$$ follows a Poisson distribution: $$P(Y_i = y_i) = \frac{\mu_i^{y_i} e^{-\mu_i}}{y_i!}$$, where $$\mu_i$$ is the rate parameter….
+Link Function: Typically the log link: $$g(\mu_i) = \ln(\mu_i) = x_i^T \beta$$, so $$\mu_i = e^{x_i^T \beta}$$....
+Estimation: Coefficients $$\beta$$ are estimated using MLE.</Basis>
+		<InputData>Numerical and encoded categorical features.</InputData>
+		<OutputData>Predicted rate or count (non-negative numerical value).</OutputData>
+		<ModelRepresentation>A specific GLM, so it's represented by coefficients, an intercept, and the assumption of a Poisson distribution with a log link function.</ModelRepresentation>
+		<LearningAlgorithm>A specific type of GLM, and therefore Supervised Learning. It learns to model count data based on labeled examples.</LearningAlgorithm>
+		<LossFunction>The loss function is the negative log-likelihood of the Poisson distribution: $$L(\beta) = -\sum_{i=1}^{n} (y_i \ln(\mu_i) - \mu_i - \ln(y_i!))$$ where $$\mu_i = e^{x_i^T \beta}$$.</LossFunction>
+		<Regularization>L1, L2</Regularization>
+		<Hyperparameters>Similar to GLMs, if regularization is used, the λ (alpha) values are hyperparameters….
+Optimization-related hyperparameters might also exist</Hyperparameters>
+		<Strengths>Specifically Designed for Count Data: Appropriately models data that represents the number of occurrences of an event….
+Handles Non-Negative Integer Responses: Based on the Poisson distribution.</Strengths>
+		<Limitations>Assumes Equidispersion: The variance of the response is equal to its mean. Overdispersion or underdispersion (variance not equal to the mean) can lead to biased results….
+Only Suitable for Count Data.</Limitations>
+		<UseCases>Traffic Accident Analysis: Modeling the number of accidents at intersections….
+Website Traffic Analysis: Predicting the number of visits to a webpage….
+Species Abundance Prediction: Estimating the number of individuals of a particular species in an area.</UseCases>
+		<EvaluationMetrics>Mean Squared Error (MSE): The average of the squared differences between the predicted and actual values. Penalizes larger errors more heavily. MSE=n1∑i=1n(yi−y^i)2….
+Root Mean Squared Error (RMSE): The square root of the MSE. Provides an error metric in the same units as the target variable, making it more interpretable. RMSE=n1∑i=1n(yi−y^i)2….
+Mean Absolute Error (MAE): The average of the absolute differences between the predicted and actual values. Less sensitive to outliers than MSE. MAE=n1∑i=1n∣yi−y^i∣….
+R-squared (Coefficient of Determination): Represents the proportion of the variance in the dependent variable that is predictable from the independent variables. Ranges from 0 to 1, with higher values indicating a better fit. R2=1−∑i=1n(yi−yˉ)2∑i=1n(yi−y^i)2….
+Adjusted R-squared: A modification of R-squared that adjusts for the number of predictors in the model. Useful for comparing models with different numbers of features. AdjustedR2=1−n−p−1(1−R2)(n−1)….
+Mean Absolute Percentage Error (MAPE): The average percentage error of the predictions. Useful for understanding the relative size of the errors. MAPE=n1∑i=1n∣yiyi−y^i∣×100%...</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>8</Id>
+		<Node>41</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Linear Models (Classification)</Name>
+		<Description>N/A</Description>
+		<CoreIdea>N/A</CoreIdea>
+		<Basis>N/A</Basis>
+		<InputData>N/A</InputData>
+		<OutputData>N/A</OutputData>
+		<ModelRepresentation>N/A</ModelRepresentation>
+		<LearningAlgorithm>N/A</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>N/A</Strengths>
+		<Limitations>N/A</Limitations>
+		<UseCases>N/A</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>9</Id>
+		<Node>42</Node>
+		<Lvl>2</Lvl>
+		<From>41</From>
+		<Name>Logistic Regression</Name>
+		<Description>A binary classification algorithm that models the probability of a binary outcome (0 or 1) using a logistic function (sigmoid function). It estimates the coefficients of the independent variables to predict the log-odds of the event occurring</Description>
+		<CoreIdea> Models the probability of a binary outcome using a sigmoid function.</CoreIdea>
+		<Basis>Model: Models the probability of the binary outcome $$P(Y=1|x) = \sigma(x^T \beta) = \frac{1}{1 + e^{-x^T \beta}}$$, where $$\sigma(z)$$ is the sigmoid function….
+Loss Function: Binary cross-entropy (log loss): $$L(\beta) = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\sigma(x_i^T \beta)) + (1 - y_i) \log(1 - \sigma(x_i^T \beta))]$$....
+Optimization: Typically solved using iterative optimization algorithms like gradient descent or Newton's method.</Basis>
+		<InputData>Numerical and encoded categorical features.</InputData>
+		<OutputData>Predicted probability of the positive class (between 0 and 1). Often converted to a binary class label (0 or 1) based on a threshold (e.g., 0.5).</OutputData>
+		<ModelRepresentation>Represented by a set of coefficients, an intercept, and the logistic (sigmoid) function that transforms the linear combination of features into a probability.</ModelRepresentation>
+		<LearningAlgorithm>A Supervised Learning algorithm used for binary classification. It learns the relationship between input features and the probability of a binary outcome based on labeled data.</LearningAlgorithm>
+		<LossFunction>Binary Cross-Entropy (Log Loss): $$L(y, \hat{y}) = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)]$$ where $$\hat{y}_i = P(y_i = 1 \mid x_i) = \sigma(x_i^T \beta)$$.</LossFunction>
+		<Regularization>L1, L2</Regularization>
+		<Hyperparameters>λ (Alpha) or C (Inverse of Regularization Strength): When L1 or L2 regularization is applied. A smaller C corresponds to stronger regularization (larger λ)….
+Penalty Type: Whether to use 'l1' or 'l2' regularization (or 'elasticnet')….
+Solver: The optimization algorithm used to find the coefficients (e.g., 'liblinear', 'lbfgs', 'sag', 'saga'). Different solvers may have their own hyperparameters (e.g., tolerance for convergence).</Hyperparameters>
+		<Strengths>Well-Suited for Binary Classification: Directly models the probability of a binary outcome….
+Interpretable Coefficients: Coefficients can be related to the log-odds of the event….
+Computationally Efficient: Training and prediction are generally fast.</Strengths>
+		<Limitations>Assumes a Linear Relationship Between Features and the Log-Odds: May not capture complex non-linear decision boundaries well….
+Sensitive to Outliers: Can affect the estimated coefficients and decision boundary….
+Can Struggle with Highly Imbalanced Datasets: May be biased towards the majority class.</Limitations>
+		<UseCases>Spam Email Detection: Classifying emails as spam or not spam….
+Medical Diagnosis: Predicting the presence or absence of a disease based on patient symptoms….
+Credit Risk Assessment: Determining the likelihood of a borrower defaulting on a loan….
+Image Classification (Binary): Identifying if an image contains a specific object (e.g., cat vs. not cat).</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>10</Id>
+		<Node>46</Node>
+		<Lvl>3</Lvl>
+		<From>42</From>
+		<Name>Multinomial Logistic Regression</Name>
+		<Description>An extension of logistic regression used for multi-class classification problems (where there are more than two possible outcomes). It models the probability of each class using a set of logistic functions, with one class typically serving as the reference category</Description>
+		<CoreIdea> Extends logistic regression to predict probabilities of multiple unordered categories.</CoreIdea>
+		<Basis>Model: For $$K$$ classes, models the probability of belonging to class $$k$$ relative to a baseline class (e.g., the last class): $$P(Y=k|x) = \frac{e^{x^T \beta_k}}{1 + \sum_{j=1}^{K-1} e^{x^T \beta_j}}$$ for $$k=1,\ldots,K-1$$, and $$P(Y=K|x) = \frac{1}{1 + \sum_{j=1}^{K-1} e^{x^T \beta_j}}$$....
+Loss Function: Categorical cross-entropy.
+Optimization: Typically solved using iterative optimization algorithms.</Basis>
+		<InputData>Numerical and encoded categorical features.</InputData>
+		<OutputData>Predicted probability distribution over multiple unordered classes (a vector of probabilities that sum to 1), or the predicted class label (the class with the highest probability).</OutputData>
+		<ModelRepresentation>Represented by a set of coefficients (one vector for each class, relative to a baseline class) and an intercept (one for each class) that define the log-odds of belonging to each class.</ModelRepresentation>
+		<LearningAlgorithm>Another Supervised Learning algorithm, extending logistic regression to multi-class classification problems using labeled data</LearningAlgorithm>
+		<LossFunction>Categorical Cross-Entropy: $$L(Y, \hat{Y}) = -\sum_{i=1}^{n} \sum_{j=1}^{K} y_{ij} \log(\hat{y}{ij})$$ where $$y{ij}$$ is 1 if the i-th instance belongs to class j and 0 otherwise, and $$\hat{y}_{ij} = P(y_i = j \mid x_i)$$.</LossFunction>
+		<Regularization>L1, L2</Regularization>
+		<Hyperparameters>Similar hyperparameters to binary logistic regression (λ or C, penalty type, solver, solver-specific parameters).</Hyperparameters>
+		<Strengths>Handles Multi-Class Classification: Extends logistic regression to problems with more than two unordered classes….
+Provides Probabilities: Outputs the probability of belonging to each class.</Strengths>
+		<Limitations>Assumes Linearity in the Log-Odds for Each Class….
+Can Become Complex with a Large Number of Classes and Features….
+Sensitive to Imbalanced Class Distributions.</Limitations>
+		<UseCases>Sentiment Analysis (Multi-Class): Classifying text as having positive, negative, or neutral sentiment….
+Product Category Prediction: Assigning a product to one of several predefined categories….
+Political Affiliation Prediction: Predicting a person's political leaning based on their survey responses.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>11</Id>
+		<Node>67</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Tree-Based Models</Name>
+		<Description>N/A</Description>
+		<CoreIdea>N/A</CoreIdea>
+		<Basis>N/A</Basis>
+		<InputData>N/A</InputData>
+		<OutputData>N/A</OutputData>
+		<ModelRepresentation> </ModelRepresentation>
+		<LearningAlgorithm>N/A</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>N/A</Strengths>
+		<Limitations>N/A</Limitations>
+		<UseCases>N/A</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>12</Id>
+		<Node>68</Node>
+		<Lvl>2</Lvl>
+		<From>67</From>
+		<Name>Decision Trees</Name>
+		<Description>A non-parametric supervised learning method used for both classification and regression. It works by recursively splitting the data based on the values of features to create a tree-like structure of decision rules. Each leaf node represents a predicted outcome</Description>
+		<CoreIdea> Classifies or predicts by recursively splitting data based on feature values, forming a tree of rules.</CoreIdea>
+		<Basis>Greedy algorithms that recursively partition the feature space based on impurity measures (for classification, e.g., Gini impurity, entropy; for regression, e.g., variance reduction)….
+Splitting Criteria: The mathematical basis lies in evaluating different split points and choosing the one that maximally reduces impurity or variance in the target variable.</Basis>
+		<InputData>Can handle both numerical and categorical features directly.</InputData>
+		<OutputData>Classification: Predicted class label….
+Regression: Predicted continuous value.</OutputData>
+		<ModelRepresentation>Represented by a tree structure consisting of nodes and branches. Each internal node represents a test on a feature, each branch represents the outcome of the test, and each leaf node represents a prediction (class label or a continuous value). (https://github.com/prushh/australia-next-day-rain-prediction)</ModelRepresentation>
+		<LearningAlgorithm>Can be used for both Supervised Learning (classification and regression). The tree structure is learned recursively from labeled data by selecting the best features to split the data at each node based on impurity reduction (for classification) or variance reduction (for regression).</LearningAlgorithm>
+		<LossFunction>The "loss" during the tree building process is typically measured by impurity or variance reduction at each split, rather than a single global loss function…. 
+Classification: Gini impurity, entropy, or misclassification rate are used to evaluate the quality of a split. The goal is to minimize impurity in the child nodes….
+Regression: Variance reduction (based on Mean Squared Error) is used. The goal is to minimize the variance of the target variable in the child nodes….</LossFunction>
+		<Regularization>Pruning: Techniques like cost-complexity pruning are used to reduce the size of the tree and prevent overfitting by removing branches that do not significantly improve performance on a validation set….
+Limiting Tree Depth: Restricting the maximum depth of the tree prevents it from becoming too complex and fitting noise in the training data….
+Minimum Samples per Leaf/Split: Setting a minimum number of samples required at a leaf node or to perform a split helps to avoid creating overly specific branches.</Regularization>
+		<Hyperparameters>max_depth: The maximum depth of the tree. Controls the complexity of the tree and prevents overfitting….
+min_samples_split: The minimum number of samples required to split an internal node….
+min_samples_leaf: The minimum number of samples required to be at a leaf node(http://slideplayer.com/slide/9028429/) ….
+max_features: The number of features to consider when looking for the best split….
+criterion: The function to measure the quality of a split 1 ('gini' or 'entropy' for classification, 'squared_error' or 'absolute_error' for regression).(https://github.com/ThachNgocTran/FinancialDistressPrediction)</Hyperparameters>
+		<Strengths>Easy to Understand and Interpret: The decision rules are transparent and can be visualized….
+Handles Both Numerical and Categorical Data: Requires little data preprocessing….
+Non-Parametric: Makes no assumptions about the underlying data distribution….
+Can Capture Non-Linear Relationships: Through the hierarchical splitting of the feature space.</Strengths>
+		<Limitations>Can Overfit the Training Data: Especially deep, unpruned trees….
+Sensitive to Small Variations in the Data: Can lead to different tree structures….
+Tend to Prefer Features with More Levels: Can be biased towards continuous or high-cardinality categorical features….
+Not Always the Most Accurate Predictor Compared to Ensemble Methods.</Limitations>
+		<UseCases>Rule-Based Systems: Creating transparent and interpretable decision rules for various applications….
+Credit Approval: Determining whether to approve a loan application based on a set of criteria….
+Customer Segmentation: Grouping customers based on their characteristics and behaviors….
+Medical Diagnosis: Assisting in the diagnosis of diseases based on symptoms.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>13</Id>
+		<Node>76</Node>
+		<Lvl>2</Lvl>
+		<From>67</From>
+		<Name>Decision Forests (Tree Aggregation)</Name>
+		<Description>Ensemble methods that combine multiple decision trees to improve predictive performance and reduce overfitting. Common examples include Random Forests</Description>
+		<CoreIdea> Combines multiple decision trees to improve prediction accuracy and robustness (e.g., Random Forests).</CoreIdea>
+		<Basis>Ensemble learning principles, particularly bagging (e.g., Random Forests)….
+Random Forests: Involves training multiple decision trees on random subsets of the data and features, and then aggregating their predictions (e.g., by averaging for regression or majority voting for classification). The randomness introduced helps to reduce variance and overfitting.</Basis>
+		<InputData>Same as Decision Trees (numerical and categorical features).</InputData>
+		<OutputData>Classification: Predicted class label (based on majority vote of the trees)….
+Regression: Predicted continuous value (based on the average prediction of the trees).</OutputData>
+		<ModelRepresentation>Represented by an ensemble of multiple decision trees. The final prediction is made by aggregating the predictions of individual trees (e.g., majority vote for classification, average for regression).</ModelRepresentation>
+		<LearningAlgorithm>Still within Supervised Learning. These ensemble methods learn multiple decision trees from different subsets of the labeled data and/or features and then aggregate their predictions.</LearningAlgorithm>
+		<LossFunction>Similar to individual decision trees, the training of each tree relies on minimizing impurity or variance at each split. The overall performance of the forest is then evaluated on a separate test set using metrics like accuracy (for classification) or MSE (for regression). There isn't a single global loss function optimized across all trees simultaneously in the same way as in gradient-based methods.</LossFunction>
+		<Regularization>Bagging (Bootstrap Aggregating): Training each tree on a random subset of the data….
+Random Subspace: Considering only a random subset of features at each split….</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>Improved Accuracy and Robustness: Reduces overfitting and variance by averaging predictions from multiple trees….
+Provides Feature Importance Estimates: Can assess which features are most important for prediction….
+Handles High-Dimensional Data Relatively Well.</Strengths>
+		<Limitations>Less Interpretable Than Single Decision Trees: The ensemble of trees can be a "black box."….
+Can Still Overfit Noisy Data (though less prone than single trees)….
+Computationally More Expensive to Train and Store Than Single Trees.</Limitations>
+		<UseCases>Image Classification: Identifying objects or scenes in images….
+Fraud Detection: Identifying potentially fraudulent transactions….
+Predicting Customer Behavior: Forecasting which products a customer might purchase….
+Environmental Modeling: Predicting species distribution or deforestation risk.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>14</Id>
+		<Node>79</Node>
+		<Lvl>3</Lvl>
+		<From>76</From>
+		<Name>Gradient Boosted Decision Trees</Name>
+		<Description>A powerful ensemble learning technique that builds multiple decision trees sequentially. Each new tree tries to correct the errors made by the previous trees by fitting to the residual errors. Examples include XGBoost, LightGBM, and CatBoost</Description>
+		<CoreIdea> Sequentially builds decision trees, with each tree correcting errors of the previous ones.</CoreIdea>
+		<Basis>Ensemble learning principle of boosting….
+Algorithm: Sequentially builds trees, with each new tree trained to predict the residual errors of the previous trees. The predictions are combined by summing the outputs of the individual trees. The optimization involves minimizing a loss function using gradient descent in function space.</Basis>
+		<InputData>Numerical and encoded categorical features (often benefit from numerical input).</InputData>
+		<OutputData>Classification: Predicted probability of a class (can be binary or multi-class, depending on the setup) or a predicted class label….
+Regression: Predicted continuous value.</OutputData>
+		<ModelRepresentation>Represented by an ensemble of multiple decision trees built sequentially. Each tree tries to correct the errors of the previous ones. The final prediction is a weighted sum of the predictions of all the trees.</ModelRepresentation>
+		<LearningAlgorithm>Supervised Learning. These powerful ensemble methods learn decision trees sequentially, with each new tree trying to correct the errors of the previous ones, all based on labeled training data</LearningAlgorithm>
+		<LossFunction>These models optimize a differentiable loss function. The choice of loss function depends on the task:….
+Regression: Mean Squared Error, Mean Absolute Error, Huber loss, etc….
+Classification: Binary or categorical cross-entropy, exponential loss (for AdaBoost-like algorithms)….
+The boosting process iteratively minimizes this loss function by adding trees that predict the negative gradient of the loss with respect to the predictions of the previous trees.</LossFunction>
+		<Regularization>Tree Depth Limitation: Similar to single decision trees….
+Minimum Child Weight: Similar to minimum samples per leaf….
+Regularization Terms (L1 and L2): Added directly to the loss function, penalizing the complexity of the learned trees (magnitude of leaf weights)…. 
+Shrinkage (Learning Rate): Reduces the contribution of each tree, slowing down the learning process and preventing overfitting….
+Subsampling: Training each tree on a random subset of the data.…
+Column (Feature) Subsampling: Training each tree on a random subset of features.</Regularization>
+		<Hyperparameters>Hyperparameters related to individual trees (max_depth, min_child_weight, max_features)….
+ n_estimators (or n_rounds): The number of boosting rounds (number of trees)….
+ learning_rate (or eta): The step size shrinkage to prevent overfitting….
+ subsample: The fraction of samples to be used for fitting the individual base learners….
+ colsample_bytree, colsample_bylevel, colsample_bynode: The fraction of features to be considered for each tree, at each level, or at each node….
+ reg_alpha (L1 regularization term on weights)….
+ reg_lambda (L2 regularization term on weights)….
+ gamma: Minimum loss reduction required to make a further partition on a leaf node
+(https://github.com/stevenhobbs/5501_Ontime_flights) ( https://miro.medium.com/max/1224/1*tJFpYGAwHpjj-J_MajgdMw.png)</Hyperparameters>
+		<Strengths>High Predictive Accuracy: Often achieves state-of-the-art performance on many tasks….
+Handles Complex Non-Linear Relationships: Can learn intricate decision boundaries….
+Feature Importance: Provides robust estimates of feature importance….
+Flexibility: Can optimize various loss functions.</Strengths>
+		<Limitations>Can Be Sensitive to Hyperparameter Tuning: Requires careful tuning to avoid overfitting….
+More Prone to Overfitting Than Random Forests if Not Tuned Properly….
+Can Be Computationally Expensive to Train, Especially with a Large Number of Trees….
+Less Interpretable Than Single Decision Trees.</Limitations>
+		<UseCases>Search Ranking: Determining the order of search results….
+Recommendation Systems: Predicting which items a user might like….
+Risk Assessment in Finance: Predicting market movements or credit default….
+Natural Language Processing Tasks: Sentiment analysis, named entity recognition.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>15</Id>
+		<Node>87</Node>
+		<Lvl>2</Lvl>
+		<From>67</From>
+		<Name>KNN</Name>
+		<Description>A non-parametric, instance-based learning algorithm used for both classification and regression. To predict the output for a new data point, it finds the k closest data points in the training set (based on a distance metric) and then makes a prediction based on the majority class (for classification) or the average (for regression) of those neighbors</Description>
+		<CoreIdea> Classifies or predicts based on the majority class or average value of the k nearest data points in the feature space.</CoreIdea>
+		<Basis>Relies on distance metrics (e.g., Euclidean distance, Manhattan distance, Minkowski distance) to determine the "nearest" neighbors in the feature space….
+Prediction: For classification, the class label is determined by the majority class among the k nearest neighbors. For regression, the prediction is typically the average of the target values of the k nearest neighbors.</Basis>
+		<InputData>Numerical features (categorical features are typically encoded into numerical representations).</InputData>
+		<OutputData>Classification: Predicted class label (based on the majority class among the k nearest neighbors)….
+Regression: Predicted continuous value (based on the average or weighted average of the target values of the k nearest neighbors).</OutputData>
+		<ModelRepresentation>Represented by the entire training dataset (the feature vectors and their corresponding labels or target values). Prediction involves finding the k most similar instances in this stored data.</ModelRepresentation>
+		<LearningAlgorithm>Primarily considered a Supervised Learning algorithm (for both classification and regression). It learns by storing the labeled training data and making predictions for new instances based on the labels of their nearest neighbors in the feature space. It's also sometimes referred to as an instance-based or lazy learning algorithm because it doesn't explicitly learn a model</LearningAlgorithm>
+		<LossFunction>KNN is a non-parametric algorithm and doesn't explicitly optimize a loss function in the traditional sense during training. It learns by storing the training data. The "loss" can be thought of in terms of the error rate on unseen data, which depends on the choice of k and the distance metric.</LossFunction>
+		<Regularization>Regularization in KNN is primarily controlled by the choice of k (the number of neighbors). A larger k tends to smooth the decision boundaries (for classification) or the predictions (for regression), making the model less sensitive to noise in the training data.</Regularization>
+		<Hyperparameters>n_neighbors (k): The number of neighbors to consider….
+weights: The weight function used in prediction ('uniform' or 'distance')….
+algorithm: The algorithm used to compute the nearest neighbors ('ball_tree', 'kd_tree', 'brute')….
+p: The power parameter for the Minkowski metric (p=1 is Manhattan, p=2 is Euclidean)….</Hyperparameters>
+		<Strengths>Simple to Understand and Implement: Conceptually straightforward….
+Non-Parametric: Makes no assumptions about the data distribution….
+Can Learn Complex Decision Boundaries: Especially with smaller values of k….
+Useful for Data with Irregular Shapes: Where linear models might struggle.</Strengths>
+		<Limitations>Computationally Expensive for Large Datasets: Prediction requires calculating distances to all training points….
+Sensitive to Feature Scaling: Features with larger scales can dominate distance calculations….
+Performance Degrades in High-Dimensional Spaces (Curse of Dimensionality): Distance metrics become less meaningful….
+Choice of K Can Significantly Impact Performance….
+Can Be Biased Towards the Majority Class in Classification.</Limitations>
+		<UseCases>Recommendation Systems: Suggesting items similar to those a user has liked….
+Image Recognition: Classifying images based on similarity to training examples….
+Anomaly Detection: Identifying data points that are significantly different from their neighbors….
+Simple Classification Tasks: Where interpretability is less critical than a quick baseline.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>16</Id>
+		<Node>88</Node>
+		<Lvl>2</Lvl>
+		<From>67</From>
+		<Name>SVM</Name>
+		<Description>A powerful supervised learning algorithm used for classification and regression. In classification, it aims to find the optimal hyperplane that best separates data points of different classes with the largest 1 margin. It can also handle non-linear data using kernel functions (https://www.educatum.com/Linear-Support-Vector-Machine-SVM-12355925845b81579869f5ec5faaeb2f)</Description>
+		<CoreIdea> Finds the optimal hyperplane that best separates data points of different classes with the largest margin.</CoreIdea>
+		<Basis>Optimization problem aiming to find the hyperplane that maximizes the margin between different classes….
+Linear SVM: Formulated as a constrained optimization problem: Minimize $$\frac{1}{2} |w|^2$$ subject to $$y_i (w^T x_i + b) \geq 1$$ for all data points $$(x_i, y_i)$$....
+Non-linear SVM: Uses kernel functions $$K(x_i, x_j)$$ to implicitly map the data into a higher-dimensional space where linear separation might be possible.</Basis>
+		<InputData>Numerical features (categorical features are typically encoded).</InputData>
+		<OutputData> Classification: Predicted class label (can be binary or multi-class)….
+Regression: Predicted continuous value.</OutputData>
+		<ModelRepresentation>Represented by a set of support vectors (a subset of the training data points that define the decision boundary), their associated weights, and a bias term. For non-linear SVMs, the representation also includes the chosen kernel function.</ModelRepresentation>
+		<LearningAlgorithm>Supervised Learning algorithm used for both classification and regression. It learns to find the optimal hyperplane that separates different classes in the feature space (for classification) or to map input to a continuous output (for regression) based on labeled data</LearningAlgorithm>
+		<LossFunction>Hinge Loss (for classification): L(y,y^)=max(0,1−y⋅f(x)), where y∈{−1,1} is the true label and f(x)=wTx+b is the decision function. The optimization objective includes a regularization term on the weights….
+Epsilon-insensitive loss (for regression): L(y,y^)=max(0,∣y−y^∣−ϵ), where ϵ defines a tube around the predictions where no penalty is incurred….</LossFunction>
+		<Regularization>The C parameter in the SVM formulation acts as a regularization parameter….
+A smaller C allows for more training errors (wider margin violations) but can lead to better generalization by prioritizing a simpler decision boundary….
+A larger C penalizes training errors more heavily, trying to classify all training points correctly, which can lead to overfitting.</Regularization>
+		<Hyperparameters>C: The regularization parameter (inverse of λ)….
+kernel: The kernel function to use ('linear', 'poly', 'rbf', 'sigmoid')….
+degree: Degree of the polynomial kernel function….
+gamma: Kernel coefficient for 'rbf', 'poly', and 'sigmoid'. Can be 'scale', 'auto', or a float value….
+coef0: Independent term in kernel function ('poly', 'sigmoid').</Hyperparameters>
+		<Strengths>Effective in High-Dimensional Spaces: Performs well when the number of features is large….
+Robust to Outliers: The decision boundary is determined by support vectors….
+Versatile with Different Kernels: Can model non-linear decision boundaries using kernel functions….
+Strong Theoretical Foundation: Based on maximizing the margin.</Strengths>
+		<Limitations>Can Be Sensitive to Hyperparameter Tuning (Kernel Choice, C, Gamma)….
+Not Naturally Probabilistic: Requires additional methods to obtain probability estimates….
+Can Be Computationally Expensive for Large Datasets (especially with non-linear kernels)….
+Performance Can Be Sensitive to the Choice of Kernel….
+Less Interpretable Than Linear Models or Decision Trees.</Limitations>
+		<UseCases>Image Classification: Effective in high-dimensional image feature spaces….
+Text Categorization: Classifying documents into different topics….
+Bioinformatics: Protein classification or gene expression analysis….
+Face Detection: Identifying faces in images.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>17</Id>
+		<Node>89</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Discriminant Analysis</Name>
+		<Description>A classification technique that assumes that different classes generate data from different probability distributions. It aims to find linear (LDA) or quadratic (QDA) discriminant functions that can separate the classes.</Description>
+		<CoreIdea>N/A</CoreIdea>
+		<Basis>Based on Bayes' theorem and assumes that data from different classes follows specific probability distributions.</Basis>
+		<InputData>N/A</InputData>
+		<OutputData>N/A</OutputData>
+		<ModelRepresentation>N/A</ModelRepresentation>
+		<LearningAlgorithm>These are Supervised Learning techniques used for classification. They learn the parameters of the class-conditional probability distributions from labeled data to make predictions.</LearningAlgorithm>
+		<LossFunction>These methods don't typically have an explicit loss function that is minimized in the same way as other algorithms. They learn the parameters of the class-conditional distributions (means and covariances) using Maximum Likelihood Estimation. The decision boundary is then derived from these estimated distributions.</LossFunction>
+		<Regularization>Regularization is less common in standard LDA and QDA. However, regularized versions exist, especially for high-dimensional data where the covariance matrix might be poorly estimated. These regularized forms often involve shrinking the estimated covariance matrices towards a more structured form.</Regularization>
+		<Hyperparameters>Standard LDA and QDA have fewer hyperparameters….
+For regularized versions, there might be hyperparameters controlling the shrinkage of the covariance matrix. For example, in sklearn.discriminant_analysis.LinearDiscriminantAnalysis, the solver and shrinkage parameters can be tuned.</Hyperparameters>
+		<Strengths>Simple and Efficient: Computationally inexpensive….
+Well-Founded in Statistical Theory: Based on probabilistic models….
+LDA Works Well When Classes Are Well-Separated and Have Similar Covariances….
+QDA Can Model More Complex Decision Boundaries When Covariances Differ.</Strengths>
+		<Limitations>N/A</Limitations>
+		<UseCases>Pattern Recognition: In applications like character recognition or speech recognition….
+Dimensionality Reduction (LDA): Preprocessing data for other classification algorithms….
+Medical Diagnosis: When the underlying data distributions can be modeled as Gaussian.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>18</Id>
+		<Node>90</Node>
+		<Lvl>2</Lvl>
+		<From>89</From>
+		<Name>LDA</Name>
+		<Description>A dimensionality reduction technique that is also used as a classifier. It assumes that the data for each class is normally distributed with the same covariance matrix. It finds a linear combination of features that best separates the classes</Description>
+		<CoreIdea> Reduces dimensionality and classifies by finding linear combinations of features that best separate classes, assuming equal class covariances.</CoreIdea>
+		<Basis>LDA (Linear Discriminant Analysis): Assumes that the data for each class is normally distributed with the same covariance matrix. It finds linear discriminant functions based on class means and the pooled covariance matrix.</Basis>
+		<InputData>Numerical features.</InputData>
+		<OutputData>Predicted class label.</OutputData>
+		<ModelRepresentation>Represented by the means of each class, the pooled covariance matrix, and the derived linear discriminant functions.</ModelRepresentation>
+		<LearningAlgorithm>These are Supervised Learning techniques used for classification. They learn the parameters of the class-conditional probability distributions from labeled data to make predictions.</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>Simple and Efficient: Computationally inexpensive….
+Well-Founded in Statistical Theory: Based on probabilistic models….
+LDA Works Well When Classes Are Well-Separated and Have Similar Covariances….
+QDA Can Model More Complex Decision Boundaries When Covariances Differ.</Strengths>
+		<Limitations>LDA Assumes Linearity of Decision Boundaries and Equal Class Covariances: These assumptions may not hold in real-world data</Limitations>
+		<UseCases>Pattern Recognition: In applications like character recognition or speech recognition….
+Dimensionality Reduction (LDA): Preprocessing data for other classification algorithms….
+Medical Diagnosis: When the underlying data distributions can be modeled as Gaussian.</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>19</Id>
+		<Node>91</Node>
+		<Lvl>2</Lvl>
+		<From>89</From>
+		<Name>QDA</Name>
+		<Description>Similar to LDA, but it allows for different covariance matrices for each class. This makes it more flexible but also more prone to overfitting if the number of training samples is small</Description>
+		<CoreIdea> Similar to LDA but allows for quadratic decision boundaries by assuming different class covariances.</CoreIdea>
+		<Basis>QDA (Quadratic Discriminant Analysis): Similar to LDA but allows for different covariance matrices for each class, leading to quadratic discriminant functions.</Basis>
+		<InputData>Numerical features.</InputData>
+		<OutputData>Predicted class label.</OutputData>
+		<ModelRepresentation>Represented by the means of each class and the covariance matrix for each class, and the derived quadratic discriminant functions.</ModelRepresentation>
+		<LearningAlgorithm>These are Supervised Learning techniques used for classification. They learn the parameters of the class-conditional probability distributions from labeled data to make predictions.</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>Simple and Efficient: Computationally inexpensive….
+Well-Founded in Statistical Theory: Based on probabilistic models….
+LDA Works Well When Classes Are Well-Separated and Have Similar Covariances….
+QDA Can Model More Complex Decision Boundaries When Covariances Differ.</Strengths>
+		<Limitations>QDA Requires More Data to Estimate Separate Covariance Matrices: Can be prone to overfitting if the number of samples is small relative to the number of features….
+Performance Can Suffer if the Underlying Data Distributions Are Not Gaussian</Limitations>
+		<UseCases>Pattern Recognition: In applications like character recognition or speech recognition….
+Dimensionality Reduction (LDA): Preprocessing data for other classification algorithms….
+Medical Diagnosis: When the underlying data distributions can be modeled as Gaussian.</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>20</Id>
+		<Node>92</Node>
+		<Lvl>2</Lvl>
+		<From>89</From>
+		<Name>Naïve Bayes</Name>
+		<Description>A probabilistic classifier based on Bayes' theorem with a strong (naïve) assumption of independence between the features. Despite its simplicity, it can be surprisingly effective in many real-world applications, especially text classification</Description>
+		<CoreIdea> Probabilistic classifier based on Bayes' theorem with the "naïve" assumption of feature independence within each class.</CoreIdea>
+		<Basis>Bayes' theorem: $$P(Y \mid x) = \frac{P(x \mid Y) P(Y)}{P(x)}$$....
+Naïve Assumption: Assumes conditional independence of features given the class: $$P(x \mid Y) = \prod_{i=1}^{p} P(x_i \mid Y)$$....
+Classification: Predicts the class with the highest posterior probability $$P(Y \mid x)$$.</Basis>
+		<InputData>Can handle both numerical and categorical features (different Naïve Bayes variants exist for different data types).</InputData>
+		<OutputData>Predicted probability of each class and the predicted class label (the class with the highest probability).</OutputData>
+		<ModelRepresentation>Represented by the prior probabilities of each class and the conditional probabilities of each feature given each class (estimated from the training data). The specific form of these probabilities depends on the assumed distribution of the features (e.g., Gaussian for continuous features, multinomial for discrete counts).</ModelRepresentation>
+		<LearningAlgorithm>Supervised Learning algorithm used for classification. It learns the conditional probabilities of features given the class labels from labeled data</LearningAlgorithm>
+		<LossFunction>Similar to Discriminant Analysis, Naïve Bayes learns the conditional probabilities P(xi​∣y) and the prior probabilities P(y) using Maximum Likelihood Estimation from the training data. There isn't a single explicit loss function being minimized in the iterative sense.</LossFunction>
+		<Regularization>Naïve Bayes is generally less prone to overfitting due to its strong independence assumptions. However, techniques like Laplace smoothing (additive smoothing) can be seen as a form of regularization to prevent zero probabilities for unseen feature-class combinations, which can lead to overly confident predictions</Regularization>
+		<Hyperparameters>Typically has very few hyperparameters….
+alpha (Laplace smoothing parameter): Controls the amount of smoothing applied.</Hyperparameters>
+		<Strengths>Simple and Fast: Training and prediction are very efficient….
+Works Well with High-Dimensional Data: Especially text data….
+Performs Surprisingly Well in Many Real-World Applications: Despite the strong independence assumption….
+Requires Relatively Little Training Data.</Strengths>
+		<Limitations>The Naïve Independence Assumption Is Often Violated in Real-World Data: Can lead to suboptimal performance if features are highly correlated….
+Can Assign Zero Probability to Unseen Feature-Class Combinations (mitigated by smoothing)….
+Not as Accurate as More Complex Models for Many Tasks.</Limitations>
+		<UseCases>Text Classification: Spam filtering, sentiment analysis, document categorization….
+Recommender Systems: Simple collaborative filtering approaches….
+Quick Baseline Models: Due to its simplicity and speed.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>21</Id>
+		<Node>93</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Neural Networks and Deep Learning</Name>
+		<Description>N/A</Description>
+		<CoreIdea>N/A</CoreIdea>
+		<Basis>N/A</Basis>
+		<InputData>N/A</InputData>
+		<OutputData> </OutputData>
+		<ModelRepresentation>N/A</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. These models learn complex mappings from input to output based on large amounts of labeled training data, adjusting their weights through optimization algorithms like backpropagation. However, neural networks can also be used in unsupervised and reinforcement learning settings</LearningAlgorithm>
+		<LossFunction>The choice of loss function is crucial and depends on the task: ….
+Regression: Mean Squared Error (MSE), Mean Absolute Error (MAE), Huber loss, etc….
+Binary Classification: Binary Cross-Entropy (Log Loss)….
+Multi-class Classification: Categorical Cross-Entropy….
+Other specialized loss functions exist for specific tasks (e.g., triplet loss for embeddings, contrastive loss)….
+The network's weights are adjusted to minimize this loss function using optimization algorithms like Stochastic Gradient Descent (SGD) and its variants (e.g., Adam, RMSprop) via backpropagation.</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>Can Learn Complex Patterns: Excellent at modeling highly non-linear relationships and intricate data structures….
+Automatic Feature Learning: Deep networks can learn hierarchical representations of features from raw data…. 
+State-of-the-Art Performance in Many Domains: Including computer vision, natural language processing, and speech recognition.( https://sidddhesh.hashnode.dev/is-there-a-roadmap-for-data-science)</Strengths>
+		<Limitations>Can Be a "Black Box": Difficult to interpret the learned relationships….
+Require Large Amounts of Labeled Data: Performance often depends heavily on the size of the training set….
+Computationally Expensive to Train: Requires significant computational resources and time….
+Sensitive to Hyperparameter Tuning: Finding the optimal architecture and hyperparameters can be challenging….
+Prone to Overfitting: Requires careful regularization….
+Can Be Difficult to Debug and Understand Why They Make Certain Predictions.</Limitations>
+		<UseCases>N/A</UseCases>
+		<EvaluationMetrics>N/A</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>22</Id>
+		<Node>95</Node>
+		<Lvl>3</Lvl>
+		<From>94</From>
+		<Name>Feed-forward Neural Networks</Name>
+		<Description>A basic type of artificial neural network where information flows in one direction, from the input layer through one or more hidden layers to the output layer, without any loops or cycles. (https://soulpageit.com/ai-glossary/feedforward-neural-network-explained/)</Description>
+		<CoreIdea> Processes information in one direction through layers of interconnected nodes to learn complex patterns.</CoreIdea>
+		<Basis>Composition of layers of interconnected nodes (neurons). Each neuron performs a weighted sum of its inputs, adds a bias, and applies a non-linear activation function (e.g., sigmoid, ReLU, tanh)….
+Learning: Weights and biases are learned through optimization algorithms like stochastic gradient descent (SGD) and its variants, by minimizing a loss function (e.g., cross-entropy for classification, mean squared error for regression) using backpropagation to calculate gradients.</Basis>
+		<InputData>Typically numerical data (categorical data is encoded, text data is often converted to embeddings). Can handle various input formats depending on the architecture (e.g., images as pixel arrays, sequences as token indices or embeddings).</InputData>
+		<OutputData>The type of output depends on the network architecture and the task: ….
+Classification: Predicted probability distribution over classes or a predicted class label….
+Regression: Predicted continuous value….
+Sequence Generation: A sequence of tokens (e.g., text, music)….
+Image Segmentation: Pixel-wise classification of an image.</OutputData>
+		<ModelRepresentation>Represented by a network architecture (number of layers, types of layers, connections between neurons) and a set of weights and biases associated with each connection and neuron.</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. These models learn complex mappings from input to output based on large amounts of labeled training data, adjusting their weights through optimization algorithms like backpropagation. However, neural networks can also be used in unsupervised and reinforcement learning settings</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>L1 and L2 Weight Regularization: Adding a penalty to the loss function based on the magnitude of the network's weights….
+Dropout: Randomly setting a fraction of neuron outputs to zero during training, forcing the network to learn more robust features….
+Batch Normalization: Normalizing the activations of intermediate layers, which can have a regularizing effect….
+Early Stopping: Monitoring the performance on a validation set and stopping training when the performance starts to degrade, even if the training loss is still decreasing…. 
+Data Augmentation: Creating slightly modified versions of the training data to increase the effective dataset size and improve generalization.</Regularization>
+		<Hyperparameters>Number of Layers: The depth of the network….
+Number of Neurons per Layer: The width of each layer….
+Activation Functions: The non-linear functions used in each layer (e.g., ReLU, sigmoid, tanh)….
+Learning Rate: The step size used during optimization….
+Batch Size: The number of samples per gradient update….
+Number of Epochs: The number of times the entire training dataset is passed through the network….
+Optimizer: The optimization algorithm used (e.g., SGD, Adam, RMSprop) and its specific hyperparameters (e.g., momentum, weight decay)….
+Regularization Parameters: Dropout rate, L1/L2 weight decay strength.</Hyperparameters>
+		<Strengths>Can Learn Complex Patterns: Excellent at modeling highly non-linear relationships and intricate data structures….
+Automatic Feature Learning: Deep networks can learn hierarchical representations of features from raw data…. 
+State-of-the-Art Performance in Many Domains: Including computer vision, natural language processing, and speech recognition.( https://sidddhesh.hashnode.dev/is-there-a-roadmap-for-data-science)</Strengths>
+		<Limitations>Can Be a "Black Box": Difficult to interpret the learned relationships….
+Require Large Amounts of Labeled Data: Performance often depends heavily on the size of the training set….
+Computationally Expensive to Train: Requires significant computational resources and time….
+Sensitive to Hyperparameter Tuning: Finding the optimal architecture and hyperparameters can be challenging….
+Prone to Overfitting: Requires careful regularization….
+Can Be Difficult to Debug and Understand Why They Make Certain Predictions.</Limitations>
+		<UseCases>Computer Vision: Image classification, object detection, image segmentation….
+Natural Language Processing: Machine translation, text generation, sentiment analysis, question answering….
+Speech Recognition: Converting audio to text….
+Time Series Forecasting: Predicting future values in sequential data….
+Drug Discovery: Identifying potential drug candidates.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>23</Id>
+		<Node>96</Node>
+		<Lvl>3</Lvl>
+		<From>94</From>
+		<Name>Convolutional Neural Networks (CNNs)</Name>
+		<Description>A type of neural network particularly well-suited for processing grid-like data, such as images. They use convolutional layers to automatically learn spatial hierarchies of features. (https://www.docsity.com/it/artificial-intelligence-english/10969351/)</Description>
+		<CoreIdea> Specialized for grid-like data (e.g., images), using convolutional layers to learn spatial hierarchies of features.</CoreIdea>
+		<Basis>Specialized for grid data, using convolutional layers that apply learnable filters to input features, extracting spatial hierarchies….
+Key Operations: Convolution, pooling (e.g., max pooling, average pooling), and non-linear activation functions….
+Learning: Similar to feed-forward networks, weights of the filters are learned using backpropagation.</Basis>
+		<InputData>Typically numerical data (categorical data is encoded, text data is often converted to embeddings). Can handle various input formats depending on the architecture (e.g., images as pixel arrays, sequences as token indices or embeddings).</InputData>
+		<OutputData>The type of output depends on the network architecture and the task: ….
+Classification: Predicted probability distribution over classes or a predicted class label….
+Regression: Predicted continuous value….
+Sequence Generation: A sequence of tokens (e.g., text, music)….
+Image Segmentation: Pixel-wise classification of an image.</OutputData>
+		<ModelRepresentation>Represented by a network architecture (number of layers, types of layers, connections between neurons) and a set of weights and biases associated with each connection and neuron.</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. These models learn complex mappings from input to output based on large amounts of labeled training data, adjusting their weights through optimization algorithms like backpropagation. However, neural networks can also be used in unsupervised and reinforcement learning settings</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>L1 and L2 Weight Regularization: Adding a penalty to the loss function based on the magnitude of the network's weights….
+Dropout: Randomly setting a fraction of neuron outputs to zero during training, forcing the network to learn more robust features….
+Batch Normalization: Normalizing the activations of intermediate layers, which can have a regularizing effect….
+Early Stopping: Monitoring the performance on a validation set and stopping training when the performance starts to degrade, even if the training loss is still decreasing…. 
+Data Augmentation: Creating slightly modified versions of the training data to increase the effective dataset size and improve generalization.</Regularization>
+		<Hyperparameters>Number of Layers: The depth of the network….
+Number of Neurons per Layer: The width of each layer….
+Activation Functions: The non-linear functions used in each layer (e.g., ReLU, sigmoid, tanh)….
+Learning Rate: The step size used during optimization….
+Batch Size: The number of samples per gradient update….
+Number of Epochs: The number of times the entire training dataset is passed through the network….
+Optimizer: The optimization algorithm used (e.g., SGD, Adam, RMSprop) and its specific hyperparameters (e.g., momentum, weight decay)….
+Regularization Parameters: Dropout rate, L1/L2 weight decay strength.</Hyperparameters>
+		<Strengths>Can Learn Complex Patterns: Excellent at modeling highly non-linear relationships and intricate data structures….
+Automatic Feature Learning: Deep networks can learn hierarchical representations of features from raw data…. 
+State-of-the-Art Performance in Many Domains: Including computer vision, natural language processing, and speech recognition.( https://sidddhesh.hashnode.dev/is-there-a-roadmap-for-data-science)</Strengths>
+		<Limitations>Can Be a "Black Box": Difficult to interpret the learned relationships….
+Require Large Amounts of Labeled Data: Performance often depends heavily on the size of the training set….
+Computationally Expensive to Train: Requires significant computational resources and time….
+Sensitive to Hyperparameter Tuning: Finding the optimal architecture and hyperparameters can be challenging….
+Prone to Overfitting: Requires careful regularization….
+Can Be Difficult to Debug and Understand Why They Make Certain Predictions.</Limitations>
+		<UseCases>Computer Vision: Image classification, object detection, image segmentation….
+Natural Language Processing: Machine translation, text generation, sentiment analysis, question answering….
+Speech Recognition: Converting audio to text….
+Time Series Forecasting: Predicting future values in sequential data….
+Drug Discovery: Identifying potential drug candidates.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>24</Id>
+		<Node>97</Node>
+		<Lvl>3</Lvl>
+		<From>94</From>
+		<Name>Recurrent Neural Networks (RNNs)</Name>
+		<Description>A type of neural network designed to process sequential data, such as text, time series, and audio. They have feedback connections that allow them to maintain a "memory" of past inputs(https://www.scribd.com/document/799371975/Table-of-Mani)</Description>
+		<CoreIdea> Designed for sequential data, using feedback connections to maintain a memory of past inputs.</CoreIdea>
+		<Basis>Designed for sequential data, incorporating feedback connections that allow the network to maintain an internal state (memory) of past inputs….
+Mathematical Representation: The hidden state at time $$t$$, $$h_t$$, is a function of the current input $$x_t$$ and the previous hidden state $$h_{t-1}$$: $$h_t = f(W_h x_t + U_h h_{t-1} + b_h)$$. The output $$y_t$$ is typically a function of $$h_t$$: $$y_t = g(W_y h_t + b_y)$$....
+Learning: Backpropagation through time (BPTT) is used to train the weights.</Basis>
+		<InputData>Typically numerical data (categorical data is encoded, text data is often converted to embeddings). Can handle various input formats depending on the architecture (e.g., images as pixel arrays, sequences as token indices or embeddings).</InputData>
+		<OutputData>The type of output depends on the network architecture and the task: ….
+Classification: Predicted probability distribution over classes or a predicted class label….
+Regression: Predicted continuous value….
+Sequence Generation: A sequence of tokens (e.g., text, music)….
+Image Segmentation: Pixel-wise classification of an image.</OutputData>
+		<ModelRepresentation>Represented by a network architecture (number of layers, types of layers, connections between neurons) and a set of weights and biases associated with each connection and neuron.</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. These models learn complex mappings from input to output based on large amounts of labeled training data, adjusting their weights through optimization algorithms like backpropagation. However, neural networks can also be used in unsupervised and reinforcement learning settings</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>L1 and L2 Weight Regularization: Adding a penalty to the loss function based on the magnitude of the network's weights….
+Dropout: Randomly setting a fraction of neuron outputs to zero during training, forcing the network to learn more robust features….
+Batch Normalization: Normalizing the activations of intermediate layers, which can have a regularizing effect….
+Early Stopping: Monitoring the performance on a validation set and stopping training when the performance starts to degrade, even if the training loss is still decreasing…. 
+Data Augmentation: Creating slightly modified versions of the training data to increase the effective dataset size and improve generalization.</Regularization>
+		<Hyperparameters>Number of Layers: The depth of the network….
+Number of Neurons per Layer: The width of each layer….
+Activation Functions: The non-linear functions used in each layer (e.g., ReLU, sigmoid, tanh)….
+Learning Rate: The step size used during optimization….
+Batch Size: The number of samples per gradient update….
+Number of Epochs: The number of times the entire training dataset is passed through the network….
+Optimizer: The optimization algorithm used (e.g., SGD, Adam, RMSprop) and its specific hyperparameters (e.g., momentum, weight decay)….
+Regularization Parameters: Dropout rate, L1/L2 weight decay strength.</Hyperparameters>
+		<Strengths>Can Learn Complex Patterns: Excellent at modeling highly non-linear relationships and intricate data structures….
+Automatic Feature Learning: Deep networks can learn hierarchical representations of features from raw data…. 
+State-of-the-Art Performance in Many Domains: Including computer vision, natural language processing, and speech recognition.( https://sidddhesh.hashnode.dev/is-there-a-roadmap-for-data-science)</Strengths>
+		<Limitations>Can Be a "Black Box": Difficult to interpret the learned relationships….
+Require Large Amounts of Labeled Data: Performance often depends heavily on the size of the training set….
+Computationally Expensive to Train: Requires significant computational resources and time….
+Sensitive to Hyperparameter Tuning: Finding the optimal architecture and hyperparameters can be challenging….
+Prone to Overfitting: Requires careful regularization….
+Can Be Difficult to Debug and Understand Why They Make Certain Predictions.</Limitations>
+		<UseCases>Computer Vision: Image classification, object detection, image segmentation….
+Natural Language Processing: Machine translation, text generation, sentiment analysis, question answering….
+Speech Recognition: Converting audio to text….
+Time Series Forecasting: Predicting future values in sequential data….
+Drug Discovery: Identifying potential drug candidates.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>25</Id>
+		<Node>98</Node>
+		<Lvl>3</Lvl>
+		<From>94</From>
+		<Name>Long Short-Term Memory (LSTM)</Name>
+		<Description>A specific type of RNN architecture that is better at learning long-range dependencies in sequential data by introducing memory cells and gating mechanisms.</Description>
+		<CoreIdea> A type of RNN that excels at learning long-range dependencies in sequences using memory cells and gates.</CoreIdea>
+		<Basis>A type of RNN with a more complex memory cell structure that includes gates (input, forget, output) to control the flow of information and address the vanishing/exploding gradient problem….
+Mathematical Representation: Involves a series of equations that govern the updates to the cell state and hidden state based on the input and the previous states, using sigmoid and tanh activation functions for the gates and cell state updates.</Basis>
+		<InputData>Typically numerical data (categorical data is encoded, text data is often converted to embeddings). Can handle various input formats depending on the architecture (e.g., images as pixel arrays, sequences as token indices or embeddings).</InputData>
+		<OutputData>The type of output depends on the network architecture and the task: ….
+Classification: Predicted probability distribution over classes or a predicted class label….
+Regression: Predicted continuous value….
+Sequence Generation: A sequence of tokens (e.g., text, music)….
+Image Segmentation: Pixel-wise classification of an image.</OutputData>
+		<ModelRepresentation>Represented by a network architecture (number of layers, types of layers, connections between neurons) and a set of weights and biases associated with each connection and neuron.</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. These models learn complex mappings from input to output based on large amounts of labeled training data, adjusting their weights through optimization algorithms like backpropagation. However, neural networks can also be used in unsupervised and reinforcement learning settings</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>L1 and L2 Weight Regularization: Adding a penalty to the loss function based on the magnitude of the network's weights….
+Dropout: Randomly setting a fraction of neuron outputs to zero during training, forcing the network to learn more robust features….
+Batch Normalization: Normalizing the activations of intermediate layers, which can have a regularizing effect….
+Early Stopping: Monitoring the performance on a validation set and stopping training when the performance starts to degrade, even if the training loss is still decreasing…. 
+Data Augmentation: Creating slightly modified versions of the training data to increase the effective dataset size and improve generalization.</Regularization>
+		<Hyperparameters>Number of Layers: The depth of the network….
+Number of Neurons per Layer: The width of each layer….
+Activation Functions: The non-linear functions used in each layer (e.g., ReLU, sigmoid, tanh)….
+Learning Rate: The step size used during optimization….
+Batch Size: The number of samples per gradient update….
+Number of Epochs: The number of times the entire training dataset is passed through the network….
+Optimizer: The optimization algorithm used (e.g., SGD, Adam, RMSprop) and its specific hyperparameters (e.g., momentum, weight decay)….
+Regularization Parameters: Dropout rate, L1/L2 weight decay strength.</Hyperparameters>
+		<Strengths>Can Learn Complex Patterns: Excellent at modeling highly non-linear relationships and intricate data structures….
+Automatic Feature Learning: Deep networks can learn hierarchical representations of features from raw data…. 
+State-of-the-Art Performance in Many Domains: Including computer vision, natural language processing, and speech recognition.( https://sidddhesh.hashnode.dev/is-there-a-roadmap-for-data-science)</Strengths>
+		<Limitations>Can Be a "Black Box": Difficult to interpret the learned relationships….
+Require Large Amounts of Labeled Data: Performance often depends heavily on the size of the training set….
+Computationally Expensive to Train: Requires significant computational resources and time….
+Sensitive to Hyperparameter Tuning: Finding the optimal architecture and hyperparameters can be challenging….
+Prone to Overfitting: Requires careful regularization….
+Can Be Difficult to Debug and Understand Why They Make Certain Predictions.</Limitations>
+		<UseCases>Computer Vision: Image classification, object detection, image segmentation….
+Natural Language Processing: Machine translation, text generation, sentiment analysis, question answering….
+Speech Recognition: Converting audio to text….
+Time Series Forecasting: Predicting future values in sequential data….
+Drug Discovery: Identifying potential drug candidates.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>26</Id>
+		<Node>99</Node>
+		<Lvl>3</Lvl>
+		<From>94</From>
+		<Name>Deep-Learning</Name>
+		<Description>A subfield of machine learning that utilizes artificial neural networks with multiple layers (deep neural networks)  to learn complex patterns  from large amounts of data(https://aptronsolutions.com/viewblogf/what-is-machine-learning.html)(https://www.qsrailab.com/the-evolution-of-artificial-intelligence-from-concept-to-reality/)</Description>
+		<CoreIdea> Uses neural networks with multiple layers to learn intricate patterns from large datasets.</CoreIdea>
+		<Basis>Utilizes neural networks with multiple hidden layers to learn hierarchical representations of data. The mathematical foundations are the same as those of the underlying neural network architectures (e.g., feed-forward, CNN, RNN), but with a focus on training very large and complex models.</Basis>
+		<InputData>Typically numerical data (categorical data is encoded, text data is often converted to embeddings). Can handle various input formats depending on the architecture (e.g., images as pixel arrays, sequences as token indices or embeddings).</InputData>
+		<OutputData>The type of output depends on the network architecture and the task: ….
+Classification: Predicted probability distribution over classes or a predicted class label….
+Regression: Predicted continuous value….
+Sequence Generation: A sequence of tokens (e.g., text, music)….
+Image Segmentation: Pixel-wise classification of an image.</OutputData>
+		<ModelRepresentation>Represented by a network architecture (number of layers, types of layers, connections between neurons) and a set of weights and biases associated with each connection and neuron.</ModelRepresentation>
+		<LearningAlgorithm>Primarily Supervised Learning. These models learn complex mappings from input to output based on large amounts of labeled training data, adjusting their weights through optimization algorithms like backpropagation. However, neural networks can also be used in unsupervised and reinforcement learning settings</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>L1 and L2 Weight Regularization: Adding a penalty to the loss function based on the magnitude of the network's weights….
+Dropout: Randomly setting a fraction of neuron outputs to zero during training, forcing the network to learn more robust features….
+Batch Normalization: Normalizing the activations of intermediate layers, which can have a regularizing effect….
+Early Stopping: Monitoring the performance on a validation set and stopping training when the performance starts to degrade, even if the training loss is still decreasing…. 
+Data Augmentation: Creating slightly modified versions of the training data to increase the effective dataset size and improve generalization.</Regularization>
+		<Hyperparameters>Number of Layers: The depth of the network….
+Number of Neurons per Layer: The width of each layer….
+Activation Functions: The non-linear functions used in each layer (e.g., ReLU, sigmoid, tanh)….
+Learning Rate: The step size used during optimization….
+Batch Size: The number of samples per gradient update….
+Number of Epochs: The number of times the entire training dataset is passed through the network….
+Optimizer: The optimization algorithm used (e.g., SGD, Adam, RMSprop) and its specific hyperparameters (e.g., momentum, weight decay)….
+Regularization Parameters: Dropout rate, L1/L2 weight decay strength.</Hyperparameters>
+		<Strengths>Can Learn Complex Patterns: Excellent at modeling highly non-linear relationships and intricate data structures….
+Automatic Feature Learning: Deep networks can learn hierarchical representations of features from raw data…. 
+State-of-the-Art Performance in Many Domains: Including computer vision, natural language processing, and speech recognition.( https://sidddhesh.hashnode.dev/is-there-a-roadmap-for-data-science)</Strengths>
+		<Limitations>Can Be a "Black Box": Difficult to interpret the learned relationships….
+Require Large Amounts of Labeled Data: Performance often depends heavily on the size of the training set….
+Computationally Expensive to Train: Requires significant computational resources and time….
+Sensitive to Hyperparameter Tuning: Finding the optimal architecture and hyperparameters can be challenging….
+Prone to Overfitting: Requires careful regularization….
+Can Be Difficult to Debug and Understand Why They Make Certain Predictions.</Limitations>
+		<UseCases>Computer Vision: Image classification, object detection, image segmentation….
+Natural Language Processing: Machine translation, text generation, sentiment analysis, question answering….
+Speech Recognition: Converting audio to text….
+Time Series Forecasting: Predicting future values in sequential data….
+Drug Discovery: Identifying potential drug candidates.</UseCases>
+		<EvaluationMetrics>Accuracy: The proportion of correctly classified instances out of the total number of instances. Accuracy=TP+TN+FP+FN&lt;2&gt;TP+TN….
+Precision: The proportion of correctly predicted positive instances out of all instances predicted as positive. High precision means fewer false positives. Precision=TP+FP&lt;2&gt;TP….
+Recall (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances. High recall means fewer false negatives. Recall=TP+FNTP….
+F1-Score: The harmonic mean of precision and recall. Provides a balanced measure of a model's performance, especially useful when classes are imbalanced. F1Score=2×Precision+RecallPrecision×Recall….
+AUC-ROC Curve: The Area Under the Receiver Operating Characteristic curve. The ROC curve plots the True Positive Rate (Recall) against the False Positive Rate (FPR) at various threshold settings. AUC measures the overall ability of the model to distinguish between classes, with a higher AUC indicating better performance….
+Confusion Matrix: A table that summarizes the performance of a classification model by showing the counts of True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN)….
+Log Loss (Cross-Entropy Loss): A common loss function used in logistic regression and neural networks for classification. It measures the uncertainty of the probabilistic predictions. Lower log loss indicates better performance. LogLoss=−n1∑i=1n[yilog(y^i)+(1−yi)log(1−y^i)] (for binary classification)….
+Cohen's Kappa: Measures the agreement between predicted and actual classifications, correcting for the possibility of agreement occurring by chance. Useful for imbalanced datasets.</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>27</Id>
+		<Node>111</Node>
+		<Lvl>2</Lvl>
+		<From>93</From>
+		<Name>Embeddings</Name>
+		<Description>Low-dimensional, dense vector representations of categorical data (e.g., words, items, users) that capture semantic relationships between them. They are learned through training neural networks</Description>
+		<CoreIdea> Dense, low-dimensional vector representations of categorical data that capture semantic relationships.</CoreIdea>
+		<Basis> Often learned as part of a neural network training process. For example, word embeddings can be learned by training a neural network to predict a word given its context (e.g., Word2Vec, GloVe). Mathematically, they are vector representations in a continuous space, where the distance and direction between vectors encode semantic relationships.</Basis>
+		<InputData>Typically categorical data (e.g., words, user IDs, item IDs).</InputData>
+		<OutputData>Low-dimensional, dense vector representations (embeddings) for each input category. These embeddings can then be used as input to other machine learning models.</OutputData>
+		<ModelRepresentation>Represented by a matrix where each row corresponds to a unique entity (e.g., word, item, user) and the values in the row are the elements of its low-dimensional vector representation.</ModelRepresentation>
+		<LearningAlgorithm>Can be learned through various learning paradigms. Often learned as part of a Supervised Learning task (e.g., in a neural network trained for classification or language modeling). However, they can also be learned using Unsupervised Learning techniques (e.g., Word2Vec, GloVe).</LearningAlgorithm>
+		<LossFunction>The loss function used to learn embeddings depends on the method. For example: ….
+Word2Vec (Skip-gram/CBOW): Negative sampling loss or hierarchical softmax loss….
+Triplet Loss: Used to learn embeddings where similar instances are closer in the embedding space than dissimilar ones….
+Contrastive Loss: Similar to triplet loss, aims to bring embeddings of similar pairs closer and push embeddings of dissimilar pairs further apart.</LossFunction>
+		<Regularization>Regularization techniques used during the training of embedding models (often neural networks) apply here as well (e.g., L2 weight decay, dropout)</Regularization>
+		<Hyperparameters>Embedding Dimension: The size of the embedding vector….
+Hyperparameters of the neural network architecture used to learn the embeddings (if applicable). Hyperparameters specific to the embedding learning algorithm (e.g., window size and number of negative samples for Word2Vec).</Hyperparameters>
+		<Strengths>Capture Semantic Relationships: Represent categorical data in a continuous space where similar items are close together….
+Reduce Dimensionality: Provide a more compact representation of high-dimensional categorical data….
+Improve Performance of Downstream Tasks: Can be used as input features for various machine learning models.</Strengths>
+		<Limitations>Quality Highly Dependent on the Training Data and Method….
+Interpretability Can Be Challenging: Understanding the exact meaning of each dimension in the embedding space can be difficult….
+May Inherit Biases from the Training Data.</Limitations>
+		<UseCases>Recommendation Systems: Representing users and items in a shared embedding space….
+Natural Language Processing: Representing words, sentences, or documents….
+Knowledge Graphs: Representing entities and relationships….
+Visual Similarity Search: Embedding images to find visually similar ones.</UseCases>
+		<EvaluationMetrics>Word Similarity Tasks: Measuring how well the distances between word embeddings correlate with human judgments of semantic similarity….
+Word Analogy Tasks: Assessing the ability of embeddings to capture analogical relationships (e.g., "king - man + woman = queen").</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>28</Id>
+		<Node>0</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Large Language Models (LLMs)</Name>
+		<Description>Deep learning models with a massive number of parameters, trained on vast amounts of text data. They are capable of generating human-like text, translating languages, writing different kinds of creative content, and answering your questions in an informative way.(https://splore.com/compare/chatgpt-vs-splore)</Description>
+		<CoreIdea> Deep learning models with many parameters, trained on vast text data to understand and generate human-like text.</CoreIdea>
+		<Basis>Primarily based on the Transformer architecture, which relies heavily on the self-attention mechanism….</Basis>
+		<InputData>Text sequences (tokenized into numerical representations).</InputData>
+		<OutputData>Predicted probability distribution over the next token in the sequence, or generated text sequences.</OutputData>
+		<ModelRepresentation>Represented by a very large neural network architecture (typically Transformer-based) with a massive number of weights and biases learned from extensive training data. This includes the weights of the attention mechanisms, feed-forward layers, and embedding layers.</ModelRepresentation>
+		<LearningAlgorithm>Primarily trained using Self-Supervised Learning, a form of unsupervised learning where the data itself provides the labels. For example, predicting the next word in a sentence. After pre-training, they are often fine-tuned on specific Supervised Learning tasks.</LearningAlgorithm>
+		<LossFunction>Cross-Entropy Loss (for language modeling): The primary loss function used during pre-training is to predict the next token in a sequence. This is a form of categorical cross-entropy applied to the vocabulary….
+During fine-tuning for specific downstream tasks, the loss function is adapted to the task (e.g., cross-entropy for classification, MSE for regression)….</LossFunction>
+		<Regularization>Weight Decay (L2 Regularization): Applied to the large number of parameters....
+Dropout: Used in various parts of the Transformer architecture....
+Attention Dropout: Specifically applied to the attention weights....
+Layer Normalization: Contributes to more stable training and can have a regularizing effect.</Regularization>
+		<Hyperparameters>Number of Layers (Transformer Blocks): The depth of the Transformer….
+Number of Attention Heads: The number of parallel self-attention mechanisms….
+Embedding Dimension: The size of the word/token embeddings….
+Hidden Layer Size (Feed-forward Networks within Transformer): The dimensionality of the intermediate layers….
+Dropout Rates (for attention and feed-forward layers)….
+Learning Rate and other optimizer hyperparameters….
+Batch Size….
+Sequence Length….</Hyperparameters>
+		<Strengths>Excellent at Understanding and Generating Human-Like Text….
+Can Perform a Wide Range of Natural Language Processing Tasks: Translation, summarization, question answering, etc….
+Contextual Understanding: Transformers can effectively model long-range dependencies in sequences….
+Few-Shot and Zero-Shot Learning Capabilities: Can perform tasks with limited or no task-specific training data.</Strengths>
+		<Limitations>Very Large and Computationally Expensive to Train and Deploy….
+Can Be Difficult to Interpret Their Reasoning….
+Potential for Bias and Misinformation Generation….
+Can Struggle with Tasks Requiring Real-World Knowledge or Common Sense Not Explicitly in the Training Data….
+Vulnerable to Adversarial Attacks….
+Can Be Sensitive to Prompt Design.</Limitations>
+		<UseCases>Text Generation: Writing articles, stories, code, etc….
+Machine Translation: Translating text between languages….
+Question Answering: Answering questions based on provided context….
+Summarization: Condensing long texts into shorter versions….
+Chatbots and Conversational AI: Building interactive dialogue systems.</UseCases>
+		<EvaluationMetrics>Perplexity: Measures how well the model predicts a sequence of tokens. Lower perplexity indicates better performance….
+BLEU (Bilingual Evaluation Understudy): Used for machine translation, measures the similarity between the machine-translated text and one or more reference translations….
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation): Used for text summarization, measures the overlap of n-grams between the generated summary and reference summaries….
+METEOR (Metric for Evaluation of Translation with Explicit Ordering): Another metric for machine translation that addresses some of the limitations of BLEU….</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>29</Id>
+		<Node>6</Node>
+		<Lvl>2</Lvl>
+		<From>6</From>
+		<Name>Transformers</Name>
+		<Description>A novel neural network architecture that relies heavily on the attention mechanism to model relationships between different parts of the input sequence. They have shown remarkable success in natural language processing and are the foundation for many modern LLMs.</Description>
+		<CoreIdea> Neural network architecture using attention mechanisms to model relationships in sequential data, crucial for modern LLMs.</CoreIdea>
+		<Basis>Self-Attention: Calculates a weighted sum of input tokens based on their relevance to each other: $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{Q K^T}{\sqrt{d_k}}\right) V$$, where $$Q$$ (Query), $$K$$ (Key), and $$V$$ (Value) are linear transformations of the input embeddings. Multi-head attention involves multiple parallel attention mechanisms….
+Feed-forward Layers, Residual Connections, Layer Normalization: These are also crucial components of the Transformer architecture….
+Training: Trained on massive text datasets using self-supervised learning objectives (e.g., next token prediction).</Basis>
+		<InputData>Text sequences (tokenized into numerical representations).</InputData>
+		<OutputData>Predicted probability distribution over the next token in the sequence, or generated text sequences.</OutputData>
+		<ModelRepresentation>Represented by a very large neural network architecture (typically Transformer-based) with a massive number of weights and biases learned from extensive training data. This includes the weights of the attention mechanisms, feed-forward layers, and embedding layers.</ModelRepresentation>
+		<LearningAlgorithm>Primarily trained using Self-Supervised Learning, a form of unsupervised learning where the data itself provides the labels. For example, predicting the next word in a sentence. After pre-training, they are often fine-tuned on specific Supervised Learning tasks.</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>Weight Decay (L2 Regularization): Applied to the large number of parameters....
+Dropout: Used in various parts of the Transformer architecture....
+Attention Dropout: Specifically applied to the attention weights....
+Layer Normalization: Contributes to more stable training and can have a regularizing effect.</Regularization>
+		<Hyperparameters>Number of Layers (Transformer Blocks): The depth of the Transformer….
+Number of Attention Heads: The number of parallel self-attention mechanisms….
+Embedding Dimension: The size of the word/token embeddings….
+Hidden Layer Size (Feed-forward Networks within Transformer): The dimensionality of the intermediate layers….
+Dropout Rates (for attention and feed-forward layers)….
+Learning Rate and other optimizer hyperparameters….
+Batch Size….
+Sequence Length….</Hyperparameters>
+		<Strengths>Excellent at Understanding and Generating Human-Like Text….
+Can Perform a Wide Range of Natural Language Processing Tasks: Translation, summarization, question answering, etc….
+Contextual Understanding: Transformers can effectively model long-range dependencies in sequences….
+Few-Shot and Zero-Shot Learning Capabilities: Can perform tasks with limited or no task-specific training data.</Strengths>
+		<Limitations>Very Large and Computationally Expensive to Train and Deploy….
+Can Be Difficult to Interpret Their Reasoning….
+Potential for Bias and Misinformation Generation….
+Can Struggle with Tasks Requiring Real-World Knowledge or Common Sense Not Explicitly in the Training Data….
+Vulnerable to Adversarial Attacks….
+Can Be Sensitive to Prompt Design.</Limitations>
+		<UseCases>Text Generation: Writing articles, stories, code, etc….
+Machine Translation: Translating text between languages….
+Question Answering: Answering questions based on provided context….
+Summarization: Condensing long texts into shorter versions….
+Chatbots and Conversational AI: Building interactive dialogue systems.</UseCases>
+		<EvaluationMetrics>Perplexity: Measures how well the model predicts a sequence of tokens. Lower perplexity indicates better performance….
+BLEU (Bilingual Evaluation Understudy): Used for machine translation, measures the similarity between the machine-translated text and one or more reference translations….
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation): Used for text summarization, measures the overlap of n-grams between the generated summary and reference summaries….
+METEOR (Metric for Evaluation of Translation with Explicit Ordering): Another metric for machine translation that addresses some of the limitations of BLEU….</EvaluationMetrics>
+	</Model>
+	<Model>
+		<Id>30</Id>
+		<Node>0</Node>
+		<Lvl>1</Lvl>
+		<From>0</From>
+		<Name>Model Deployment</Name>
+		<Description>The process of integrating a trained machine learning model into a production environment where it can be used to make predictions on new, 1 unseen data. This involves various steps such as packaging the model, setting up infrastructure, creating APIs, and monitoring performance.(https://analyticspedia.com/roadmaps/the-ultimate-roadmap-to-master-analytics-model-deployment/)</Description>
+		<CoreIdea> Integrating a trained machine learning model into a production environment for making predictions on new data.</CoreIdea>
+		<Basis>Involves applying concepts from software engineering, computer architecture, and sometimes distributed computing. The mathematical models themselves are already trained; deployment focuses on making them accessible and scalable for real-world use. This might involve optimization for inference speed and resource utilization.</Basis>
+		<InputData>New, unseen data in the same format that the model was trained on (the "input" of the trained model).</InputData>
+		<OutputData>Predictions from the trained model (the "output" of the trained model), which could be class labels, continuous values, probabilities, etc., depending on the model and the task.</OutputData>
+		<ModelRepresentation>N/A</ModelRepresentation>
+		<LearningAlgorithm>N/A</LearningAlgorithm>
+		<LossFunction>N/A</LossFunction>
+		<Regularization>N/A</Regularization>
+		<Hyperparameters>N/A</Hyperparameters>
+		<Strengths>The "strengths" here relate to the successful application of the trained model:…
+Automation of Predictions: Enables efficient and scalable decision-making….
+Integration with Existing Systems: Allows leveraging machine learning insights within real-world applications….
+Real-Time Decision Making: For applications requiring immediate predictions.</Strengths>
+		<Limitations>Requires Infrastructure and Maintenance….
+Potential for Model Drift: Performance can degrade over time as the underlying data distribution changes….
+Security and Privacy Concerns Related to Data Handling….
+Can Introduce Latency in Real-Time Applications.</Limitations>
+		<UseCases>Enables the use of any of the above models in real-world applications, such as: ….
+Real-time fraud detection in banking applications….
+Personalized product recommendations on e-commerce websites….
+Automated medical image analysis for faster diagnoses….
+Virtual assistants powered by LLMs.</UseCases>
+		<EvaluationMetrics>Latency: The time it takes for the model to make a prediction….
+Throughput: The number of predictions the model can handle in a given time….
+Stability and Reliability: The consistency of the model's performance over time….
+Monitoring of Performance Metrics: Tracking the chosen evaluation metrics on live data to detect model drift.</EvaluationMetrics>
+	</Model>
+</Models>
