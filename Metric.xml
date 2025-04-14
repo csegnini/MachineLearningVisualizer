@@ -46,7 +46,7 @@
 		<From>89</From>
 		<Name>Purity</Name>
 		<Purpose>To measure the extent to which each cluster contains data points from a single class.</Purpose>
-		<Formula>Purity = \frac{1}{N} \sum_{i=1}^{k} max_j |c_i \cap t_j|</Formula>
+		<Formula>\[ Purity = \frac{1}{N} \sum_{i=1}^{k} max_j |c_i \cap t_j|\]</Formula>
 		<Interpretation>A higher purity score indicates that the cluster contains predominantly data points from a single class, suggesting good cluster homogeneity.</Interpretation>
 		<Applications>When evaluating clustering results where the ground truth class labels are known, to assess how well clusters correspond to classes.</Applications>
 		<Limitations>Doesn't consider the distribution of data points within clusters, high purity can be achieved with many small clusters.</Limitations>
@@ -72,7 +72,7 @@
 		<From>89</From>
 		<Name>Normalized Mutual Information (NMI)</Name>
 		<Purpose>To measure the statistical dependence between cluster assignments and true labels.</Purpose>
-		<Formula>NMI(U, V) = \frac{2 * I(U; V)}{H(U) + H(V)}</Formula>
+		<Formula>\[ NMI(U, V) = \frac{2 * I(U; V)}{H(U) + H(V)}\]</Formula>
 		<Interpretation>A higher NMI score indicates a stronger agreement between the cluster assignments and the prior knowledge or external standard.</Interpretation>
 		<Applications>When evaluating clustering results with known ground truth labels, especially when dealing with clusters of varying sizes.</Applications>
 		<Limitations>Can be sensitive to the number of clusters, may require normalization.</Limitations>
@@ -85,7 +85,7 @@
 		<From>3</From>
 		<Name>Standard error</Name>
 		<Purpose>To estimate the variability of a sample statistic.</Purpose>
-		<Formula>SE = \frac{\sigma}{\sqrt{n}}</Formula>
+		<Formula>\[ SE = \frac{\sigma}{\sqrt{n}}\]</Formula>
 		<Interpretation>A smaller standard error indicates that the sample mean is a more precise estimate of the population mean.</Interpretation>
 		<Applications>When estimating the precision of a sample statistic, such as the mean, and constructing confidence intervals.</Applications>
 		<Limitations>Only reflects sampling variability, does not account for other sources of error.</Limitations>
@@ -98,7 +98,7 @@
 		<From>3</From>
 		<Name>MSE</Name>
 		<Purpose>To measure the average squared difference between predicted and actual values.</Purpose>
-		<Formula>MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Formula>
+		<Formula>\[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</Formula>
 		<Interpretation>MSE is interpreted as the average squared error in the units of the target variable squared. Lower MSE indicates better model fit.</Interpretation>
 		<Applications>When evaluating regression models where minimizing the average squared error is the primary goal.</Applications>
 		<Limitations>Sensitive to outliers, gives more weight to larger errors, not in the same units as the target variable.</Limitations>
@@ -111,7 +111,7 @@
 		<From>3</From>
 		<Name>RSE</Name>
 		<Purpose>To measure the goodness of fit of a regression model.</Purpose>
-		<Formula>RSE = \sqrt{\frac{RSS}{n - 2}}</Formula>
+		<Formula>\[ RSE = \sqrt{\frac{RSS}{n - 2}}\]</Formula>
 		<Interpretation>RSE is interpreted as the average error in the units of the target variable. Lower RSE indicates a better model fit.</Interpretation>
 		<Applications>When assessing the fit of a regression model and understanding the error in the units of the response variable.</Applications>
 		<Limitations>Assumes that the model errors are normally distributed, can be affected by outliers.</Limitations>
@@ -124,7 +124,7 @@
 		<From>3</From>
 		<Name>RSS</Name>
 		<Purpose>To measure the total squared difference between the predicted and actual values.</Purpose>
-		<Formula>RSS = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Formula>
+		<Formula>\[ RSS = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</Formula>
 		<Interpretation>RSS represents the total variance unexplained by the regression model. Lower RSS indicates a better fit.</Interpretation>
 		<Applications>When assessing the fit of a regression model and understanding the total variance unexplained by the model.</Applications>
 		<Limitations>Provides a measure of error but not of predictive accuracy.</Limitations>
@@ -150,7 +150,7 @@
 		<From>31</From>
 		<Name>Mean Squared Error (MSE)</Name>
 		<Purpose>To measure the average squared difference between predicted and actual values.</Purpose>
-		<Formula>MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2</Formula>
+		<Formula>\[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</Formula>
 		<Interpretation>MSE is interpreted as the average squared error in the units of the target variable squared. Lower MSE indicates better model fit.</Interpretation>
 		<Applications>When evaluating regression models where minimizing the average squared error is the primary goal.</Applications>
 		<Limitations>Sensitive to outliers, gives more weight to larger errors, not in the same units as the target variable.</Limitations>
@@ -163,7 +163,7 @@
 		<From>31</From>
 		<Name>Root Mean Squared Error (RMSE)</Name>
 		<Purpose>To measure the square root of the average squared difference between predicted and actual values.</Purpose>
-		<Formula>RMSE = \sqrt{MSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}</Formula>
+		<Formula>\[ RMSE = \sqrt{MSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}\]</Formula>
 		<Interpretation>RMSE is in the same units as the target variable, making it easier to interpret the average prediction error. Lower values are better.</Interpretation>
 		<Applications>When evaluating regression models and when the error needs to be in the same units as the target variable.</Applications>
 		<Limitations>Sensitive to outliers.</Limitations>
@@ -176,7 +176,7 @@
 		<From>31</From>
 		<Name>Mean Absolute Error (MAE)</Name>
 		<Purpose>To measure the average absolute difference between predicted and actual values.</Purpose>
-		<Formula>MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|</Formula>
+		<Formula>\[ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|\]</Formula>
 		<Interpretation>MAE is interpreted as the average absolute difference between predicted and actual values. Lower values indicate better model accuracy.</Interpretation>
 		<Applications>When evaluating regression models and when robustness to outliers is desired.</Applications>
 		<Limitations>Less sensitive to outliers than MSE, but doesn't penalize large errors as much.</Limitations>
@@ -189,7 +189,7 @@
 		<From>31</From>
 		<Name>R-squared (Coefficient of Determination)</Name>
 		<Purpose>To measure the proportion of the variance in the dependent variable that is predictable from the independent variables.</Purpose>
-		<Formula>R^2 = 1 - \frac{RSS}{TSS}</Formula>
+		<Formula>\[ R^2 = 1 - \frac{RSS}{TSS}\]</Formula>
 		<Interpretation>R-squared is interpreted as the proportion of the variance in the dependent variable explained by the regression model. Values closer to 1 indicate a better fit.</Interpretation>
 		<Applications>When evaluating regression models and assessing the proportion of variance explained by the model.</Applications>
 		<Limitations>Can be inflated by adding more predictors, even if they are not relevant, doesn't indicate causation.</Limitations>
@@ -202,7 +202,7 @@
 		<From>31</From>
 		<Name>Adjusted R-squared</Name>
 		<Purpose>To measure the proportion of the variance in the dependent variable that is predictable from the independent variables, adjusted for the number of predictors.</Purpose>
-		<Formula>Adjusted R^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - p - 1}</Formula>
+		<Formula>\[ Adjusted R^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - p - 1}\]</Formula>
 		<Interpretation>Adjusted R-squared is interpreted similarly to R-squared, but it accounts for the number of predictors in the model. It is useful for comparing models with different numbers of independent variables.</Interpretation>
 		<Applications>When comparing regression models with different numbers of predictors and assessing model fit.</Applications>
 		<Limitations>May not always accurately reflect the true explanatory power of the model.</Limitations>
@@ -215,7 +215,7 @@
 		<From>31</From>
 		<Name>Mean Absolute Percentage Error (MAPE)</Name>
 		<Purpose>To measure the average percentage error of predictions.</Purpose>
-		<Formula>MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100</Formula>
+		<Formula>\[ MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\]</Formula>
 		<Interpretation>MAPE is interpreted as the average percentage error of predictions. Lower MAPE indicates better prediction accuracy.</Interpretation>
 		<Applications>When evaluating regression models and when the error needs to be expressed as a percentage.</Applications>
 		<Limitations>Undefined when actual values are zero, can be skewed by small values.</Limitations>
@@ -254,7 +254,7 @@
 		<From>49</From>
 		<Name>Accuracy</Name>
 		<Purpose>To measure the overall proportion of correct predictions.</Purpose>
-		<Formula>Accuracy = \frac{TP + TN}{TP + TN + FP + FN}</Formula>
+		<Formula>\[ Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\]</Formula>
 		<Interpretation>Accuracy is interpreted as the overall proportion of correct predictions. Higher accuracy is generally desirable, but it can be misleading in imbalanced classification problems.</Interpretation>
 		<Applications>When evaluating classification models on balanced datasets where all classes are equally important.</Applications>
 		<Limitations>Can be misleading in imbalanced classification problems, gives equal weight to all classes.</Limitations>
@@ -267,7 +267,7 @@
 		<From>49</From>
 		<Name>Precision</Name>
 		<Purpose>To measure the proportion of correctly predicted positive instances out of all instances predicted as positive.</Purpose>
-		<Formula>Precision = \frac{TP}{TP + FP}</Formula>
+		<Formula>\[ Precision = \frac{TP}{TP + FP}\]</Formula>
 		<Interpretation>Precision is interpreted as the proportion of positive identifications that were actually correct. High precision is important when the cost of false positives is high.</Interpretation>
 		<Applications>When evaluating classification models and when minimizing false positives is crucial.</Applications>
 		<Limitations>Ignores false negatives, can be high even if the model misses many positive cases.</Limitations>
@@ -280,7 +280,7 @@
 		<From>49</From>
 		<Name>Recall (Sensitivity or True Positive Rate)</Name>
 		<Purpose>To measure the proportion of correctly predicted positive instances out of all actual positive instances.</Purpose>
-		<Formula>Recall = \frac{TP}{TP + FN}</Formula>
+		<Formula>\[ Recall = \frac{TP}{TP + FN}\]</Formula>
 		<Interpretation>Recall is interpreted as the proportion of actual positives that were correctly identified. High recall is important when the cost of false negatives is high.</Interpretation>
 		<Applications>When evaluating classification models and when minimizing false negatives is crucial.</Applications>
 		<Limitations>Ignores false positives, can be high even if the model makes many incorrect positive predictions.</Limitations>
@@ -293,7 +293,7 @@
 		<From>49</From>
 		<Name>F1-Score</Name>
 		<Purpose>To provide a balanced measure of precision and recall.</Purpose>
-		<Formula>F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}</Formula>
+		<Formula>\[ F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}\]</Formula>
 		<Interpretation>The F1-score is interpreted as the harmonic mean of precision and recall. It balances the trade-off between precision and recall, and higher F1-scores are better.</Interpretation>
 		<Applications>When evaluating classification models and when balancing precision and recall is important.</Applications>
 		<Limitations>Provides a balanced view but may not be suitable if precision or recall is significantly more important.</Limitations>
@@ -332,7 +332,7 @@
 		<From>48</From>
 		<Name>Log Loss (Cross-Entropy Loss)</Name>
 		<Purpose>To measure the uncertainty of the probabilistic predictions.</Purpose>
-		<Formula>Log Loss = - \frac{1}{n} \sum_{i=1}^{n} [y_i \cdot \log(\hat{y}_i) + (1 - y_i) \cdot \log(1 - \hat{y}_i)]</Formula>
+		<Formula>\[ Log Loss = - \frac{1}{n} \sum_{i=1}^{n} [y_i \cdot \log(\hat{y}_i) + (1 - y_i) \cdot \log(1 - \hat{y}_i)]\]</Formula>
 		<Interpretation>Log loss is interpreted as a measure of the model's uncertainty in its predictions. Lower log loss values indicate better model calibration.</Interpretation>
 		<Applications>When evaluating classification models that predict probabilities, especially in logistic regression and neural networks.</Applications>
 		<Limitations>Sensitive to misclassifications, requires probabilistic predictions.</Limitations>
@@ -358,7 +358,7 @@
 		<From>60</From>
 		<Name>Mallow’s Cp</Name>
 		<Purpose>To assess the goodness of fit of a regression model while penalizing model complexity.</Purpose>
-		<Formula>C_p = \frac{SSE_p}{\hat{\sigma}^2} + 2p - n</Formula>
+		<Formula>\[ C_p = \frac{SSE_p}{\hat{\sigma}^2} + 2p - n\]</Formula>
 		<Interpretation>Mallowâ€™s Cp is interpreted as a criterion for model selection, balancing goodness of fit and model complexity. Models with lower Cp values are generally preferred.</Interpretation>
 		<Applications>When selecting the best subset of predictors in regression models, balancing goodness of fit and model complexity.</Applications>
 		<Limitations>Computationally expensive for a large number of predictors.</Limitations>
@@ -371,7 +371,7 @@
 		<From>60</From>
 		<Name>Akaike information criterion (AIC)</Name>
 		<Purpose>To compare the quality of statistical models for a given set of data.</Purpose>
-		<Formula>AIC = 2k - 2ln(L)</Formula>
+		<Formula>\[ AIC = 2k - 2ln(L)\]</Formula>
 		<Interpretation>AIC is interpreted as a measure for comparing the quality of statistical models, balancing goodness of fit and model complexity. Lower AIC values are preferred.</Interpretation>
 		<Applications>When comparing statistical models and selecting the best one based on goodness of fit and model complexity.</Applications>
 		<Limitations>Can overfit if the sample size is small, relies on model assumptions.</Limitations>
@@ -384,7 +384,7 @@
 		<From>60</From>
 		<Name>Bayesian information criterion (BIC)</Name>
 		<Purpose>To compare the quality of statistical models for a given set of data, penalizing model complexity more heavily than AIC.</Purpose>
-		<Formula>BIC = k \cdot ln(n) - 2ln(L)</Formula>
+		<Formula>\[ BIC = k \cdot ln(n) - 2ln(L)\]</Formula>
 		<Interpretation>BIC is interpreted similarly to AIC but penalizes model complexity more heavily. Lower BIC values are preferred for model selection when model parsimony is important.</Interpretation>
 		<Applications>When comparing statistical models and selecting the best one, with a stronger penalty for model complexity than AIC.</Applications>
 		<Limitations>Penalizes model complexity, but relies on model assumptions.</Limitations>
@@ -410,7 +410,7 @@
 		<From>76</From>
 		<Name>Purity</Name>
 		<Purpose>To measure the extent to which each cluster contains data points from a single class.</Purpose>
-		<Formula>Purity = \frac{1}{N} \sum_{i=1}^{k} max_j |c_i \cap t_j|</Formula>
+		<Formula>\[ Purity = \frac{1}{N} \sum_{i=1}^{k} max_j |c_i \cap t_j|\]</Formula>
 		<Interpretation>A higher purity score indicates that the cluster contains predominantly data points from a single class, suggesting good cluster homogeneity.</Interpretation>
 		<Applications>When evaluating clustering results where the ground truth class labels are known, to assess how well clusters correspond to classes.</Applications>
 		<Limitations>Doesn't consider the distribution of data points within clusters, high purity can be achieved with many small clusters.</Limitations>
@@ -514,7 +514,7 @@
 		<From>13</From>
 		<Name>Accuracy</Name>
 		<Purpose>To measure the overall proportion of correct predictions.</Purpose>
-		<Formula>Accuracy = \frac{TP + TN}{TP + TN + FP + FN}</Formula>
+		<Formula>\[ Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\]</Formula>
 		<Interpretation>Accuracy is interpreted as the overall proportion of correct predictions. Higher accuracy is generally desirable, but it can be misleading in imbalanced classification problems.</Interpretation>
 		<Applications>When evaluating classification models on balanced datasets where all classes are equally important.</Applications>
 		<Limitations>Can be misleading in imbalanced classification problems, gives equal weight to all classes.</Limitations>
@@ -527,7 +527,7 @@
 		<From>13</From>
 		<Name>Precision</Name>
 		<Purpose>To measure the proportion of correctly predicted positive instances out of all instances predicted as positive.</Purpose>
-		<Formula>Precision = \frac{TP}{TP + FP}</Formula>
+		<Formula>\[ Precision = \frac{TP}{TP + FP}\]</Formula>
 		<Interpretation>Precision is interpreted as the proportion of positive identifications that were actually correct. High precision is important when the cost of false positives is high.</Interpretation>
 		<Applications>When evaluating classification models and when minimizing false positives is crucial.</Applications>
 		<Limitations>Ignores false negatives, can be high even if the model misses many positive cases.</Limitations>
@@ -540,7 +540,7 @@
 		<From>13</From>
 		<Name>Recall(true positive rate)</Name>
 		<Purpose>To measure the proportion of correctly predicted positive instances out of all actual positive instances.</Purpose>
-		<Formula>Recall = \frac{TP}{TP + FN}</Formula>
+		<Formula>\[ Recall = \frac{TP}{TP + FN}\]</Formula>
 		<Interpretation>Recall is interpreted as the proportion of actual positives that were correctly identified. High recall is important when the cost of false negatives is high.</Interpretation>
 		<Applications>When evaluating classification models and when minimizing false negatives is crucial.</Applications>
 		<Limitations>Ignores false positives, can be high even if the model makes many incorrect positive predictions.</Limitations>
@@ -553,7 +553,7 @@
 		<From>13</From>
 		<Name>False positive rate</Name>
 		<Purpose>To measure the proportion of negative instances that are incorrectly classified as positive.</Purpose>
-		<Formula>FPR = \frac{FP}{FP + TN}</Formula>
+		<Formula>\[ FPR = \frac{FP}{FP + TN}\]</Formula>
 		<Interpretation>The proportion of negative instances that are incorrectly classified as positive.</Interpretation>
 		<Applications>When analyzing the trade-off between false positives and false negatives in classification.</Applications>
 		<Limitations>Focuses only on the proportion of negative instances that are incorrectly classified as positive.</Limitations>
@@ -605,7 +605,7 @@
 		<From>16</From>
 		<Name>Perplexity</Name>
 		<Purpose>To evaluate how well a language model predicts a sequence of words.</Purpose>
-		<Formula>Perplexity = 2^{H(p)}</Formula>
+		<Formula>\[ Perplexity = 2^{H(p)}\]</Formula>
 		<Interpretation>Lower perplexity indicates that the language model is better at predicting the next word in a sequence.</Interpretation>
 		<Applications>When evaluating the performance of language models.</Applications>
 		<Limitations>Correlates poorly with human judgment of text quality, sensitive to vocabulary size.</Limitations>
@@ -642,7 +642,7 @@
 		<Node>19</Node>
 		<Lvl>3</Lvl>
 		<From>16</From>
-		<Name>METEOR </Name>
+		<Name>METEOR</Name>
 		<Purpose>The purpose of the Metric for Evaluation of Translation with Explicit Ordering is to evaluate the quality of machine-translated text, considering precision and recall.</Purpose>
 		<Formula>N/A</Formula>
 		<Interpretation>Higher METEOR scores indicate better translation quality, considering both precision and recall, and word order.</Interpretation>
