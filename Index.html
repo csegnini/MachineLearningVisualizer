@@ -53,7 +53,7 @@
   .left { position: absolute; margin: auto; top: 0; bottom: 0; left: 4%; height: 5px; width: 5px; transform: rotate(135deg); -webkit-transform: rotate(135deg); }
 
   #MLworkflow { width:100vw; height: 100vh; }
-  #infocon {position: absolute; top: 4vh;left: 99vw; width: 59vw;height: 95vh; resize: horizontal; overflow: auto; transform-origin: left;transform: scale(-1);opacity:0; display: none; overflow: hidden;z-index:2;}
+  #infocon {position: absolute; top: 4vh;left: 99vw; width: 45vw;height: 95vh; resize: horizontal; overflow: auto; transform-origin: left;transform: scale(-1);opacity:0; display: none; overflow: hidden;z-index:2;}
   #info { position: absolute; top: 0; left: 0; width: 98%; height: 98%; background: #ececec; margin: 2%; border-radius: 3px; box-shadow: 5px 5px 10px -3px #554f4f; padding: 1%; padding-left: 5%; padding-right: 5%; box-sizing: border-box; overflow-y: auto; transform: scale(-1); }
   #infoClose { z-index: 3; color: #057a8f; position: absolute; top: 0px; right: 0px; height: 17px; width: 17px; font-size: 130%; line-height: 80%; background: #d5d5d5; text-align: center; border-radius: 2px; cursor: pointer; }
   #infoClose:hover { color: #212020; border-color: #212020;}
@@ -98,7 +98,7 @@
     <span id="glass">🔍</span>
   </div>
   <footer>
-    <p>This project is being developed by Christopher Segnini. We encouraged contributions! Please feel free to use this resource and <a href="https://github.com/csegnini/MachineLearningVisualizer">contact us</a> if you're interested in collaborating.</p>
+    <p>Please feel free to use this resource and <a href="https://github.com/csegnini/MachineLearningVisualizer">contact me</a> if you're interested in collaborating. Hope you find this humble resource useful, Christopher Segnini. </p>
     <p>The text in this document, except where specific citations are provided, was generated with the assistance of<a
         href="https://gemini.google.com/app">&MediumSpace;Gemini Advanced 2.0 Flash</a></p>
   </footer>
@@ -259,6 +259,15 @@
         });
     }
    
+    function nodeFocus(){
+      let nodePosition = network.getPositions(activeNodeId);
+      for (let key in nodePosition) {
+        let position = nodePosition[key];
+        focusOpts = {'position': {'x':position.x, 'y':position.y},'offset': {'x':-(window.innerWidth / 4), 'y':-175},'scale': 0.3,'animation': true}}
+        Object.keys(network.body.nodes).forEach(nodeId => {network.body.nodes[nodeId].setOptions({"borderWidth": 1, font: {'strokeWidth': 0, 'strokeColor': '#fff'}})});
+        network.body.nodes[activeNodeId].setOptions({"borderWidth": 2, font: {'strokeWidth': 1,'strokeColor': '#000000'}});
+        network.moveTo(focusOpts)}
+
 
     function handleNetworkClick(params) {
       if (params.nodes.length > 0) {
@@ -267,6 +276,7 @@
         if (node) {
           const nodePath = getNodePath(activeNodeId);
           displayNodeDetails(node, nodePath);
+          nodeFocus();
         }
       }
     }
@@ -293,6 +303,7 @@
         if (node) {
           const nodePath = getNodePath(activeNodeId);
           displayNodeDetails(node, nodePath);
+          nodeFocus();
         }
       }
     }
@@ -304,7 +315,15 @@
         initialize();
       });
 
-      $(document).dblclick(function(event) {if(event.target.id == ""){$infocon.css("display", "none").animate({ opacity: 0 }, 500)}});
+      $(document).dblclick(function(event) {if(event.target.id == ""){$infocon.css("display", "none").animate({ opacity: 0 }, 500)}
+
+
+      
+
+        
+    
+    
+    });
      
       initializeNetwork()
       setupEventHandlers()});
