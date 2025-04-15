@@ -1,1 +1,327 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Concept Visualizer</title>
+  <!--  
+  MIT License
+
+  Copyright (c) 2025 Christopher Segnini  
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.-->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script id="MathJax Formulae" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <style>
+  @font-face { font-family: 'Titillium Web'; font-style: normal; font-weight: 400; src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(Titillium-Regular.woff) format('woff'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+  @font-face { font-family: 'Titillium Web'; font-style: normal; font-weight: 600; src: local('Titillium WebSemiBold'), local('TitilliumWeb-SemiBold'), url(Titillium-Semibold.woff) format('woff'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+ 
+  body, html { position: absolute; margin: 0; padding: 0; width: 100%; left: 0; top: 0; height: 100%; font-size: 2vmin; font-weight: 400; font-family: 'Titillium Web', sans-serif; -webkit-font-smoothing: antialiased !important; -moz-osx-font-smoothing: grayscale; -moz-font-smoothing: antialiased; overflow: hidden; }
+  h1 { margin-top: 2%; margin-bottom: 1%; margin-left: -1%; font-size: 150%; color: #057a8f; } 
+  h2 { position: relative; float: none; clear: both; margin: 1%; margin-bottom: 0; font-size: 100%;}
+  h5 { position: relative; float: none; clear: both; width: 100%; margin: 0; padding: 0; top: 4px; color: #8c8c8c; font-weight: 400; font-size: 75%; right: 20px; text-align: right}
+  p { position: relative; float: none; clear: both; margin: 1%; margin-top: 0.2%; font-size: 80%;}
+  
+  .ui-autocomplete { background-color: #f0f0f0; border: 1px solid #ccc; padding: 5px; list-style-type: none; max-height: 200px; overflow-y: auto; font-family: 'Titillium Web', sans-serif;  z-index: 1000; position: absolute}
+  .ui-menu-item {padding: 5px 10px;cursor: pointer; font-size: 90%}
+  .ui-state-active {background-color: #057a8f;color: white; }
+  .ui-menu-item:nth-child(odd) {background-color: #e8e8e8}
+  .arrow { border: solid #5ea1ad; border-width: 0 3px 3px 0; display: inline-block; padding: 3px; z-index: 10; cursor: pointer; }
+  .arrow:hover { border-color: #000; transition: 50ms; }
+  .right { position: absolute; margin: auto; top: 0; bottom: 0; right: 2%; height: 5px; width: 5px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
+  .left { position: absolute; margin: auto; top: 0; bottom: 0; left: 4%; height: 5px; width: 5px; transform: rotate(135deg); -webkit-transform: rotate(135deg); }
+
+  #MLworkflow { width:100vw; height: 100vh; }
+  #infocon {position: absolute; top: 4vh;left: 99vw; width: 45vw;height: 95vh; resize: horizontal; overflow: auto; transform-origin: left;transform: scale(-1);opacity:0; display: none; overflow: hidden;z-index:2;}
+  #info { position: absolute; top: 0; left: 0; width: 98%; height: 98%; background: #ececec; margin: 2%; border-radius: 3px; box-shadow: 5px 5px 10px -3px #554f4f; padding: 1%; padding-left: 5%; padding-right: 5%; box-sizing: border-box; overflow-y: auto; transform: scale(-1); }
+  #infoClose { z-index: 3; color: #057a8f; position: absolute; top: 0px; right: 0px; height: 17px; width: 17px; font-size: 130%; line-height: 80%; background: #d5d5d5; text-align: center; border-radius: 2px; cursor: pointer; }
+  #infoClose:hover { color: #212020; border-color: #212020;}
+  #lookupCon{position: fixed;top: 7vmin;left: 10px; width: 37vw; height: 5vh; min-height: 15px;}
+  #lookup{position: absolute; top: 0px; left: 0px; width: 100%; height: 5vh; min-height: 15px; border: solid 1px #ededed; font-size: 100%; text-indent: 3px; font-family: 'Titillium Web'; outline: none;border-radius: 3px; background: #fafafa}
+  #lookup:active, #lookup:focus{border: solid 1px #efefef}
+  #glass {opacity: 0.7;position: absolute; margin: auto; top: 0; bottom: 0; right: 2px; padding-left: 5px; font-size: 125%; line-height: 200%; border-left: solid #ececec 1px;}
+  #main{position: absolute; top: 0;left: 0;margin: 0;width: 90%; height: 5vmin; padding-left: 10px; z-index: 2;background: rgb(255 255 255 / 75%);}
+  #main h3{position: relative; float: left;clear: right; color:#595959; top: 1vmin;left: 0;margin: 0; padding: 0; font-size: 100%; height: 3vmin; cursor: pointer;}
+  #main h3:hover{font-size: 110%; color: #057a8f;}
+
+  footer{position: absolute; height: 10vh; width: 100vw; margin: 0; padding: 1%; box-sizing: border-box; bottom:0;font-size: 90%; color: #545454;background: rgb(255 255 255 / 75%);}
+  footer a{text-decoration: none;color: #4285f4}
+</style>
+</head>
+
+<body>
+  <nav id="main">
+    <h3 id="LogicMath" style="font-size: 110%; color: #057a8f">LogicMath &gt; &MediumSpace; </h3>
+    <h3 id="Dataset">Dataset &gt; &MediumSpace; </h3>
+    <h3 id="Selection">Selection &gt; &MediumSpace; </h3>
+    <h3 id="Model">Model &gt; &MediumSpace; </h3>
+    <h3 id="Optimization">Optimization &gt; &MediumSpace; </h3>
+    <h3 id="Deployment">Deployment &gt &MediumSpace; </h3>
+    <h3 id="LLM">LLM</h3>
+  </nav>
+
+  <main>
+  <div id="MLworkflow"></div>
+  <div id="infocon">
+    <div id="arright" class="arrow left"></div>
+    <div id="arleft" class="arrow right"></div>
+    <div id="info">
+      <div id="infoClose"></div>
+    </div>
+  </div>
+</main>
+
+  <div id="lookupCon" class="ui-widget">
+    <label for="lookup">Search:</label>
+    <input id="lookup" placeholder="Search">
+    <span id="glass">🔍</span>
+  </div>
+  <footer>
+    <p>Please feel free to use this resource and <a href="https://github.com/csegnini/MachineLearningVisualizer">contact me</a> if you're interested in collaborating. Hope you find this humble resource useful, Christopher Segnini. </p>
+    <p>The text in this document, except where specific citations are provided, was generated with the assistance of<a
+        href="https://gemini.google.com/app">&MediumSpace;Gemini Advanced 2.0 Flash</a></p>
+  </footer>
+  <script>
+    window.scope = "Workflow > LogicMath > node";
+    $(document).ready(function initialize() {
+      const $MLworkflow = $("#MLworkflow");
+      const $infocon = $("#infocon");
+      const $info = $("#info");
+      const $arright = $("#arright");
+      const $arleft = $("#arleft");
+      const $lookup = $("#lookup");
+
+      let network = null;
+      let nodes = [];
+      let edges = [];
+      let activeGroups = {};
+      let xmlData = "indexes.xml";
+      let activeNodeId = null;
+      $infocon.hide();
+      $info.empty();
+      
+    function destroyNetwork() {
+      if (network !== null) {
+        network.destroy();
+        network = null;
+      }
+    }
+
+    function parseXML(xmlData) {
+      return $.ajax({
+        url: xmlData,
+        type: 'GET',
+        dataType: 'xml'
+      }).then(data => {
+        return data;
+      }).catch(error => {
+        console.error("Error parsing XML:", error);
+        throw error;
+      });
+    }
+
+    function initializeAutocomplete(sourceData) {
+      $lookup.autocomplete({
+        source: sourceData,
+        minLength: 0,
+        select: function(event, ui) {
+          window.activeNodeId = ui.item.id;
+          const selectedNode = nodes.find(n => n.id === ui.item.id);
+          const nodePath = getNodePath(ui.item.id);
+          displayNodeDetails(selectedNode, nodePath);
+        }
+      });
+    }
+
+    function getNodePath(nodeId) {
+      const path = [];
+      let currentNodeId = nodeId;
+      while (currentNodeId !== 0) {
+        const currentNode = nodes.find(n => n.id === currentNodeId);
+        if (!currentNode) break;
+        const nodeName = currentNode.label || "Unnamed Node";
+        path.unshift(nodeName);
+        const parentEdge = edges.find(e => e.from === currentNodeId);
+        currentNodeId = parentEdge ? parentEdge.to : 0;
+      }
+      return path.join(" → ");
+    }
+
+    function displayNodeDetails(node, nodePath) {
+      if (!node || !node.dir) {
+        console.error("Invalid node data");
+        return;
+      }
+
+      const [file, d_num] = node.dir.split('-');
+      parseXML(file + ".xml")
+        .then(xmlDoc => {
+          const $targetNodes = $(xmlDoc).find("Id");
+          const parentIndex = $targetNodes.toArray().findIndex(n => $(n).text().trim() === d_num);
+          if (parentIndex === -1) {
+            console.error("No parent node found");
+            return;
+          }
+          const $parentNode = $targetNodes.eq(parentIndex).parent();
+          if (!$parentNode) {
+            console.error("No parent node found");
+            return;
+          }
+          let infoHTML = `<h5>${nodePath}</h5><div id="infoClose">x</div>`;
+
+          $parentNode.children().slice(4).each(function() {
+            let tagName = this.tagName.replace(/([a-z])([A-Z])/g, '$1 $2');
+            let tagContent = $(this).text().trim();
+            if (tagName === "Name") {
+              infoHTML += `<h1>${tagContent}</h1>`;
+            } else if (tagContent && tagContent !== "N/A") {
+              infoHTML += `<h2>${tagName}</h2>`;
+              let formattedContent = tagContent.split("….").map(part => part.trim()).join("<br>");
+              formattedContent = formattedContent.replace(/\(https[^\)]+\)/g, match => {
+                const url = match.slice(1, -1);
+                return `<a href="${url}" target="_blank">source</a>`;
+              });
+              infoHTML += `<p>${formattedContent}</p>`;
+            }
+          });
+
+          $info.html(infoHTML);
+          MathJax.typesetPromise()
+            .then(() => {
+              $infocon.css("display", "block").animate({ opacity: 1 }, 500);
+            })
+            .catch(err => console.error("MathJax error:", err));
+        })
+        .catch(error => console.error("Error processing node details:", error));
+    }
+
+    function initializeNetwork() {
+      destroyNetwork();
+      nodes = [];
+      edges = [];
+
+      parseXML(xmlData)
+        .then(xmlDoc => {
+          const xmlNodes = $(xmlDoc).find(window.scope);
+          xmlNodes.each(function() {
+            const id = parseInt($(this).attr('num'));
+            const label = $(this).text().trim();
+            const group = $(this).attr('group');
+            const level = parseInt($(this).attr('level'));
+            const dir = $(this).attr('dir');
+            nodes.push({ id, label, level, group, dir });
+            activeGroups[group] = true;
+          });
+
+          xmlNodes.each(function() {
+            const from = parseInt($(this).attr('num'));
+            const to = parseInt($(this).attr('from'));
+            if (from !== to) {
+              edges.push({ from, to });
+            }
+          });
+
+          const container = $MLworkflow[0];
+          const data = { nodes, edges };
+
+          return $.getJSON('options.json', config => {
+            const options = config;
+            network = new vis.Network(container, data, options);
+            network.on("click", handleNetworkClick);
+          });
+        })
+        .then(() => {
+          const autocompleteSource = nodes.map(node => ({ value: node.label, id: node.id }));
+          initializeAutocomplete(autocompleteSource);
+        })
+        .catch(error => {
+        });
+    }
+   
+    function nodeFocus(){
+      let nodePosition = network.getPositions(activeNodeId);
+      for (let key in nodePosition) {
+        let position = nodePosition[key];
+        focusOpts = {'position': {'x':position.x, 'y':position.y},'offset': {'x':-(window.innerWidth / 4), 'y':-175},'scale': 0.3,'animation': true}}
+        Object.keys(network.body.nodes).forEach(nodeId => {network.body.nodes[nodeId].setOptions({"borderWidth": 1, font: {'strokeWidth': 0, 'strokeColor': '#fff'}})});
+        network.body.nodes[activeNodeId].setOptions({"borderWidth": 2, font: {'strokeWidth': 1,'strokeColor': '#000000'}});
+        network.moveTo(focusOpts)}
+
+
+    function handleNetworkClick(params) {
+      if (params.nodes.length > 0) {
+        activeNodeId = params.nodes[0];
+        const node = nodes.find(n => n.id === activeNodeId);
+        if (node) {
+          const nodePath = getNodePath(activeNodeId);
+          displayNodeDetails(node, nodePath);
+          nodeFocus();
+        }
+      }
+    }
+
+    function setupEventHandlers() {
+      $info.on("click", function(event) {
+        if (event.target.id === "infoClose") {
+          $infocon.css("display", "none").animate({ opacity: 0 }, 500);
+        }
+      });
+      $("#infoResize").on("mousedown", function() {
+        $info.resizable();
+      });
+      $arright.on("click", () => navigateNodes(1));
+      $arleft.on("click", () => navigateNodes(-1));
+    }
+
+    function navigateNodes(direction) {
+      if (window.activeNodeId === null) return;
+      const newActiveNodeId = activeNodeId + direction;
+      if (newActiveNodeId >= 0 && newActiveNodeId < nodes.length) {
+        activeNodeId = newActiveNodeId;
+        const node = nodes.find(n => n.id === activeNodeId);
+        if (node) {
+          const nodePath = getNodePath(activeNodeId);
+          displayNodeDetails(node, nodePath);
+          nodeFocus();
+        }
+      }
+    }
+
+      $("#main h3").click(function() {
+        $("#main h3").css({"font-size": "100%", "color": "#595959"});
+        $("#" + this.id).css({"font-size": "110%", "color": "#057a8f"});
+        window.scope = "Workflow > "+this.id+" > node";
+        initialize();
+      });
+
+      $(document).dblclick(function(event) {if(event.target.id == ""){$infocon.css("display", "none").animate({ opacity: 0 }, 500)} 
+    
+    });
+     
+      initializeNetwork()
+      setupEventHandlers()});
+  </script>
+</body>
+
+</html>
