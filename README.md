@@ -1,1 +1,1 @@
-# MachineLearningVisualizer
+# Machine Learning Concept Visualizer
