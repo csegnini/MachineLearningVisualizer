@@ -1,0 +1,68 @@
+{
+    "autoResize": true,
+    "height": "100%",
+    "width": "100%",
+    "edges": {
+        "smooth": {
+            "type": "cubicBezier",
+            "forceDirection": "horizontal",
+            "roundness": 0.6
+        },
+        "color": {
+            "color": "#7dc5d2",
+            "hover": "#34c2db",
+            "opacity": 1.0
+        }
+    },
+    "nodes": {
+        "borderWidth": 1,
+        "borderWidthSelected": 2,
+        "chosen": true,
+        "mass": 0.5,
+        "size": 36,
+        "color": {
+            "border": "#057a8f",
+            "background": "#057a8f",
+            "highlight": {
+                "border": "#34c2db",
+                "background": "#34c2db"
+            },
+            "hover": {
+                "border": "#34c2db",
+                "background": "#34c2db"
+            }
+        },
+        "font": {
+            "color": "#363636",
+            "size": 65,
+            "face": "Titillium Web",
+            "vadjust": -50
+
+        },
+        "shape": "dot"
+    },
+    "layout": {
+            "hierarchical": {
+                  "enabled":true,
+                  "levelSeparation": 2200,
+                  "nodeSpacing": 150,
+                  "treeSpacing": 700,
+                  "direction": "LR"      
+                }
+        
+    },
+    "interaction": {
+        "hover": true
+    },
+    "physics": {
+        "enabled": true,
+        "hierarchicalRepulsion": {
+            "centralGravity": 0.0001,
+            "springLength": 100,
+            "springConstant": 0.0001,
+            "nodeDistance": 120,
+            "damping": 0.09,
+            "avoidOverlap": 1
+        }
+    }
+}
